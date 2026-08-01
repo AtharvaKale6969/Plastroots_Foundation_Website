@@ -49,17 +49,7 @@ const InfoSection = () => {
         >
           <Quote size={80} className={`${styles.quoteIcon} ${styles.quoteLeft}`} />
           <h3 className={styles.quoteText}>
-            {"CHANGE STARTS HERE....".split("").map((char, index) => (
-              <motion.span
-                key={index}
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.1, delay: index * 0.08 }}
-              >
-                {char}
-              </motion.span>
-            ))}
+            CHANGE STARTS HERE....
           </h3>
           <Quote size={80} className={`${styles.quoteIcon} ${styles.quoteRight}`} />
         </motion.div>
