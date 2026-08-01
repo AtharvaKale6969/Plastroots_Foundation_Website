@@ -1,0 +1,122 @@
+.section {
+  padding: 80px 0;
+  background-color: var(--white);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.impactHeader {
+  background-color: var(--brand-blue);
+  color: var(--white);
+  padding: 40px;
+  border-radius: 12px;
+  margin-bottom: 40px;
+  box-shadow: 0 10px 30px rgba(9, 102, 153, 0.2);
+}
+
+.impactHeader h2 {
+  color: var(--white);
+  font-size: 1.8rem;
+  margin-bottom: 16px;
+}
+
+.impactHeader p {
+  font-size: 0.95rem;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.statCard {
+  background-color: var(--light-bg);
+  padding: 24px 16px;
+  border-radius: 8px;
+  text-align: center;
+  border: 1px solid var(--border-light);
+}
+
+.statCard.highlight {
+  border-color: var(--brand-green);
+  background-color: rgba(32, 156, 93, 0.05);
+}
+
+.statLabel {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+.statValue {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--brand-blue);
+  margin-bottom: 8px;
+}
+
+.statHighlight {
+  color: var(--brand-green);
+}
+
+.statDesc {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.mapContainer {
+  background-color: var(--light-bg);
+  border-radius: 12px;
+  height: 500px;
+  position: relative;
+  border: 1px solid var(--border-light);
+  overflow: hidden;
+}
+
+.tooltip {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--brand-blue);
+  color: var(--white);
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(9, 102, 153, 0.3);
+  pointer-events: none;
+  z-index: 10;
+  transition: opacity 0.2s ease;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .grid { grid-template-columns: 1fr; gap: 40px; }
+}
+@media (max-width: 768px) {
+  .section { padding: 60px 0; }
+  .impactHeader { padding: 30px; }
+  .mapContainer { height: 400px; }
+}
+@media (max-width: 600px) {
+  .statsGrid { grid-template-columns: 1fr; }
+}
+@media (max-width: 425px) {
+  .section { padding: 40px 0; }
+  .impactHeader { padding: 24px; margin-bottom: 30px; }
+  .impactHeader h2 { font-size: 1.5rem; }
+  .mapContainer { height: 300px; }
+  .statValue { font-size: 1.5rem; }
+  .statCard { padding: 16px 12px; }
+}

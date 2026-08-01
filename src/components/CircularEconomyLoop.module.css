@@ -1,0 +1,139 @@
+.container {
+  position: relative;
+  width: 100%;
+  height: 550px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+  padding: 40px;
+}
+
+.orbit {
+  position: relative;
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  border: 2px dashed rgba(9, 102, 153, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: spin 30s linear infinite;
+}
+
+.orbit:hover {
+  animation-play-state: paused;
+}
+
+.orbit:hover .node {
+  animation-play-state: paused;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.centerNode {
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 40px rgba(32, 156, 93, 0.15);
+  z-index: 10;
+  animation: pulse 4s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 20px rgba(32, 156, 93, 0.1); transform: scale(1); }
+  50% { box-shadow: 0 0 50px rgba(32, 156, 93, 0.3); transform: scale(1.05); }
+  100% { box-shadow: 0 0 20px rgba(32, 156, 93, 0.1); transform: scale(1); }
+}
+
+.node {
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--brand-blue);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  border: 1px solid rgba(255,255,255,0.8);
+  /* Reverse rotation so icons stay upright */
+  animation: counterSpin 30s linear infinite;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.node:hover {
+  transform: scale(1.15) !important;
+  box-shadow: 0 15px 35px rgba(9, 102, 153, 0.2);
+  z-index: 20;
+}
+
+@keyframes counterSpin {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+/* Exact positions for 5 nodes on a 180px radius circle with flat bottom symmetry. (Node offset -32px) */
+/* Node 1: Top Right (36 deg) */
+.node1 { left: 254px; top: 2px; }
+/* Node 2: Bottom Right (108 deg) */
+.node2 { left: 319px; top: 204px; }
+/* Node 3: Bottom (180 deg) */
+.node3 { left: 148px; top: 328px; }
+/* Node 4: Bottom Left (252 deg) */
+.node4 { left: -23px; top: 204px; }
+/* Node 5: Top Left (324 deg) */
+.node5 { left: 42px; top: 2px; }
+
+.label {
+  position: absolute;
+  top: 75px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--text-dark);
+  background: white;
+  padding: 4px 16px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  text-transform: uppercase;
+}
+
+/* Mobile Responsiveness for the hardcoded 360px loop */
+@media (max-width: 500px) {
+  .container {
+    transform: scale(0.7);
+    margin-top: -60px;
+    margin-bottom: -60px;
+  }
+}
+
+@media (max-width: 380px) {
+  .container {
+    transform: scale(0.55);
+    margin-top: -90px;
+    margin-bottom: -90px;
+  }
+}

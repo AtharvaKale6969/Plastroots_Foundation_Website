@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  /* Brand Colors */
+  --brand-green: #209c5d;
+  --brand-blue: #096699;
+  
+  /* Neutral Colors */
+  --white: #ffffff;
+  --light-bg: #fafafa;
+  --text-dark: #1f2c33;
+  --text-muted: #45505f;
+  --border-light: #dddddd;
+
+  /* Typography */
+  --font-primary: 'Inter', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  overflow-x: clip;
+  width: 100%;
+}
+
+body {
+  font-family: var(--font-primary);
+  background-color: var(--white);
+  /* A very subtle, premium off-white/grey-blue gradient for the background */
+  background: linear-gradient(135deg, #ffffff 0%, #f4f7f9 100%);
+  color: var(--text-dark);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+/* Global Accessibility (a11y) Focus Rings */
+:focus-visible {
+  outline: 2px solid var(--brand-blue);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--brand-blue);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+a {
+  color: var(--brand-green);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--brand-blue);
+}
+
+/* Common layout utility classes */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section {
+  padding: 80px 0;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.btn-primary {
+  display: inline-block;
+  background-color: var(--brand-green);
+  color: var(--white);
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--brand-blue);
+  color: var(--white);
+}
+
+/* GLOBAL HERO FIX: Prevent flexbox upward overflow under fixed header */
+.page-wrapper > section:first-of-type,
+[class*="pageWrapper"] > section:first-of-type {
+  padding-top: 160px !important;
+  padding-bottom: 100px !important;
+  align-items: flex-start !important;
+}
+
+@media (max-width: 768px) {
+  .page-wrapper > section:first-of-type,
+  [class*="pageWrapper"] > section:first-of-type {
+    padding-top: 140px !important;
+    padding-bottom: 80px !important;
+  }
+}
+
+.page-wrapper > section:first-of-type > div {
+  margin-top: auto;
+  margin-bottom: auto;
+}

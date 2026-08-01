@@ -1,0 +1,119 @@
+.section {
+  padding: 80px 0;
+  background-color: var(--light-bg);
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 50px;
+  font-size: 2.2rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.card {
+  position: relative;
+  height: 380px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  cursor: pointer;
+}
+
+.cardImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.card:hover .cardImage {
+  transform: scale(1.1);
+}
+
+.cardOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(9, 102, 153, 0.9) 0%, rgba(9, 102, 153, 0.4) 50%, rgba(0,0,0,0) 100%);
+  display: flex;
+  align-items: flex-end;
+  padding: 30px;
+  transition: background 0.4s ease;
+}
+
+.card:hover .cardOverlay {
+  background: linear-gradient(to top, rgba(9, 102, 153, 0.95) 0%, rgba(9, 102, 153, 0.85) 50%, rgba(32, 156, 93, 0.6) 100%);
+}
+
+.cardContent {
+  width: 100%;
+}
+
+.card h3 {
+  font-size: 1.35rem;
+  color: var(--white);
+  margin-bottom: 12px;
+  transition: transform 0.4s ease;
+  transform: translateY(20px);
+}
+
+.card p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  opacity: 0;
+  max-height: 0;
+  transform: translateY(20px);
+  transition: all 0.4s ease;
+  overflow: hidden;
+}
+
+.card:hover h3 {
+  transform: translateY(0);
+}
+
+.card:hover p {
+  opacity: 1;
+  max-height: 200px;
+  transform: translateY(0);
+  margin-top: 16px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
+  /* Center the 3rd odd card when grid wraps to 2 columns */
+  .card:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: calc(50% - 15px);
+  }
+}
+@media (max-width: 768px) {
+  .section { padding: 60px 0; }
+  .grid { grid-template-columns: 1fr; gap: 24px; }
+  .card { height: 320px; }
+  .card:last-child:nth-child(odd) {
+    width: 100%;
+  }
+}
+@media (max-width: 425px) {
+  .section { padding: 40px 0; }
+  .title { font-size: 1.8rem; margin-bottom: 30px; }
+  .grid { gap: 20px; }
+  .card { height: 260px; }
+  .card h3 { font-size: 1.2rem; }
+  .card p { font-size: 0.9rem; }
+  .cardOverlay { padding: 20px; }
+}

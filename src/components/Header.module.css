@@ -1,0 +1,338 @@
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  z-index: 1000;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+}
+
+@supports not (backdrop-filter: blur(12px)) {
+  .header {
+    background: rgba(255, 255, 255, 0.98);
+  }
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 110px;
+  padding: 0 4%;
+  max-width: 1800px;
+  margin: 0 auto;
+}
+
+.rightNav {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-shrink: 0;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.logoImg {
+  height: 80px; /* Increased scale */
+  width: auto;
+}
+
+.nameImg {
+  height: 65px; /* Increased scale */
+  width: auto;
+}
+
+.menu {
+  display: flex;
+  gap: 32px; /* Balanced equal spacing */
+  list-style: none;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  flex: 1; /* Pushes into the remaining space */
+  justify-content: center; /* Centers the menu perfectly */
+}
+
+.menuItem {
+  position: relative;
+}
+
+.menuItem > a, .dropdownToggle {
+  color: var(--text-dark);
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.menuItem > a:hover, .dropdownToggle:hover {
+  color: var(--brand-blue);
+}
+
+.menuItem > a.active {
+  color: var(--brand-green);
+}
+
+/* Dropdown Styles */
+.dropdownMenu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  min-width: 180px;
+  padding: 10px 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  list-style: none;
+}
+
+.menuItem:hover .dropdownMenu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+.dropdownItem a {
+  display: block;
+  padding: 10px 20px;
+  color: var(--text-dark);
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.dropdownItem a:hover {
+  background-color: rgba(32, 156, 93, 0.05);
+  color: var(--brand-green);
+}
+
+.contactBtn {
+  background-color: transparent;
+  color: var(--brand-blue) !important;
+  border: 2px solid var(--brand-blue);
+  padding: 10px 24px;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.contactBtn:hover {
+  background-color: rgba(9, 102, 153, 0.1);
+}
+
+.donateBtn {
+  background-color: #ef4444; /* High-contrast energetic red/orange for urgency */
+  background: linear-gradient(135deg, #f59e0b, #ea580c); /* Vibrant warm gradient */
+  color: var(--white) !important;
+  padding: 12px 28px;
+  border-radius: 30px; /* Pill shape stands out from other buttons */
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(234, 88, 12, 0.4);
+  animation: pulse 2s infinite;
+}
+
+.donateBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(234, 88, 12, 0.6);
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(234, 88, 12, 0.4); }
+  70% { box-shadow: 0 0 0 10px rgba(234, 88, 12, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(234, 88, 12, 0); }
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+  color: var(--brand-blue);
+  z-index: 1001;
+}
+
+.mobileActions {
+  display: none;
+}
+
+.chevron {
+  transition: transform 0.3s ease;
+}
+
+.chevronOpen {
+  transform: rotate(180deg);
+}
+
+/* Responsive Header */
+@media (max-width: 1440px) {
+  .logoImg { height: 70px; }
+  .nameImg { height: 55px; }
+  .menu { gap: 24px; }
+}
+
+@media (max-width: 1024px) {
+  .hamburger {
+    display: block;
+  }
+  
+  /* Mobile Menu Container */
+  .menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 100px;
+    gap: 20px;
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow-y: auto;
+  }
+  
+  @supports not (backdrop-filter: blur(15px)) {
+    .menu {
+      background: rgb(255, 255, 255);
+    }
+  }
+
+  .menuOpen {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .menuItem {
+    width: 100%;
+    text-align: center;
+  }
+
+  .menuItem > a, .dropdownToggle {
+    font-size: 1.4rem;
+    padding: 10px;
+    justify-content: center;
+  }
+
+  /* Mobile Dropdown Override */
+  .dropdownMenu {
+    position: static;
+    transform: none;
+    background: transparent;
+    box-shadow: none;
+    opacity: 0;
+    visibility: hidden;
+    max-height: 0;
+    overflow: hidden;
+    padding: 0;
+    min-width: 100%;
+    transition: all 0.3s ease;
+  }
+  
+  /* Reset hover logic for mobile */
+  .menuItem:hover .dropdownMenu {
+    opacity: 0;
+    visibility: hidden;
+    max-height: 0;
+    transform: none;
+    background: transparent;
+    box-shadow: none;
+  }
+  
+  /* Class applied by JS */
+  .dropdownOpen {
+    opacity: 1 !important;
+    visibility: visible !important;
+    max-height: 500px !important;
+    padding: 10px 0;
+  }
+
+  .dropdownItem a {
+    font-size: 1.1rem;
+    padding: 12px;
+    white-space: normal;
+    word-wrap: break-word;
+  }
+}
+
+@media (max-width: 1025px) {
+  .rightNav {
+    display: none; /* Hide desktop action buttons outside */
+  }
+
+  .hamburger {
+    margin-right: 0;
+    order: unset;
+  }
+
+  .nav {
+    height: 80px;
+    justify-content: space-between;
+  }
+
+  .logo {
+    gap: 10px;
+  }
+
+  .logoImg { height: 50px; }
+  .nameImg { height: 40px; }
+
+  .mobileActions {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+    width: 80%;
+    max-width: 300px;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .mobileActions a {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .logoImg { height: 45px; }
+  .nameImg { height: 35px; }
+}
+
+@media (max-width: 425px) {
+  .nav { padding: 0 5%; }
+  .logoImg { height: 40px; }
+  .nameImg { height: 30px; }
+  .logo { gap: 6px; }
+}
+
+@media (max-width: 320px) {
+  .logoImg { height: 35px; }
+  .nameImg { height: 26px; }
+}

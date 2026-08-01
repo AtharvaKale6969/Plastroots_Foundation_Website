@@ -1,0 +1,88 @@
+.section {
+  padding: 100px 0;
+  background-color: var(--white);
+  overflow: hidden;
+}
+
+.title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: var(--brand-blue);
+  margin-bottom: 60px;
+}
+
+.carouselContainer {
+  display: flex;
+  gap: 24px;
+  /* We will use framer-motion to animate this horizontally */
+  width: max-content;
+  padding: 0 20px;
+}
+
+.card {
+  width: 400px;
+  background-color: var(--white);
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  padding: 32px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+  flex-shrink: 0;
+}
+
+.stars {
+  color: #fbbf24;
+  display: flex;
+  gap: 4px;
+  margin-bottom: 16px;
+}
+
+.quote {
+  font-size: 1rem;
+  color: var(--text-muted);
+  font-style: italic;
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--brand-green);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.authorInfo h4 {
+  font-size: 1rem;
+  color: var(--text-dark);
+  margin-bottom: 2px;
+}
+
+.authorInfo p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .section { padding: 60px 0; }
+  .title { font-size: 2rem; margin-bottom: 40px; }
+  .card { width: 350px; padding: 24px; }
+}
+@media (max-width: 425px) {
+  .section { padding: 40px 0; }
+  .title { font-size: 1.8rem; margin-bottom: 30px; }
+  .card { width: 85vw; padding: 20px; } 
+  .quote { font-size: 0.95rem; margin-bottom: 16px; }
+}

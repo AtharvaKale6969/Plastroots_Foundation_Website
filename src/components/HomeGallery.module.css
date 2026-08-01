@@ -1,0 +1,134 @@
+.section {
+  padding: 80px 0;
+  background-color: var(--light-bg);
+  overflow: hidden;
+}
+
+.title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: var(--brand-blue);
+  margin-bottom: 50px;
+}
+
+.marqueeWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.marqueeRow {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+}
+
+.marqueeRow.left {
+  animation: scrollLeft 35s linear infinite;
+}
+
+.marqueeRow.right {
+  animation: scrollRight 35s linear infinite;
+}
+
+/* Pause on hover */
+.marqueeRow:hover {
+  animation-play-state: paused;
+}
+
+.galleryItem {
+  position: relative;
+  width: 350px;
+  height: 250px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.galleryItem:hover .image {
+  transform: scale(1.1);
+}
+
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-50% - 10px)); /* -50% of total width minus half of the gap */
+  }
+}
+
+@keyframes scrollRight {
+  0% {
+    transform: translateX(calc(-50% - 10px));
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Lightbox */
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  cursor: zoom-out;
+}
+
+.lightboxImage {
+  max-width: 90%;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  cursor: default;
+}
+
+.closeBtn {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  background: transparent;
+  color: white;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.closeBtn:hover {
+  transform: scale(1.2);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .section { padding: 60px 0; }
+  .title { font-size: 2rem; margin-bottom: 40px; }
+  .galleryItem { width: 300px; height: 215px; }
+}
+@media (max-width: 425px) {
+  .section { padding: 40px 0; }
+  .title { font-size: 1.8rem; margin-bottom: 30px; }
+  .galleryItem { width: 250px; height: 180px; }
+  .marqueeWrapper { gap: 12px; }
+  .marqueeRow { gap: 12px; }
+}

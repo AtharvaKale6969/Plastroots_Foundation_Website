@@ -1,0 +1,159 @@
+/* Hero Section */
+.hero {
+  min-height: 400px;
+  background: linear-gradient(to bottom, rgba(31, 44, 51, 0.6), rgba(9, 102, 153, 0.7)), #e2e8f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--white);
+  padding: 120px 5% 40px;
+}
+
+.heroTitle {
+  font-size: 4rem;
+  font-weight: 800;
+  color: var(--brand-green);
+  margin-bottom: 24px;
+  max-width: 1000px;
+  line-height: 1.2;
+  text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+.heroSubtitle {
+  font-size: 1.35rem;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 800px;
+  margin: 0 auto;
+  margin-bottom: 40px;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+/* Initiatives Grid Section */
+.initiativesSection {
+  padding: 100px 5%;
+  background: var(--light-bg);
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  color: var(--brand-blue);
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (max-width: 900px) {
+  .gridContainer {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  background: var(--white);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(32, 156, 93, 0.15);
+}
+
+.cardImageWrapper {
+  height: 250px;
+  overflow: hidden;
+}
+
+.cardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+  content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600"><rect width="100%" height="100%" fill="%23e2e8f0"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="sans-serif" font-size="24" fill="%23a0aec0">Image Placeholder</text></svg>');
+  background-color: #e2e8f0;
+}
+
+.card:hover .cardImage {
+  transform: scale(1.08);
+}
+
+.cardContent {
+  padding: 2.5rem 2rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.cardTitle {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--brand-blue);
+  margin-bottom: 1rem;
+  font-family: 'Outfit', sans-serif;
+}
+
+.cardDescription {
+  color: var(--text-dark);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  flex-grow: 1;
+}
+
+.readMoreBtn {
+  align-self: flex-start;
+  background: none;
+  border: none;
+  color: var(--brand-green);
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0;
+  transition: gap 0.3s ease;
+}
+
+.readMoreBtn:hover {
+  gap: 0.8rem;
+}
+
+/* RESPONSIVE HERO */
+@media (max-width: 1024px) {
+  .heroTitle { font-size: 3rem; }
+}
+@media (max-width: 768px) {
+  .hero { min-height: 350px; }
+  .heroTitle { font-size: 2.5rem; }
+  .heroSubtitle { font-size: 1.1rem; }
+  .initiativesSection { padding: 40px 5%; }
+  .sectionHeader { margin-bottom: 2rem; }
+}
+@media (max-width: 425px) {
+  .hero { min-height: 300px; }
+  .heroTitle { font-size: 2rem; margin-bottom: 15px; }
+  .heroSubtitle { font-size: 1rem; margin-bottom: 20px; }
+}
+@media (max-width: 320px) {
+  .heroTitle { font-size: 1.8rem; }
+  .heroSubtitle { font-size: 0.9rem; }
+}

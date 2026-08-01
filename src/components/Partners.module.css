@@ -1,0 +1,136 @@
+.section {
+  padding: 80px 0;
+  background-color: var(--light-bg);
+  text-align: center;
+}
+
+.title {
+  font-size: 2.2rem;
+  color: var(--brand-blue);
+  margin-bottom: 16px;
+}
+
+.subtitle {
+  color: var(--text-muted);
+  max-width: 600px;
+  margin: 0 auto 50px;
+}
+
+.marqueeContainer {
+  width: 100%;
+  overflow: hidden;
+  padding: 20px 0 60px 0;
+  position: relative;
+}
+
+.marqueeTrack {
+  display: flex;
+  gap: 30px;
+  width: max-content;
+  animation: scrollLeft 25s linear infinite;
+}
+
+.marqueeContainer:hover .marqueeTrack {
+  animation-play-state: paused;
+}
+
+.partnerCard {
+  width: 350px;
+  flex-shrink: 0;
+  background-color: var(--white);
+  padding: 40px 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid var(--border-light);
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+.partnerCard:hover {
+  border-color: var(--brand-green);
+}
+
+.logoWrapper {
+  height: 80px;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.partnerCard h4 {
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+  color: var(--text-dark);
+  text-align: center;
+}
+
+.partnerCard p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  text-align: center;
+}
+
+.hoverOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 12px 0;
+  background-color: var(--brand-blue);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: all 0.3s ease;
+  font-weight: 500;
+  font-size: 0.9rem;
+  z-index: 10;
+}
+
+.partnerCard:hover .hoverOverlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(calc(-25% - 7.5px));
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .section { padding: 60px 0; }
+  .title { font-size: 2rem; }
+  .partnerCard { width: 300px; padding: 30px 20px; }
+  .logoWrapper { height: 70px; margin-bottom: 20px; }
+}
+@media (max-width: 425px) {
+  .section { padding: 40px 0; }
+  .title { font-size: 1.8rem; }
+  .partnerCard { width: 250px; padding: 24px 16px; }
+  .logoWrapper { height: 60px; margin-bottom: 16px; }
+  .partnerCard h4 { font-size: 1rem; }
+  .partnerCard p { font-size: 0.8rem; }
+}
