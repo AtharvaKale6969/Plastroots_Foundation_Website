@@ -76,28 +76,30 @@ const Hero = () => {
         </div>
       </div>
       
-      {/* Dynamic Slide Label */}
-      <AnimatePresence mode="wait">
-        <motion.div 
-          key={currentSlide}
-          className={styles.slideLabel}
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -10 }}
-          transition={{ duration: 0.3 }}
-        >
-          {slides[currentSlide].label}
-        </motion.div>
-      </AnimatePresence>
+      {/* Dynamic Slide Label and Indicators */}
+      <div className={styles.bottomControls}>
+        <AnimatePresence mode="wait">
+          <motion.div 
+            key={currentSlide}
+            className={styles.slideLabel}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.3 }}
+          >
+            {slides[currentSlide].label}
+          </motion.div>
+        </AnimatePresence>
 
-      <div className={styles.indicatorContainer}>
-        {slides.map((_, index) => (
-          <div 
-            key={index} 
-            className={`${styles.indicator} ${index === currentSlide ? styles.active : ''}`}
-            onClick={() => setCurrentSlide(index)}
-          />
-        ))}
+        <div className={styles.indicatorContainer}>
+          {slides.map((_, index) => (
+            <div 
+              key={index} 
+              className={`${styles.indicator} ${index === currentSlide ? styles.active : ''}`}
+              onClick={() => setCurrentSlide(index)}
+            />
+          ))}
+        </div>
       </div>
       
     </section>
