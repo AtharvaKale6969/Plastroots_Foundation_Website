@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
+import { useNavigate } from 'react-router-dom';
 import { Target, Lightbulb, ChevronRight, Leaf, Recycle, Megaphone, Landmark } from 'lucide-react';
 import styles from './AboutUs.module.css';
 
@@ -81,6 +82,7 @@ const AnimatedText = ({ text, className }) => {
 };
 
 const AboutUs = () => {
+  const navigate = useNavigate();
   return (
     <div className={styles.aboutPage}>
       <Helmet>
@@ -102,8 +104,8 @@ const AboutUs = () => {
               Plastroots Foundation is a not-for-profit organization registered under Section 8 of the Companies Act 2013, committed to driving a positive change through our integrated approach to social, economic and environmental initiatives. With our passion for transformation, we strive to create a sustainable impact and empower communities.
             </p>
             <div className={styles.heroButtons}>
-              <button className={styles.primaryBtn}>Get In Touch</button>
-              <button className={styles.secondaryBtn}>Plastroots Foundation Community</button>
+              <button className={styles.primaryBtn} onClick={() => navigate('/contact')}>Get In Touch</button>
+              <button className={styles.secondaryBtn} onClick={() => navigate('/initiatives')}>Plastroots Foundation Initiatives</button>
             </div>
           </motion.div>
         </div>

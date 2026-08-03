@@ -357,7 +357,7 @@ const HealthActivities = () => {
           <p className={styles.ctaDesc}>
             Join us in building a healthier, more educated community. Your contribution can provide critical resources to those in need.
           </p>
-          <button className={styles.ctaBtn}>Get Involved</button>
+          <button className={styles.ctaBtn} onClick={() => navigate('/collaborate')}>Get Involved</button>
         </motion.div>
       </section>
     </div>

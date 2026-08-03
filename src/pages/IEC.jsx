@@ -381,7 +381,7 @@ const IEC = () => {
           <p className={styles.ctaDesc}>
             Help us spread the word. Whether you want to volunteer for our door-to-door campaigns, act in a street play, or sponsor educational materials, your support creates lasting change.
           </p>
-          <button className={styles.ctaBtn}>Get Involved</button>
+          <button className={styles.ctaBtn} onClick={() => navigate('/collaborate')}>Get Involved</button>
         </motion.div>
       </section>
     </div>

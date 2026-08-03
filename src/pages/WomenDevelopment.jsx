@@ -355,7 +355,7 @@ const WomenDevelopment = () => {
           <p className={styles.ctaDesc}>
             Your support helps us provide critical training and seed funding for women-led micro-enterprises. Together, we can build a more sustainable and equitable future.
           </p>
-          <button className={styles.ctaBtn}>Support SHGs</button>
+          <button className={styles.ctaBtn} onClick={() => navigate('/collaborate')}>Support SHGs</button>
         </motion.div>
       </section>
     </div>

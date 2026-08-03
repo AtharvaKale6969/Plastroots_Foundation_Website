@@ -334,7 +334,7 @@ const FarmerWelfare = () => {
           <p className={styles.ctaDesc}>
             Join us in our mission to empower rural farmers through education and sustainable agricultural practices. Whether you're an expert looking to volunteer or a donor, your support matters.
           </p>
-          <button className={styles.ctaBtn}>Get Involved</button>
+          <button className={styles.ctaBtn} onClick={() => navigate('/collaborate')}>Get Involved</button>
         </motion.div>
       </section>
     </div>

@@ -353,7 +353,7 @@ const EducationActivities = () => {
           <p className={styles.ctaDesc}>
             Are you an educator or school administrator? Join hands with us to bring practical sustainability education to your institution.
           </p>
-          <button className={styles.ctaBtn}>Become a Partner School</button>
+          <button className={styles.ctaBtn} onClick={() => navigate('/collaborate')}>Become a Partner School</button>
         </motion.div>
       </section>
     </div>

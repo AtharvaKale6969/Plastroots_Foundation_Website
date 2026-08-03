@@ -559,7 +559,7 @@ const WasteManagement = () => {
           <p className={styles.ctaDesc}>
             Whether you want to organize a clean-up drive in your neighborhood or sponsor a community composting unit, your action can help turn the tide on waste.
           </p>
-          <button className={styles.ctaBtn}>Join the Movement</button>
+          <button className={styles.ctaBtn} onClick={() => navigate('/collaborate')}>Join the Movement</button>
         </motion.div>
       </section>
     </div>
