@@ -13,6 +13,44 @@ const BlogDetail = () => {
     window.scrollTo(0, 0);
   }, [id]);
 
+  const handleShare = async (platform) => {
+    const url = window.location.href;
+    const title = "The Future of Circular Economy: Building a Greener Tomorrow";
+
+    switch (platform) {
+      case 'mail':
+        window.location.href = `mailto:?subject=${encodeURIComponent(title)}&body=${encodeURIComponent("Check out this article: " + url)}`;
+        break;
+      case 'copy':
+        try {
+          await navigator.clipboard.writeText(url);
+          alert("Link copied to clipboard!");
+        } catch (err) {
+          console.error("Failed to copy link", err);
+        }
+        break;
+      case 'whatsapp':
+        window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(title + " - " + url)}`, '_blank');
+        break;
+      case 'native':
+        if (navigator.share) {
+          try {
+            await navigator.share({
+              title: title,
+              url: url,
+            });
+          } catch (err) {
+            console.error("Error sharing", err);
+          }
+        } else {
+          alert("Web Share API is not supported in your browser.");
+        }
+        break;
+      default:
+        break;
+    }
+  };
+
   return (
     <>
       <Helmet>
@@ -123,10 +161,10 @@ const BlogDetail = () => {
             >
               <h4 className={styles.widgetTitle}>Share this Article</h4>
               <div className={styles.shareButtons}>
-                <div className={styles.shareIcon}><Mail size={20} /></div>
-                <div className={styles.shareIcon}><Link2 size={20} /></div>
-                <div className={styles.shareIcon}><MessageCircle size={20} /></div>
-                <div className={styles.shareIcon}><Share2 size={20} /></div>
+                <div className={styles.shareIcon} onClick={() => handleShare('mail')} title="Share via Email"><Mail size={20} /></div>
+                <div className={styles.shareIcon} onClick={() => handleShare('copy')} title="Copy Link"><Link2 size={20} /></div>
+                <div className={styles.shareIcon} onClick={() => handleShare('whatsapp')} title="Share on WhatsApp"><MessageCircle size={20} /></div>
+                <div className={styles.shareIcon} onClick={() => handleShare('native')} title="Share..."><Share2 size={20} /></div>
               </div>
             </motion.div>
 
