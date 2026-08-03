@@ -3,7 +3,7 @@
 .aboutPage {
   background-color: transparent;
   color: var(--text-dark);
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 /* --- Hero Section --- */
@@ -480,6 +480,7 @@
   background: var(--white);
   padding: 100px 5%;
   gap: 4rem;
+  align-items: flex-start;
 }
 
 .journeyLeft {
