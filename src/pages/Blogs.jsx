@@ -200,12 +200,19 @@ const Blogs = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
               >
-                <h4 className={styles.newsletterTitle}>Get the latest insights</h4>
-                <p className={styles.newsletterText}>Subscribe to our newsletter for updates on the circular economy and environmental awareness.</p>
-                <form className={styles.newsletterForm} onSubmit={(e) => e.preventDefault()}>
-                  <input type="email" placeholder="Your email address" className={styles.newsletterInput} required />
-                  <button type="submit" className={`btn-primary ${styles.newsletterBtn}`}>Subscribe</button>
-                </form>
+                <h4 className={styles.newsletterTitle}>Follow us</h4>
+                <p className={styles.newsletterText}>Stay connected with us on our social media for the latest updates on environmental awareness.</p>
+                <div className={styles.socialLinks}>
+                  <a href="https://www.instagram.com/plastrootsfoundation/" target="_blank" rel="noopener noreferrer" className={styles.socialIcon}>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16.11 7.5v.01"/><path d="M12 15.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Z"/></svg>
+                  </a>
+                  <a href="https://www.linkedin.com/company/plastroots-foundation/" target="_blank" rel="noopener noreferrer" className={styles.socialIcon}>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+                  </a>
+                  <a href="https://www.facebook.com/p/Plastroots-Foundation-61579938444905/" target="_blank" rel="noopener noreferrer" className={styles.socialIcon}>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                  </a>
+                </div>
               </motion.div>
             </aside>
 
