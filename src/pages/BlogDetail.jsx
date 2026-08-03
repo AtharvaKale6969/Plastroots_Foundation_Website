@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
-import { Calendar, Clock, Leaf, Share2, Facebook, Twitter, Linkedin, ArrowLeft } from 'lucide-react';
+import { Calendar, Clock, Leaf, Share2, Mail, Link2, MessageCircle, ArrowLeft } from 'lucide-react';
 import styles from './BlogDetail.module.css';
 
 const BlogDetail = () => {
@@ -123,9 +123,9 @@ const BlogDetail = () => {
             >
               <h4 className={styles.widgetTitle}>Share this Article</h4>
               <div className={styles.shareButtons}>
-                <div className={styles.shareIcon}><Facebook size={20} /></div>
-                <div className={styles.shareIcon}><Twitter size={20} /></div>
-                <div className={styles.shareIcon}><Linkedin size={20} /></div>
+                <div className={styles.shareIcon}><Mail size={20} /></div>
+                <div className={styles.shareIcon}><Link2 size={20} /></div>
+                <div className={styles.shareIcon}><MessageCircle size={20} /></div>
                 <div className={styles.shareIcon}><Share2 size={20} /></div>
               </div>
             </motion.div>
