@@ -688,7 +688,7 @@
   .title { font-size: 2.5rem; }
   .quoteText { font-size: 1.8rem; }
   .sectionHeading, .sectionHeadingWhite { font-size: 2.5rem; }
-  .impactGrid { grid-template-columns: 1fr; }
+  .impactGrid { grid-template-columns: 1fr 1fr; }
   .masonryVisuals { height: 400px; flex-direction: column; }
   .masonryCol1 { padding-top: 0; height: 200px; }
   .masonryImgLarge { height: 100%; }
@@ -720,6 +720,7 @@
   .genesisSection, .impactSection, .awarenessSection, .grassrootsSection, .futureSection { padding: 40px 5%; }
   .quoteSection { padding: 40px 5%; }
   .quoteWrapper { padding: 30px 20px; }
+  .impactNumber { font-size: 1.8rem; }
   .genesisGrid, .grassrootsGrid { gap: 40px; }
   .awarenessDetails { margin-top: 60px; gap: 60px; }
 }
