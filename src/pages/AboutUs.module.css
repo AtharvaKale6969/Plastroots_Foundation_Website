@@ -931,7 +931,7 @@
   }
 }
 @media (max-width: 768px) {
-  .heroSection { padding: 100px 5% 50px 5%; }
+  .heroSection { padding: 160px 5% 50px 5%; }
   .heroTitle { font-size: 2.5rem; }
   .heroSubtitle { font-size: 1.05rem; }
   .heroImage { max-height: 350px; }
