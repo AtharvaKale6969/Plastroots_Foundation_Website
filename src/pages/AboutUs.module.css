@@ -932,8 +932,8 @@
   }
 }
 @media (max-width: 768px) {
-  .heroSection { padding: 160px 5% 50px 5%; }
-  .heroTitle { font-size: 4rem; }
+  .hero { padding: 140px 5% 60px; min-height: auto; }
+  .heroTitle { font-size: 2.5rem; }
   .heroSubtitle { font-size: 1.05rem; }
   .heroImage { max-height: 350px; }
   
@@ -976,9 +976,9 @@
   }
 }
 @media (max-width: 425px) {
-  .heroSection { min-height: 300px; }
-  .heroTitle { font-size: 4rem; }
+  .hero { padding: 120px 5% 40px; min-height: 250px; }
+  .heroTitle { font-size: 2rem; margin-bottom: 15px; }
 }
 @media (max-width: 320px) {
-  .heroTitle { font-size: 4rem; }
+  .heroTitle { font-size: 1.6rem; }
 }

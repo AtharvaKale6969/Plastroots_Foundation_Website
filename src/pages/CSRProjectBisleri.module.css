@@ -714,10 +714,9 @@
 }
 
 @media (max-width: 425px) {
-  .hero { min-height: 300px; }
-  .title { font-size: 1.8rem; margin-bottom: 15px; }
+  .hero { padding: 120px 5% 40px; min-height: 250px; }
+  .heroTitle { font-size: 2rem; margin-bottom: 15px; }
   .subtitle { font-size: 0.95rem; }
-  .backBtn { top: 90px; }
   
   .genesisSection, .impactSection, .awarenessSection, .grassrootsSection, .futureSection { padding: 40px 5%; }
   .quoteSection { padding: 40px 5%; }

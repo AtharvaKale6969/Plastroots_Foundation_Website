@@ -218,14 +218,12 @@
 }
 
 @media (max-width: 1024px) {
-  .title { font-size: 4rem; }
   .contentLayout { gap: 40px; grid-template-columns: 1.8fr 1fr; }
 }
 
 @media (max-width: 768px) {
-  .title { font-size: 4rem; }
-  .heroSection { padding: 160px 5% 100px; }
-  .backLink { top: 90px; }
+  .heroSection { padding: 140px 5% 60px; min-height: auto; }
+  .title { font-size: 2.5rem; }
   .contentLayout { 
     grid-template-columns: 1fr; 
     gap: 60px;
@@ -236,9 +234,13 @@
 }
 
 @media (max-width: 425px) {
-  .heroSection { padding: 140px 5% 80px; }
-  .title { font-size: 4rem; }
+  .heroSection { padding: 120px 5% 40px; min-height: 250px; }
+  .title { font-size: 2rem; }
   .articleBody { font-size: 1.05rem; }
   .premiumQuote { padding: 24px; }
   .quoteText { font-size: 1.2rem; }
+}
+
+@media (max-width: 320px) {
+  .title { font-size: 1.6rem; }
 }
