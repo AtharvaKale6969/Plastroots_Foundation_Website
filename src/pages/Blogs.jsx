@@ -65,22 +65,26 @@ const Blogs = () => {
   return (
     <>
       <Helmet>
-        <title>Blogs - Plastroots Foundation</title>
-        <meta name="description" content="Read the latest insights and stories from the Plastroots Foundation." />
+        <title>Blogs | Insights on Circular Economy & Sustainability | Plastroots Foundation</title>
+        <meta name="description" content="Read the latest insights, stories, and news from Plastroots Foundation. Learn about waste management, sustainability, and grassroots social impact." />
+        <meta property="og:title" content="Blogs - Plastroots Foundation" />
+        <meta property="og:description" content="Discover our latest insights on building a sustainable, circular world." />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
       </Helmet>
       
       <main className={styles.blogsPage}>
         
-        {/* Page Header */}
-        <section className={styles.pageHeader}>
+        {/* Page Header / Hero Section */}
+        <section className={styles.heroSection}>
           <motion.div 
             className="container"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className={styles.pageTitle}>Plastroots <span>Editorial</span></h1>
-            <p className={styles.pageSubtitle}>Insights, stories, and perspectives on building a sustainable, circular world.</p>
+            <h1 className={styles.heroTitle}>Plastroots <span>Editorial</span></h1>
+            <p className={styles.heroSubtitle}>Insights, stories, and perspectives on building a sustainable, circular world.</p>
           </motion.div>
         </section>
 

@@ -54,23 +54,29 @@ const BlogDetail = () => {
   return (
     <>
       <Helmet>
-        <title>Blog Detail - Plastroots Foundation</title>
+        <title>The Future of Circular Economy - Plastroots Foundation</title>
         <meta name="description" content="Read our latest blog post on environmental sustainability and circular economy." />
+        <meta property="og:title" content="The Future of Circular Economy - Plastroots Foundation" />
+        <meta property="og:description" content="Read our latest blog post on environmental sustainability and circular economy." />
+        <meta property="og:type" content="article" />
+        <meta property="article:published_time" content="2026-08-20T00:00:00Z" />
+        <meta name="twitter:card" content="summary_large_image" />
       </Helmet>
 
       <main className={styles.pageWrapper}>
         
-        {/* Header Section */}
+        {/* Full Width Hero Section */}
         <section className={styles.heroSection}>
+          <Link to="/blogs" className={styles.backLink}>
+            <ArrowLeft size={18} /> Back to Blogs
+          </Link>
+          
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
+            style={{ position: 'relative', zIndex: 1 }}
           >
-            <Link to="/blogs" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'var(--brand-green)', fontWeight: '600', marginBottom: '30px' }}>
-              <ArrowLeft size={18} /> Back to Blogs
-            </Link>
-            
             <div>
               <span className={styles.categoryTag}>Sustainability</span>
             </div>
@@ -84,17 +90,7 @@ const BlogDetail = () => {
           </motion.div>
         </section>
 
-        {/* Hero Image */}
-        <motion.div 
-          className={styles.heroImageWrapper}
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-        >
-          <div className={styles.heroImage}>
-            <Leaf className={styles.placeholderIcon} size={64} />
-          </div>
-        </motion.div>
+
 
         {/* Main Content Layout (Two Columns on Desktop) */}
         <section className={styles.contentLayout}>
