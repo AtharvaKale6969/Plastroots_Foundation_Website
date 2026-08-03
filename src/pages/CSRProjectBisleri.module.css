@@ -1,7 +1,7 @@
 /* Bisleri Project Page - Premium Magazine Styles */
 
 .hero {
-  min-height: 60vh;
+  min-height: 400px;
   background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(8, 47, 73, 0.95) 100%), url('/Images/Doodle_BFC.jpg');
   background-size: cover;
   background-position: center;
@@ -9,7 +9,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 180px 10% 80px;
+  padding: 200px 10% 100px;
   position: relative;
   overflow: hidden;
 }
@@ -24,7 +24,7 @@
 
 .backBtn {
   position: absolute;
-  top: 120px;
+  top: 140px;
   left: 5%;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);

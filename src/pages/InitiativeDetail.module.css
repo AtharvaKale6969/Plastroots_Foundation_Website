@@ -8,12 +8,12 @@
   justify-content: center;
   text-align: center;
   color: var(--white);
-  padding: 120px 5% 40px;
+  padding: 200px 5% 100px;
 }
 
 .backBtn {
   position: absolute;
-  top: 120px;
+  top: 140px;
   left: 5%;
   display: flex;
   align-items: center;

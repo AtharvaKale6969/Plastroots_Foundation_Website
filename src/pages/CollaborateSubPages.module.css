@@ -1,17 +1,17 @@
 /* Hero Section */
 .hero {
   position: relative;
-  height: 60vh;
   min-height: 400px;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
   color: var(--white);
-  padding: 120px 5% 40px;
+  padding: 200px 5% 100px;
 }
 
 .heroOverlay {
@@ -83,7 +83,7 @@
 
 .backBtn {
   position: absolute;
-  top: 120px;
+  top: 140px;
   left: 5%;
   z-index: 10;
   display: flex;

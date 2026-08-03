@@ -11,12 +11,12 @@
   background-image: linear-gradient(to right, #096699, #064b73);
   color: var(--white);
   text-align: center;
-  padding: 180px 20px 100px;
+  padding: 200px 20px 120px;
 }
 
 .backBtn {
   position: absolute;
-  top: 120px;
+  top: 140px;
   left: 5%;
   z-index: 10;
   display: flex;
