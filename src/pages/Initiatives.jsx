@@ -72,6 +72,7 @@ const Initiatives = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
             style={{ padding: '16px 36px', fontSize: '1.1rem' }}
+            onClick={() => navigate('/collaborate')}
           >
             Support Our Cause
           </motion.button>
