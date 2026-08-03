@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { ChevronDown, Menu, X } from 'lucide-react';
 import styles from './Header.module.css';
@@ -9,10 +9,25 @@ const Header = () => {
   const location = useLocation();
   const { pathname } = location;
 
+  // Close menu on route change
+  useEffect(() => {
+    setIsMenuOpen(false);
+    setActiveDropdown(null);
+  }, [pathname]);
+
+  // Lock body scroll when menu is open
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => { document.body.style.overflow = ''; };
+  }, [isMenuOpen]);
+
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   const toggleDropdown = (e, name) => {
-    // Only apply click-to-toggle on mobile screens
     if (window.innerWidth <= 1024) {
       e.preventDefault();
       setActiveDropdown(activeDropdown === name ? null : name);
@@ -38,6 +53,12 @@ const Header = () => {
           >
             {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
+
+          {/* Backdrop overlay */}
+          <div 
+            className={`${styles.backdrop} ${isMenuOpen ? styles.backdropVisible : ''}`}
+            onClick={() => setIsMenuOpen(false)}
+          />
 
           <ul id="mobile-navigation" className={`${styles.menu} ${isMenuOpen ? styles.menuOpen : ''}`}>
             <li className={styles.menuItem}><a href="/" className={pathname === '/' ? styles.active : ''}>Home</a></li>
