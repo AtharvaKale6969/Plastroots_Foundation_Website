@@ -400,6 +400,47 @@
   box-shadow: 0 5px 15px rgba(32, 156, 93, 0.3);
 }
 
+.supportCard {
+  background: linear-gradient(145deg, #096699, #064b73);
+  border-radius: 20px;
+  padding: 40px 30px;
+  text-align: center;
+  box-shadow: 0 15px 35px rgba(9, 102, 153, 0.2);
+  margin-top: 30px;
+  color: white;
+}
+
+.supportTitle {
+  font-family: 'Tan Mon Cheri', serif;
+  font-size: 1.8rem;
+  color: white;
+  margin-bottom: 16px;
+}
+
+.supportText {
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 24px;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.supportBtn {
+  width: 100%;
+  background: var(--brand-green);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 16px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.supportBtn:hover {
+  background: white;
+  color: var(--brand-green);
+}
+
 /* RESPONSIVE */
 @media (max-width: 1200px) {
   .featuredTitle { font-size: 2.2rem; }

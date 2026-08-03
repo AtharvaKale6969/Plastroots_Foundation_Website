@@ -214,6 +214,21 @@ const Blogs = () => {
                   </a>
                 </div>
               </motion.div>
+
+              {/* Support Our Cause Widget */}
+              <motion.div 
+                className={styles.supportCard}
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+              >
+                <h4 className={styles.supportTitle}>Make an Impact</h4>
+                <p className={styles.supportText}>Join hands with us to create a sustainable, circular economy. Every action counts towards a greener tomorrow.</p>
+                <Link to="/collaborate" className={`btn-primary ${styles.supportBtn}`}>
+                  Get Involved
+                </Link>
+              </motion.div>
             </aside>
 
           </div>
