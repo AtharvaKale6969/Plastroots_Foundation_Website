@@ -1,62 +1,61 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
-import { ArrowRight, Clock, Calendar } from 'lucide-react';
+import { ArrowRight, Clock, Calendar, Leaf, Bookmark } from 'lucide-react';
 import styles from './Blogs.module.css';
 
+const categories = ["All", "Environment", "Waste Management", "Sustainability", "CSR", "Social Impact"];
+
 const featuredBlog = {
-  title: "Safai Saathis: The Unsung Heroes of Our Cities",
-  excerpt: "A tribute to the uncelebrated heroes who play a critical role in keeping our surroundings clean and making the circular economy work.",
-  date: "July 17, 2026",
-  readTime: "4 MIN READ",
-  image: "/Images/Safai%20saathis/Street%20Sweeping.jpg",
-  category: "Featured Story"
+  title: "The Silent Crisis: Managing Electronic Waste in Urban India",
+  excerpt: "As technology accelerates, so does e-waste. Discover the grassroots movements transforming hazardous materials into circular opportunities.",
+  date: "August 12, 2026",
+  readTime: "6 MIN READ",
+  category: "Waste Management"
 };
 
 const blogPosts = [
   {
-    title: "Closing the Loop: Redefining Plastic in a Circular Economy",
-    excerpt: "A deep dive into how transitioning from a linear to a circular economy is the only viable solution to plastic pollution.",
-    date: "April 02, 2026",
-    readTime: "2 MIN READ",
-    image: "/Images/circular_economy.png",
+    title: "Protecting Our Oceans: The Grassroots Approach to Coastal Cleanups",
+    excerpt: "How local communities are taking charge to remove plastic pollution from our coastlines and restore marine ecosystems.",
+    date: "July 24, 2026",
+    readTime: "4 MIN READ",
+    category: "Environment",
     height: "tall"
   },
   {
-    title: "The Future of Plastic Waste: Innovations in Recycling",
-    excerpt: "Discover how new technologies are transforming how we handle and recycle plastic waste on a global scale.",
-    date: "March 15, 2026",
-    readTime: "2 MIN READ",
-    image: "/Images/Safai%20saathis/Door2Door%20waste.jpg",
-    height: "short"
-  },
-  {
-    title: "Climate Change and Individual Responsibility",
-    excerpt: "Do our individual efforts against climate change really matter? Explore why every small sustainable action makes a difference.",
-    date: "May 18, 2026",
-    readTime: "3 MIN READ",
-    image: "/Images/hero_doodles.png",
+    title: "Why ESG Consulting is Non-Negotiable for Modern Businesses",
+    excerpt: "Explore the strategic benefits of integrating ESG frameworks into your core operations and how it impacts long-term profitability.",
+    date: "June 10, 2026",
+    readTime: "5 MIN READ",
+    category: "CSR",
     height: "medium"
   },
   {
-    title: "Why ESG Consulting is Non-Negotiable",
-    excerpt: "Explore the strategic benefits of integrating ESG frameworks into your core business operations for modern businesses.",
-    date: "June 10, 2026",
-    readTime: "2 MIN READ",
-    image: "/Images/Safai%20saathis/safai4.png",
+    title: "Closing the Loop: Redefining Plastic in a Circular Economy",
+    excerpt: "A deep dive into how transitioning from a linear to a circular economy is the only viable solution to the plastic crisis.",
+    date: "May 18, 2026",
+    readTime: "7 MIN READ",
+    category: "Sustainability",
     height: "tall"
   },
   {
     title: "Empowering Rural Women through Sustainable Practices",
-    excerpt: "How self-help groups and education are creating new pathways for women in rural India.",
-    date: "August 01, 2026",
-    readTime: "5 MIN READ",
-    image: "/Images/SHG_1.jpg",
+    excerpt: "Discover how self-help groups and education are creating new pathways for women in rural India while protecting the environment.",
+    date: "April 05, 2026",
+    readTime: "4 MIN READ",
+    category: "Social Impact",
     height: "short"
   }
 ];
 
 const Blogs = () => {
+  const [activeCategory, setActiveCategory] = useState("All");
+
+  const filteredPosts = activeCategory === "All" 
+    ? blogPosts 
+    : blogPosts.filter(post => post.category === activeCategory);
+
   return (
     <>
       <Helmet>
@@ -89,9 +88,11 @@ const Blogs = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
             >
-              <div className={styles.featuredImageWrapper}>
-                <img src={featuredBlog.image} alt={featuredBlog.title} className={styles.featuredImage} />
-                <div className={styles.featuredBadge}>{featuredBlog.category}</div>
+              <div className={styles.featuredImagePlaceholder}>
+                <div className={styles.placeholderIcon}>
+                  <Leaf size={64} />
+                </div>
+                <div className={styles.featuredBadge}>Featured: {featuredBlog.category}</div>
               </div>
               <div className={styles.featuredContent}>
                 <h2 className={styles.featuredTitle}>{featuredBlog.title}</h2>
@@ -116,35 +117,72 @@ const Blogs = () => {
           <div className={`container ${styles.contentLayout}`}>
             
             <div className={styles.articlesColumn}>
-              <h3 className={styles.sectionHeading}>Latest Articles</h3>
+              <div className={styles.articlesHeader}>
+                <h3 className={styles.sectionHeading}>Latest Articles</h3>
+                
+                {/* Category Filter */}
+                <div className={styles.categoryFilter}>
+                  {categories.map((category) => (
+                    <button
+                      key={category}
+                      className={`${styles.categoryBtn} ${activeCategory === category ? styles.activeCategory : ''}`}
+                      onClick={() => setActiveCategory(category)}
+                    >
+                      {category}
+                    </button>
+                  ))}
+                </div>
+              </div>
               
               <div className={styles.masonryGrid}>
-                {blogPosts.map((post, index) => (
-                  <motion.article 
-                    key={index}
-                    className={`${styles.blogCard} ${styles[post.height]}`}
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "-50px" }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                  >
-                    <div className={styles.cardImageWrapper}>
-                      <img src={post.image} alt={post.title} className={styles.cardImage} />
-                    </div>
-                    <div className={styles.cardContent}>
-                      <div className={styles.metaInfo}>
-                        <span className={styles.metaItem}>{post.date}</span>
-                        <span className={styles.metaDivider}>•</span>
-                        <span className={styles.metaItem}>{post.readTime}</span>
+                <AnimatePresence>
+                  {filteredPosts.map((post, index) => (
+                    <motion.article 
+                      key={post.title}
+                      layout
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0, scale: 0.9 }}
+                      transition={{ duration: 0.4 }}
+                      className={`${styles.blogCard} ${styles[post.height]}`}
+                    >
+                      <div className={styles.cardImagePlaceholder}>
+                        <div className={styles.placeholderIconSmall}>
+                          <Leaf size={32} />
+                        </div>
+                        <div className={styles.categoryTag}>{post.category}</div>
                       </div>
-                      <h4 className={styles.cardTitle}>{post.title}</h4>
-                      <p className={styles.cardExcerpt}>{post.excerpt}</p>
-                      <a href="#" className={styles.cardLink}>
-                        Read Article <ArrowRight size={16} />
-                      </a>
-                    </div>
-                  </motion.article>
-                ))}
+                      <div className={styles.cardContent}>
+                        <div className={styles.metaInfo}>
+                          <span className={styles.metaItem}>{post.date}</span>
+                          <span className={styles.metaDivider}>•</span>
+                          <span className={styles.metaItem}>{post.readTime}</span>
+                        </div>
+                        <h4 className={styles.cardTitle}>{post.title}</h4>
+                        <p className={styles.cardExcerpt}>{post.excerpt}</p>
+                        
+                        <div className={styles.cardFooter}>
+                          <a href="#" className={styles.cardLink}>
+                            Read Article <ArrowRight size={16} />
+                          </a>
+                          <button className={styles.bookmarkBtn} aria-label="Bookmark article">
+                            <Bookmark size={18} />
+                          </button>
+                        </div>
+                      </div>
+                    </motion.article>
+                  ))}
+                </AnimatePresence>
+                
+                {filteredPosts.length === 0 && (
+                  <motion.div 
+                    initial={{ opacity: 0 }} 
+                    animate={{ opacity: 1 }} 
+                    className={styles.noPostsMessage}
+                  >
+                    No articles found in this category yet.
+                  </motion.div>
+                )}
               </div>
             </div>
 

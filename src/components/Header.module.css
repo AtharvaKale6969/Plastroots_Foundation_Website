@@ -284,14 +284,16 @@
     display: none; /* Hide desktop action buttons outside */
   }
 
-  .hamburger {
-    margin-right: 0;
-    order: unset;
-  }
-
   .nav {
     height: 80px;
-    justify-content: space-between;
+    position: relative;
+    justify-content: center;
+  }
+
+  .hamburger {
+    margin-right: 0;
+    position: absolute;
+    right: 4%;
   }
 
   .logo {

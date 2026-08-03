@@ -49,22 +49,27 @@
   box-shadow: 0 30px 60px rgba(0,0,0,0.1);
 }
 
-.featuredImageWrapper {
+.featuredImagePlaceholder {
   position: relative;
   height: 100%;
   min-height: 400px;
+  background: linear-gradient(135deg, #e0f2fe, #f0fdf4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
 }
 
-.featuredImage {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.7s ease;
+.placeholderIcon {
+  color: var(--brand-green);
+  opacity: 0.1;
+  transform: scale(3);
+  transition: transform 0.7s ease, opacity 0.7s ease;
 }
 
-.featuredCard:hover .featuredImage {
-  transform: scale(1.05);
+.featuredCard:hover .placeholderIcon {
+  transform: scale(3.5);
+  opacity: 0.15;
 }
 
 .featuredBadge {
@@ -78,6 +83,7 @@
   font-weight: 600;
   font-size: 0.9rem;
   backdrop-filter: blur(4px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
 }
 
 .featuredContent {
@@ -152,19 +158,65 @@
   align-items: start;
 }
 
+.articlesHeader {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 40px;
+}
+
 .sectionHeading {
   font-family: 'Tan Mon Cheri', serif;
   font-size: 2.2rem;
   color: var(--text-dark);
-  margin-bottom: 40px;
-  padding-bottom: 16px;
+  margin-bottom: 20px;
+}
+
+.categoryFilter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-bottom: 20px;
   border-bottom: 2px solid rgba(0,0,0,0.05);
+}
+
+.categoryBtn {
+  background: var(--light-bg);
+  border: 1px solid rgba(0,0,0,0.05);
+  color: var(--text-muted);
+  padding: 8px 20px;
+  border-radius: 30px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.categoryBtn:hover {
+  background: rgba(74, 222, 128, 0.1);
+  color: var(--brand-green);
+}
+
+.categoryBtn.activeCategory {
+  background: var(--brand-green);
+  color: var(--white);
+  border-color: var(--brand-green);
+  box-shadow: 0 4px 15px rgba(74, 222, 128, 0.3);
 }
 
 /* Masonry Grid (CSS Columns) */
 .masonryGrid {
   column-count: 2;
   column-gap: 30px;
+}
+
+.noPostsMessage {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  background: var(--white);
+  border-radius: 20px;
+  border: 1px dashed rgba(0,0,0,0.1);
 }
 
 .blogCard {
@@ -184,27 +236,46 @@
   box-shadow: 0 20px 40px rgba(0,0,0,0.08);
 }
 
-.cardImageWrapper {
+.cardImagePlaceholder {
   position: relative;
   overflow: hidden;
   width: 100%;
+  background: linear-gradient(135deg, #f0fdf4, #e0f2fe);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.placeholderIconSmall {
+  color: var(--brand-green);
+  opacity: 0.1;
+  transform: scale(2);
+  transition: transform 0.7s ease, opacity 0.7s ease;
+}
+
+.blogCard:hover .placeholderIconSmall {
+  transform: scale(2.5);
+  opacity: 0.2;
+}
+
+.categoryTag {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: var(--brand-green);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
 /* Artificial varied heights to simulate masonry/pinterest feel if images are standard size */
-.blogCard.tall .cardImageWrapper { height: 280px; }
-.blogCard.medium .cardImageWrapper { height: 220px; }
-.blogCard.short .cardImageWrapper { height: 180px; }
-
-.cardImage {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.7s ease;
-}
-
-.blogCard:hover .cardImage {
-  transform: scale(1.05);
-}
+.blogCard.tall .cardImagePlaceholder { height: 280px; }
+.blogCard.medium .cardImagePlaceholder { height: 220px; }
+.blogCard.short .cardImagePlaceholder { height: 180px; }
 
 .cardContent {
   padding: 30px;
@@ -234,6 +305,13 @@
   flex-grow: 1;
 }
 
+.cardFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+}
+
 .cardLink {
   display: inline-flex;
   align-items: center;
@@ -243,11 +321,28 @@
   text-decoration: none;
   font-size: 0.95rem;
   transition: gap 0.3s ease;
-  align-self: flex-start;
 }
 
 .cardLink:hover {
   gap: 10px;
+}
+
+.bookmarkBtn {
+  background: none;
+  border: none;
+  color: #ccc;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bookmarkBtn:hover {
+  color: var(--brand-green);
+  background: rgba(74, 222, 128, 0.1);
 }
 
 /* Sidebar Newsletter */

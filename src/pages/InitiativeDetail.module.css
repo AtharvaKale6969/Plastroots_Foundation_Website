@@ -458,7 +458,13 @@
   .featureRow, .featureRowReverse {
     flex-direction: column;
     gap: 2rem;
-    text-align: center;
+    text-align: left;
+  }
+  .featureTitle {
+    font-size: 1.6rem;
+  }
+  .featureDesc {
+    font-size: 0.95rem;
   }
 }
 
