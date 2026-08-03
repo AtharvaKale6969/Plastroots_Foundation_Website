@@ -58,7 +58,7 @@ const AnimatedText = ({ text, className }) => {
       className={className}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: false, amount: 0.3 }}
+      viewport={{ once: true, amount: 0.3 }}
       variants={{
         visible: { transition: { staggerChildren: 0.03 } }
       }}
