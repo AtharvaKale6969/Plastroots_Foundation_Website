@@ -163,11 +163,11 @@
 }
 
 @media (max-width: 1024px) {
-  .heroTitle { font-size: 3rem; }
+  .heroTitle { font-size: 4rem; }
 }
 @media (max-width: 768px) {
   .hero { min-height: 350px; }
-  .heroTitle { font-size: 2.5rem; }
+  .heroTitle { font-size: 4rem; }
   .heroDesc { font-size: 1.1rem; }
   .projectsSection { padding: 60px 5%; }
   .grid {
@@ -176,11 +176,11 @@
 }
 @media (max-width: 425px) {
   .hero { min-height: 300px; }
-  .heroTitle { font-size: 2rem; margin-bottom: 15px; }
+  .heroTitle { font-size: 4rem; margin-bottom: 15px; }
   .heroDesc { font-size: 1rem; }
   .projectsSection { padding: 40px 5%; }
 }
 @media (max-width: 320px) {
-  .heroTitle { font-size: 1.8rem; }
+  .heroTitle { font-size: 4rem; }
   .heroDesc { font-size: 0.9rem; }
 }

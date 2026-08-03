@@ -33,7 +33,7 @@
 }
 
 .heroTitle {
-  font-size: 3rem;
+  font-size: 4rem;
   font-weight: 800;
   color: var(--brand-green);
   margin-bottom: 24px;
@@ -337,7 +337,7 @@
     grid-template-columns: 350px 1fr;
     gap: 40px;
   }
-  .heroTitle { font-size: 3rem; }
+  .heroTitle { font-size: 4rem; }
   .quoteText { font-size: 2.2rem; }
 }
 
@@ -355,7 +355,7 @@
   .cardsGrid {
     grid-template-columns: repeat(2, 1fr);
   }
-  .heroTitle { font-size: 2.5rem; }
+  .heroTitle { font-size: 4rem; }
   .heroDesc { font-size: 1.1rem; }
 }
 
@@ -365,21 +365,21 @@
   .form { grid-template-columns: 1fr; }
   .formSection { padding: 30px 15px; }
   .hero { min-height: 300px; }
-  .heroTitle { font-size: 1.8rem; }
+  .heroTitle { font-size: 4rem; }
   .heroSubtitle { font-size: 1rem; }
   .featuresGrid { grid-template-columns: 1fr; }
   .backBtn { top: 90px; padding: 8px 12px; font-size: 0.9rem; }
 }
 
 @media (max-width: 375px) {
-  .heroTitle { font-size: 1.8rem; }
+  .heroTitle { font-size: 4rem; }
   .heroDesc { font-size: 1rem; }
   .quoteText { font-size: 1.5rem; }
   .backBtn { top: 100px; padding: 8px 12px; font-size: 0.9rem; }
 }
 
 @media (max-width: 320px) {
-  .heroTitle { font-size: 1.8rem; }
+  .heroTitle { font-size: 4rem; }
   .infoTitle { font-size: 1.5rem; }
   .cardTitle { font-size: 1.2rem; }
   .formSection { padding: 20px 10px; }

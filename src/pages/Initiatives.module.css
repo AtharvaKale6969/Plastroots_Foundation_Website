@@ -139,21 +139,21 @@
 
 /* RESPONSIVE HERO */
 @media (max-width: 1024px) {
-  .heroTitle { font-size: 3rem; }
+  .heroTitle { font-size: 4rem; }
 }
 @media (max-width: 768px) {
   .hero { min-height: 350px; }
-  .heroTitle { font-size: 2.5rem; }
+  .heroTitle { font-size: 4rem; }
   .heroSubtitle { font-size: 1.1rem; }
   .initiativesSection { padding: 40px 5%; }
   .sectionHeader { margin-bottom: 2rem; }
 }
 @media (max-width: 425px) {
   .hero { min-height: 300px; }
-  .heroTitle { font-size: 2rem; margin-bottom: 15px; }
+  .heroTitle { font-size: 4rem; margin-bottom: 15px; }
   .heroSubtitle { font-size: 1rem; margin-bottom: 20px; }
 }
 @media (max-width: 320px) {
-  .heroTitle { font-size: 1.8rem; }
+  .heroTitle { font-size: 4rem; }
   .heroSubtitle { font-size: 0.9rem; }
 }

@@ -488,7 +488,7 @@
 }
 
 @media (max-width: 768px) {
-  .heroTitle { font-size: 3rem; }
+  .heroTitle { font-size: 4rem; }
   .heroSection { padding: 140px 5% 80px; }
   .masonryGrid { 
     column-count: auto; 
@@ -502,7 +502,7 @@
 
 @media (max-width: 425px) {
   .heroSection { padding: 120px 5% 60px; }
-  .heroTitle { font-size: 2.2rem; }
+  .heroTitle { font-size: 4rem; }
   .heroSubtitle { font-size: 1rem; }
   .featuredImageWrapper { min-height: 250px; }
   .featuredContent { padding: 30px 20px; }

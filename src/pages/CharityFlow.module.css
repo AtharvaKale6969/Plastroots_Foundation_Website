@@ -424,7 +424,7 @@
 }
 
 @media (max-width: 1024px) {
-  .heroTitle { font-size: 3.5rem; }
+  .heroTitle { font-size: 4rem; }
   .contentGrid { gap: 30px; }
   .statsGrid { gap: 15px; }
   .donationCard { padding: 40px; }
@@ -432,7 +432,7 @@
 
 @media (max-width: 768px) {
   .pageWrapper { padding-bottom: 40px; }
-  .heroTitle { font-size: 2.8rem; }
+  .heroTitle { font-size: 4rem; }
   .heroSubtitle { font-size: 1.1rem; }
   .widgetSection { padding: 40px 5%; }
   .donationCard { padding: 30px; }
@@ -446,7 +446,7 @@
 }
 
 @media (max-width: 425px) {
-  .heroTitle { font-size: 2.2rem; }
+  .heroTitle { font-size: 4rem; }
   .donationCard { padding: 20px; }
   .amountGrid { grid-template-columns: 1fr; }
   .customAmountInput { grid-column: span 1; }
@@ -457,14 +457,14 @@
 }
 
 @media (max-width: 375px) {
-  .heroTitle { font-size: 1.8rem; }
+  .heroTitle { font-size: 4rem; }
   .sectionTitle { font-size: 1.8rem; }
   .submitBtn { padding: 15px; font-size: 1.1rem; }
   .backBtn { top: 100px; padding: 8px 12px; font-size: 0.9rem; }
 }
 
 @media (max-width: 320px) {
-  .heroTitle { font-size: 1.5rem; }
+  .heroTitle { font-size: 4rem; }
   .heroSubtitle { font-size: 0.95rem; }
   .amountChip { font-size: 1rem; }
   .statCard h4 { font-size: 1.1rem; }

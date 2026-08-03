@@ -55,7 +55,7 @@
 
 .heroTitle {
   color: white;
-  font-size: 3.8rem;
+  font-size: 4rem;
   font-weight: 800;
   margin-bottom: 1.5rem;
   line-height: 1.1;
@@ -917,7 +917,7 @@
 @media (max-width: 1024px) {
   .heroSection { flex-direction: column; text-align: center; gap: 2rem; padding: 120px 5% 60px 5%; }
   .heroLeft { align-items: center; max-width: 100%; }
-  .heroTitle { font-size: 3rem; }
+  .heroTitle { font-size: 4rem; }
   .heroButtons { justify-content: center; }
   
   /* Fix pill-shaped stretched images on 1024px laptop by stacking them vertically */
@@ -933,7 +933,7 @@
 }
 @media (max-width: 768px) {
   .heroSection { padding: 160px 5% 50px 5%; }
-  .heroTitle { font-size: 2.5rem; }
+  .heroTitle { font-size: 4rem; }
   .heroSubtitle { font-size: 1.05rem; }
   .heroImage { max-height: 350px; }
   
@@ -977,8 +977,8 @@
 }
 @media (max-width: 425px) {
   .heroSection { min-height: 300px; }
-  .heroTitle { font-size: 2.2rem; }
+  .heroTitle { font-size: 4rem; }
 }
 @media (max-width: 320px) {
-  .heroTitle { font-size: 1.8rem; }
+  .heroTitle { font-size: 4rem; }
 }
