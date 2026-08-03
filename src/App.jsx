@@ -21,6 +21,7 @@ import CSRProjects from './pages/CSRProjects';
 import CSRProjectBisleri from './pages/CSRProjectBisleri';
 import Gallery from './components/Gallery';
 import Blogs from './pages/Blogs';
+import BlogDetail from './pages/BlogDetail';
 import ScrollToTop from './components/ScrollToTop';
 import SplashScreen from './components/SplashScreen';
 import './index.css';
@@ -62,6 +63,7 @@ function App() {
             <Route path="/csr-projects/bisleri" element={<CSRProjectBisleri />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/blogs" element={<Blogs />} />
+            <Route path="/blogs/:id" element={<BlogDetail />} />
             <Route path="/gallery/project" element={<Gallery category="Project" />} />
             <Route path="/gallery/event" element={<Gallery category="Event" />} />
             <Route path="/gallery/college-drive" element={<Gallery category="College Drive" />} />

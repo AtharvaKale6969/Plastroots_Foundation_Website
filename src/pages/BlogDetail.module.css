@@ -1,0 +1,242 @@
+.pageWrapper {
+  padding-top: 100px;
+  background-color: var(--light-bg);
+  min-height: 100vh;
+}
+
+.heroSection {
+  text-align: center;
+  padding: 60px 5% 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.categoryTag {
+  display: inline-block;
+  background-color: rgba(32, 156, 93, 0.1);
+  color: var(--brand-green);
+  padding: 8px 16px;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.title {
+  font-family: 'Tan Mon Cheri', serif;
+  font-size: 3.5rem;
+  color: var(--text-dark);
+  margin-bottom: 24px;
+  line-height: 1.2;
+}
+
+.metaInfo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.metaDivider {
+  color: #ccc;
+}
+
+.heroImageWrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto 60px;
+  padding: 0 5%;
+}
+
+.heroImage {
+  width: 100%;
+  height: 500px;
+  border-radius: 24px;
+  background: linear-gradient(135deg, #e0f2fe, #f0fdf4);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.placeholderIcon {
+  color: var(--brand-green);
+  opacity: 0.1;
+  transform: scale(4);
+}
+
+.contentLayout {
+  display: grid;
+  grid-template-columns: 2.2fr 1fr;
+  gap: 80px;
+  align-items: start;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 5% 100px;
+}
+
+.articleBody {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: #475569;
+}
+
+.articleBody p {
+  margin-bottom: 24px;
+  text-align: justify;
+}
+
+.articleBody h3 {
+  font-size: 2rem;
+  color: var(--text-dark);
+  margin: 40px 0 20px;
+  font-family: 'Tan Mon Cheri', serif;
+}
+
+.premiumQuote {
+  margin: 50px 0;
+  padding: 40px;
+  background: linear-gradient(145deg, #ffffff, #f0fdf4);
+  border-left: 5px solid var(--brand-green);
+  border-radius: 0 20px 20px 0;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.04);
+  position: relative;
+}
+
+.premiumQuote::before {
+  content: '"';
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  font-size: 6rem;
+  color: rgba(32, 156, 93, 0.1);
+  font-family: Georgia, serif;
+  line-height: 1;
+}
+
+.quoteText {
+  font-size: 1.6rem;
+  color: var(--brand-blue);
+  font-weight: 600;
+  line-height: 1.5;
+  position: relative;
+  z-index: 1;
+  font-family: 'Outfit', sans-serif;
+}
+
+.sidebar {
+  position: sticky;
+  top: 120px;
+}
+
+.sidebarWidget {
+  background: var(--white);
+  border-radius: 20px;
+  padding: 30px;
+  margin-bottom: 30px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+.widgetTitle {
+  font-size: 1.2rem;
+  color: var(--text-dark);
+  margin-bottom: 20px;
+  font-weight: 700;
+  padding-bottom: 10px;
+  border-bottom: 2px solid rgba(32, 156, 93, 0.2);
+}
+
+.authorProfile {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.authorAvatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--brand-blue);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.authorName {
+  font-weight: 700;
+  color: var(--text-dark);
+  font-size: 1.1rem;
+}
+
+.authorRole {
+  color: var(--brand-green);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.authorBio {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.shareButtons {
+  display: flex;
+  gap: 12px;
+}
+
+.shareIcon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--light-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--brand-blue);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.shareIcon:hover {
+  background: var(--brand-green);
+  color: white;
+  transform: translateY(-3px);
+}
+
+@media (max-width: 1024px) {
+  .title { font-size: 3rem; }
+  .contentLayout { gap: 40px; grid-template-columns: 1.8fr 1fr; }
+  .heroImage { height: 400px; }
+}
+
+@media (max-width: 768px) {
+  .title { font-size: 2.5rem; }
+  .contentLayout { 
+    grid-template-columns: 1fr; 
+    gap: 60px;
+  }
+  .sidebar { position: static; }
+  .heroImage { height: 300px; }
+  .premiumQuote { padding: 30px; margin: 40px 0; }
+  .quoteText { font-size: 1.4rem; }
+}
+
+@media (max-width: 425px) {
+  .heroSection { padding: 40px 5% 20px; }
+  .title { font-size: 2rem; }
+  .heroImage { height: 200px; border-radius: 16px; }
+  .articleBody { font-size: 1.05rem; }
+  .premiumQuote { padding: 24px; }
+  .quoteText { font-size: 1.2rem; }
+}

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 import { ArrowRight, Clock, Calendar, Leaf, Bookmark } from 'lucide-react';
@@ -7,7 +8,8 @@ import styles from './Blogs.module.css';
 const categories = ["All", "Environment", "Waste Management", "Sustainability", "CSR", "Social Impact"];
 
 const featuredBlog = {
-  title: "The Silent Crisis: Managing Electronic Waste in Urban India",
+  id: "featured",
+  title: "Featured Blog: The Silent Crisis",
   excerpt: "As technology accelerates, so does e-waste. Discover the grassroots movements transforming hazardous materials into circular opportunities.",
   date: "August 12, 2026",
   readTime: "6 MIN READ",
@@ -16,7 +18,8 @@ const featuredBlog = {
 
 const blogPosts = [
   {
-    title: "Protecting Our Oceans: The Grassroots Approach to Coastal Cleanups",
+    id: "1",
+    title: "Blog 1",
     excerpt: "How local communities are taking charge to remove plastic pollution from our coastlines and restore marine ecosystems.",
     date: "July 24, 2026",
     readTime: "4 MIN READ",
@@ -24,7 +27,8 @@ const blogPosts = [
     height: "tall"
   },
   {
-    title: "Why ESG Consulting is Non-Negotiable for Modern Businesses",
+    id: "2",
+    title: "Blog 2",
     excerpt: "Explore the strategic benefits of integrating ESG frameworks into your core operations and how it impacts long-term profitability.",
     date: "June 10, 2026",
     readTime: "5 MIN READ",
@@ -32,7 +36,8 @@ const blogPosts = [
     height: "medium"
   },
   {
-    title: "Closing the Loop: Redefining Plastic in a Circular Economy",
+    id: "3",
+    title: "Blog 3",
     excerpt: "A deep dive into how transitioning from a linear to a circular economy is the only viable solution to the plastic crisis.",
     date: "May 18, 2026",
     readTime: "7 MIN READ",
@@ -40,7 +45,8 @@ const blogPosts = [
     height: "tall"
   },
   {
-    title: "Empowering Rural Women through Sustainable Practices",
+    id: "4",
+    title: "Blog 4",
     excerpt: "Discover how self-help groups and education are creating new pathways for women in rural India while protecting the environment.",
     date: "April 05, 2026",
     readTime: "4 MIN READ",
@@ -104,9 +110,9 @@ const Blogs = () => {
                   <span className={styles.metaItem}><Clock size={14} /> {featuredBlog.readTime}</span>
                 </div>
                 
-                <a href="#" className={styles.readMoreBtn}>
+                <Link to={`/blogs/${featuredBlog.id}`} className={styles.readMoreBtn}>
                   Read This Article <ArrowRight size={18} />
-                </a>
+                </Link>
               </div>
             </motion.div>
           </div>
@@ -162,9 +168,9 @@ const Blogs = () => {
                         <p className={styles.cardExcerpt}>{post.excerpt}</p>
                         
                         <div className={styles.cardFooter}>
-                          <a href="#" className={styles.cardLink}>
+                          <Link to={`/blogs/${post.id}`} className={styles.cardLink}>
                             Read Article <ArrowRight size={16} />
-                          </a>
+                          </Link>
                           <button className={styles.bookmarkBtn} aria-label="Bookmark article">
                             <Bookmark size={18} />
                           </button>
