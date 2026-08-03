@@ -84,8 +84,12 @@ const CSRProjectBisleri = () => {
             </div>
 
             <div className={styles.genesisVisuals}>
-              <div className={styles.imageCardBack}></div>
-              <div className={styles.imageCardFront}></div>
+              <div className={styles.imageCardBack}>
+                <img src="/Images/Gallery/WhatsApp Image 2026-06-13 at 6.43.41 PM (1).jpeg" alt="Collection drive" />
+              </div>
+              <div className={styles.imageCardFront}>
+                <img src="/Images/BFC_product.jpeg" alt="Bottles for Change Product" />
+              </div>
               <div className={styles.floatingBadge}>
                 <Leaf size={24} color="#10b981" />
                 <span>100% Recyclable</span>
