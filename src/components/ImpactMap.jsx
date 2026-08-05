@@ -11,10 +11,10 @@ const ImpactMap = () => {
     <section className={styles.section}>
       <div className="container">
         <div className={styles.grid}>
-          
+
           {/* Left Column: Impact Header & Stats */}
           <div className={styles.leftCol}>
-            <motion.div 
+            <motion.div
               className={styles.impactHeader}
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -23,13 +23,13 @@ const ImpactMap = () => {
             >
               <h2>Our Impact - PLASTROOTS FOUNDATION</h2>
               <p>
-                Together we are creating a lasting, sustainable impact in India. 
-                Our reach continues to grow, and our numbers reflect our dedication 
+                Together we are creating a lasting, sustainable impact in India.
+                Our reach continues to grow, and our numbers reflect our dedication
                 to environmental stewardship and community empowerment.
               </p>
             </motion.div>
-            
-            <motion.div 
+
+            <motion.div
               className={styles.statsGrid}
               initial="hidden"
               whileInView="visible"
@@ -44,19 +44,19 @@ const ImpactMap = () => {
                 <div className={styles.statValue}>20+</div>
                 <div className={styles.statDesc}>Awareness in Nagpur District</div>
               </motion.div>
-              
+
               <motion.div className={styles.statCard} variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}>
                 <div className={styles.statLabel}>Swachchta Sathis</div>
                 <div className={styles.statValue}>25+</div>
                 <div className={styles.statDesc}>Uplifted & empowered</div>
               </motion.div>
-              
+
               <motion.div className={styles.statCard} variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}>
                 <div className={styles.statLabel}>People Impacted</div>
                 <div className={`${styles.statValue} ${styles.statHighlight}`}>10,000+</div>
                 <div className={styles.statDesc}>Direct & indirect beneficiaries</div>
               </motion.div>
-              
+
               <motion.div className={styles.statCard} variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}>
                 <div className={styles.statLabel}>SHGs Trained</div>
                 <div className={styles.statValue}>210+</div>
@@ -66,7 +66,7 @@ const ImpactMap = () => {
           </div>
 
           {/* Right Column: Interactive Map */}
-          <motion.div 
+          <motion.div
             className={styles.mapContainer}
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -76,12 +76,12 @@ const ImpactMap = () => {
             <ComposableMap
               projection="geoMercator"
               projectionConfig={{
-                scale: 750,
-                center: [80, 23] // Center coordinates for India
+                scale: 800,
+                center: [82.5, 24] // Center coordinates for India
               }}
-              width={500}
-              height={500}
-              style={{ width: "100%", height: "100%" }}
+              width={450}
+              height={480}
+              style={{ width: "100%", height: "auto", display: "block" }}
             >
               <Geographies geography={geoUrl}>
                 {({ geographies }) =>
@@ -123,15 +123,15 @@ const ImpactMap = () => {
                 }
               </Geographies>
             </ComposableMap>
-            
+
             {tooltipContent && (
               <div className={styles.tooltip}>
                 {tooltipContent}
               </div>
             )}
-            
+
           </motion.div>
-          
+
         </div>
       </div>
     </section>

@@ -5,10 +5,13 @@ import { ArrowLeft, Megaphone, GraduationCap, Home, Trash2, Users, Image, LineCh
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip as RechartsTooltip, ResponsiveContainer, Cell } from 'recharts';
 import styles from './InitiativeDetail.module.css';
 
+import AnimatedCounter from '../components/AnimatedCounter';
+import InViewChart from '../components/InViewChart';
+
 const impactStats = [
-  { value: '270+', label: 'Awareness Campaigns' },
-  { value: '3,90,000+', label: 'Citizens Reached' },
-  { value: '120+', label: 'Schools Engaged' }
+  { end: 270, suffix: '+', label: 'Awareness Campaigns' },
+  { end: 390000, suffix: '+', label: 'Citizens Reached' },
+  { end: 120, suffix: '+', label: 'Schools Engaged' }
 ];
 
 const focusAreas = [
@@ -133,23 +136,25 @@ const IECChart = () => {
 
   return (
     <div style={{ width: '100%', height: 350, marginTop: '20px' }}>
-      <ResponsiveContainer width="100%" height="100%">
-        <BarChart
-          data={data}
-          layout="vertical"
-          margin={{ top: 20, right: 30, left: 40, bottom: 5 }}
-        >
-          <CartesianGrid strokeDasharray="3 3" horizontal={false} stroke="#e2e8f0" />
-          <XAxis hide={true} type="number" domain={[0, 110]} />
-          <YAxis dataKey="name" type="category" axisLine={false} tickLine={false} tick={{ fill: '#64748b', fontSize: 12 }} />
-          <RechartsTooltip content={<CustomTooltip />} cursor={{ fill: '#f1f5f9' }} />
-          <Bar dataKey="visualValue" name="Impact" radius={[0, 4, 4, 0]}>
-            {data.map((entry, index) => (
-              <Cell key={`cell-${index}`} fill={entry.color} />
-            ))}
-          </Bar>
-        </BarChart>
-      </ResponsiveContainer>
+      <InViewChart>
+        <ResponsiveContainer width="100%" height="100%">
+          <BarChart
+            data={data}
+            layout="vertical"
+            margin={{ top: 20, right: 30, left: 40, bottom: 5 }}
+          >
+            <CartesianGrid strokeDasharray="3 3" horizontal={false} stroke="#e2e8f0" />
+            <XAxis hide={true} type="number" domain={[0, 110]} />
+            <YAxis dataKey="name" type="category" axisLine={false} tickLine={false} tick={{ fill: '#64748b', fontSize: 12 }} />
+            <RechartsTooltip content={<CustomTooltip />} cursor={{ fill: '#f1f5f9' }} />
+            <Bar dataKey="visualValue" name="Impact" radius={[0, 4, 4, 0]}>
+              {data.map((entry, index) => (
+                <Cell key={`cell-${index}`} fill={entry.color} />
+              ))}
+            </Bar>
+          </BarChart>
+        </ResponsiveContainer>
+      </InViewChart>
     </div>
   );
 };
@@ -212,7 +217,9 @@ const IEC = () => {
                   transition={{ duration: 0.5, delay: idx * 0.15 }}
                 >
                   <div className={styles.statInfo}>
-                    <div className={styles.statValue}>{stat.value}</div>
+                    <div className={styles.statValue}>
+                      <AnimatedCounter end={stat.end} suffix={stat.suffix} />
+                    </div>
                     <div className={styles.statLabel}>{stat.label}</div>
                   </div>
                   <div className={styles.statTrend}>

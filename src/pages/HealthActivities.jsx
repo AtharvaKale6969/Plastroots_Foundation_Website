@@ -6,10 +6,13 @@ import { ArrowLeft, HeartPulse, ShieldPlus, BookOpen, Stethoscope, LineChart, Sy
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip as RechartsTooltip, ResponsiveContainer, Cell } from 'recharts';
 import styles from './InitiativeDetail.module.css';
 
+import AnimatedCounter from '../components/AnimatedCounter';
+import InViewChart from '../components/InViewChart';
+
 const impactStats = [
-  { value: '100+', label: 'Health Camps' },
-  { value: '10,000+', label: 'Lives Impacted' },
-  { value: '50+', label: 'Schools Reached' }
+  { end: 100, suffix: '+', label: 'Health Camps' },
+  { end: 10000, suffix: '+', label: 'Lives Impacted' },
+  { end: 50, suffix: '+', label: 'Schools Reached' }
 ];
 
 const focusAreas = [
@@ -112,22 +115,24 @@ const HealthChart = () => {
 
   return (
     <div style={{ width: '100%', height: 350, marginTop: '20px' }}>
-      <ResponsiveContainer width="100%" height="100%">
-        <BarChart
-          data={data}
-          margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
-        >
-          <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e2e8f0" />
-          <XAxis dataKey="name" axisLine={false} tickLine={false} tick={{ fill: '#64748b', fontSize: 12 }} />
-          <YAxis hide={true} domain={[0, 110]} />
-          <RechartsTooltip content={<CustomTooltip />} cursor={{ fill: '#f1f5f9' }} />
-          <Bar dataKey="visualValue" radius={[6, 6, 0, 0]}>
-            {data.map((entry, index) => (
-              <Cell key={`cell-${index}`} fill={entry.color} />
-            ))}
-          </Bar>
-        </BarChart>
-      </ResponsiveContainer>
+      <InViewChart>
+        <ResponsiveContainer width="100%" height="100%">
+          <BarChart
+            data={data}
+            margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
+          >
+            <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e2e8f0" />
+            <XAxis dataKey="name" axisLine={false} tickLine={false} tick={{ fill: '#64748b', fontSize: 12 }} />
+            <YAxis hide={true} domain={[0, 110]} />
+            <RechartsTooltip content={<CustomTooltip />} cursor={{ fill: '#f1f5f9' }} />
+            <Bar dataKey="visualValue" radius={[6, 6, 0, 0]}>
+              {data.map((entry, index) => (
+                <Cell key={`cell-${index}`} fill={entry.color} />
+              ))}
+            </Bar>
+          </BarChart>
+        </ResponsiveContainer>
+      </InViewChart>
     </div>
   );
 };
@@ -190,7 +195,9 @@ const HealthActivities = () => {
                   transition={{ duration: 0.5, delay: idx * 0.15 }}
                 >
                   <div className={styles.statInfo}>
-                    <div className={styles.statValue}>{stat.value}</div>
+                    <div className={styles.statValue}>
+                      <AnimatedCounter end={stat.end} suffix={stat.suffix} />
+                    </div>
                     <div className={styles.statLabel}>{stat.label}</div>
                   </div>
                   <div className={styles.statTrend}>

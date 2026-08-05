@@ -13,6 +13,10 @@
   position: relative;
   width: 360px;
   height: 360px;
+  min-width: 360px;
+  min-height: 360px;
+  max-width: none;
+  flex-shrink: 0;
   border-radius: 50%;
   border: 2px dashed rgba(9, 102, 153, 0.2);
   display: flex;
@@ -21,13 +25,7 @@
   animation: spin 30s linear infinite;
 }
 
-.orbit:hover {
-  animation-play-state: paused;
-}
 
-.orbit:hover .node {
-  animation-play-state: paused;
-}
 
 @keyframes spin {
   from {
@@ -73,14 +71,6 @@
   border: 1px solid rgba(255,255,255,0.8);
   /* Reverse rotation so icons stay upright */
   animation: counterSpin 30s linear infinite;
-  cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.node:hover {
-  transform: scale(1.15) !important;
-  box-shadow: 0 15px 35px rgba(9, 102, 153, 0.2);
-  z-index: 20;
 }
 
 @keyframes counterSpin {

@@ -1,22 +1,23 @@
-/* Hero Section */
 .hero {
   position: relative;
   min-height: 400px;
   background: linear-gradient(to bottom, rgba(31, 44, 51, 0.6), rgba(9, 102, 153, 0.7)), #e2e8f0;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
   color: var(--white);
-  padding: 200px 5% 100px;
+  padding: 160px 5% 100px;
 }
 
 .backBtn {
-  position: relative;
+  position: absolute;
+  top: 130px;
+  left: 5%;
   z-index: 10;
   display: inline-flex;
   align-items: center;
-  margin-bottom: 30px;
   gap: 8px;
   background: rgba(255,255,255,0.1);
   border: 1px solid rgba(255,255,255,0.3);
@@ -28,7 +29,6 @@
   cursor: pointer;
   transition: all 0.3s ease;
   backdrop-filter: blur(4px);
-  z-index: 10;
 }
 
 .backBtn:hover {
@@ -40,13 +40,16 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .heroTitle {
   font-size: 4rem;
   font-weight: 800;
   color: var(--brand-green);
-  margin-bottom: 24px;
+  margin: 0 auto 24px auto;
   max-width: 1000px;
   line-height: 1.2;
   text-shadow: 0 4px 20px rgba(0,0,0,0.3);
@@ -66,6 +69,7 @@
   color: rgba(255, 255, 255, 0.85);
   max-width: 800px;
   line-height: 1.6;
+  margin: 0 auto;
 }
 
 /* Premium Dashboard Section */
@@ -297,9 +301,12 @@
 .splitContainer {
   display: flex;
   max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
   gap: 4rem;
   align-items: center;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 @media (max-width: 900px) {
@@ -330,6 +337,8 @@
 .splitImageWrapper {
   flex: 1;
   position: relative;
+  width: 100%;
+  max-width: 100%;
 }
 
 .splitImage {
@@ -846,6 +855,13 @@
   height: 400px;
 }
 
+@media (max-width: 768px) {
+  .recoveryImageWrapper {
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+}
+
 .recoveryImageWrapper img {
   width: 100%;
   height: 100%;
@@ -950,8 +966,12 @@
     text-align: center;
   }
   .splitDesc {
-    text-align: center;
+    text-align: left;
     font-size: 1rem;
+    padding: 0 10px;
+  }
+  .approachContent p, .recoveryText p {
+    text-align: left;
   }
 }
 
@@ -1096,6 +1116,7 @@
   margin-bottom: 3.5rem;
   background: linear-gradient(to right, #ffffff, #94a3b8);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -1169,11 +1190,12 @@
 
 /* RESPONSIVE HERO AND LAYOUT */
 @media (max-width: 1024px) {
-  .heroTitle { font-size: 4rem; }
+  .heroTitle { font-size: 3rem; }
 }
 @media (max-width: 768px) {
   .hero { padding: 140px 5% 60px; min-height: auto; }
-  .heroTitle { font-size: 2.5rem; }
+  .backBtn { top: 90px; }
+  .heroTitle { font-size: 2.2rem; }
   .heroSubtitle { font-size: 1.1rem; }
   
   /* Dashboard optimizations */

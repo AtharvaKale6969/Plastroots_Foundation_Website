@@ -7,10 +7,13 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip as RechartsTooltip,
 import CircularEconomyLoop from '../components/CircularEconomyLoop';
 import styles from './InitiativeDetail.module.css';
 
+import AnimatedCounter from '../components/AnimatedCounter';
+import InViewChart from '../components/InViewChart';
+
 const impactStats = [
-  { value: '7,000+', label: 'Tonnes Waste Collected' },
-  { value: '6,500+', label: 'Tonnes Plastic Recycled' },
-  { value: '3,90,000+', label: 'Citizens Engaged' }
+  { end: 7000, suffix: '+', label: 'Tonnes Waste Collected' },
+  { end: 6500, suffix: '+', label: 'Tonnes Plastic Recycled' },
+  { end: 390000, suffix: '+', label: 'Citizens Engaged' }
 ];
 
 const focusAreas = [
@@ -113,22 +116,24 @@ const WasteChart = () => {
 
   return (
     <div style={{ width: '100%', height: 350, marginTop: '20px' }}>
-      <ResponsiveContainer width="100%" height="100%">
-        <BarChart
-          data={data}
-          margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
-        >
-          <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e2e8f0" />
-          <XAxis dataKey="name" axisLine={false} tickLine={false} tick={{ fill: '#64748b' }} />
-          <YAxis hide={true} domain={[0, 110]} />
-          <RechartsTooltip content={<CustomTooltip />} cursor={{ fill: '#f1f5f9' }} />
-          <Bar dataKey="visualValue" radius={[6, 6, 0, 0]}>
-            {data.map((entry, index) => (
-              <Cell key={`cell-${index}`} fill={entry.color} />
-            ))}
-          </Bar>
-        </BarChart>
-      </ResponsiveContainer>
+      <InViewChart>
+        <ResponsiveContainer width="100%" height="100%">
+          <BarChart
+            data={data}
+            margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
+          >
+            <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e2e8f0" />
+            <XAxis dataKey="name" axisLine={false} tickLine={false} tick={{ fill: '#64748b' }} />
+            <YAxis hide={true} domain={[0, 110]} />
+            <RechartsTooltip content={<CustomTooltip />} cursor={{ fill: '#f1f5f9' }} />
+            <Bar dataKey="visualValue" radius={[6, 6, 0, 0]}>
+              {data.map((entry, index) => (
+                <Cell key={`cell-${index}`} fill={entry.color} />
+              ))}
+            </Bar>
+          </BarChart>
+        </ResponsiveContainer>
+      </InViewChart>
     </div>
   );
 };
@@ -225,7 +230,9 @@ const WasteManagement = () => {
                   transition={{ duration: 0.5, delay: idx * 0.15 }}
                 >
                   <div className={styles.statInfo}>
-                    <div className={styles.statValue}>{stat.value}</div>
+                    <div className={styles.statValue}>
+                      <AnimatedCounter end={stat.end} suffix={stat.suffix} />
+                    </div>
                     <div className={styles.statLabel}>{stat.label}</div>
                   </div>
                   <div className={styles.statTrend}>

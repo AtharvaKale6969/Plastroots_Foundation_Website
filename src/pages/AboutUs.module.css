@@ -932,13 +932,13 @@
   }
 }
 @media (max-width: 768px) {
-  .hero { padding: 140px 5% 60px; min-height: auto; }
+  .heroSection { padding: 140px 5% 60px !important; min-height: auto; }
   .heroTitle { font-size: 2.5rem; }
   .heroSubtitle { font-size: 1.05rem; }
   .heroImage { max-height: 350px; }
   
-  /* Generic layout optimizations for all sections */
-  section { padding: 40px 5% !important; }
+  /* Generic layout optimizations for About Us sections */
+  .splitSection, .visionMissionSection, .sdgSection, .journeySection, .impactSection, .teamSection { padding: 40px 5% !important; }
   .leftPanel, .rightPanel { padding: 2rem 1.5rem !important; }
   
   /* Typography Scaling */
@@ -976,7 +976,7 @@
   }
 }
 @media (max-width: 425px) {
-  .hero { padding: 120px 5% 40px; min-height: 250px; }
+  .heroSection { padding: 120px 5% 40px !important; min-height: 250px; }
   .heroTitle { font-size: 2rem; margin-bottom: 15px; }
 }
 @media (max-width: 320px) {

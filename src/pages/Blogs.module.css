@@ -462,13 +462,6 @@
 }
 
 /* RESPONSIVE */
-@media (max-width: 425px) {
-  .heroSection { padding: 120px 5% 40px; min-height: 250px; }
-  .heroTitle { font-size: 2rem; margin-bottom: 10px; }
-  .featuredContent { padding: 40px 30px; }
-  .contentLayout { gap: 40px; grid-template-columns: 2fr 1fr; }
-}
-
 @media (max-width: 1024px) {
   .featuredCard { grid-template-columns: 1fr; }
   .featuredImageWrapper { min-height: 350px; }
@@ -502,12 +495,13 @@
 }
 
 @media (max-width: 425px) {
-  .heroSection { padding: 120px 5% 60px; }
-  .heroTitle { font-size: 4rem; }
+  .heroSection { padding: 120px 5% 40px !important; min-height: 250px; }
+  .heroTitle { font-size: 2rem !important; margin-bottom: 10px; }
   .heroSubtitle { font-size: 1rem; }
   .featuredImageWrapper { min-height: 250px; }
   .featuredContent { padding: 30px 20px; }
   .featuredTitle { font-size: 1.8rem; }
+  .contentLayout { gap: 40px; grid-template-columns: 1fr; }
   
   .cardContent { padding: 24px 20px; }
   .blogCard.tall .cardImageWrapper,

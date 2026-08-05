@@ -77,15 +77,14 @@
 .mapContainer {
   background-color: var(--light-bg);
   border-radius: 12px;
-  height: 500px;
+  width: 100%;
   position: relative;
   border: 1px solid var(--border-light);
-  overflow: hidden;
 }
 
 .tooltip {
   position: absolute;
-  bottom: 20px;
+  top: -45px;
   left: 50%;
   transform: translateX(-50%);
   background-color: var(--brand-blue);
@@ -96,7 +95,7 @@
   font-weight: 600;
   box-shadow: 0 4px 15px rgba(9, 102, 153, 0.3);
   pointer-events: none;
-  z-index: 10;
+  z-index: 20;
   transition: opacity 0.2s ease;
 }
 
@@ -107,7 +106,6 @@
 @media (max-width: 768px) {
   .section { padding: 60px 0; }
   .impactHeader { padding: 30px; }
-  .mapContainer { height: 400px; }
 }
 @media (max-width: 600px) {
   .statsGrid { grid-template-columns: 1fr; }
@@ -116,7 +114,6 @@
   .section { padding: 40px 0; }
   .impactHeader { padding: 24px; margin-bottom: 30px; }
   .impactHeader h2 { font-size: 1.5rem; }
-  .mapContainer { height: 300px; }
   .statValue { font-size: 1.5rem; }
   .statCard { padding: 16px 12px; }
 }

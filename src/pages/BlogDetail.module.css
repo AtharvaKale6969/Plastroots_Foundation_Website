@@ -13,26 +13,37 @@
   color: white;
   position: relative;
   margin-bottom: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .backLink {
-  position: relative;
+  position: absolute;
+  top: 130px;
+  left: 5%;
   z-index: 10;
   display: inline-flex;
   align-items: center;
-  margin-bottom: 30px;
-  display: inline-flex;
-  align-items: center;
   gap: 8px;
-  color: rgba(255, 255, 255, 0.8);
-  font-weight: 600;
-  transition: color 0.3s ease;
-  z-index: 2;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.3);
+  color: var(--white);
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(4px);
   text-decoration: none;
 }
 
 .backLink:hover {
-  color: white;
+  background: rgba(255,255,255,0.25);
+  transform: translateX(-5px);
+  color: var(--white);
 }
 
 .categoryTag {
@@ -52,11 +63,10 @@
   font-family: 'Tan Mon Cheri', serif;
   font-size: 4rem;
   color: white;
-  margin-bottom: 24px;
+  margin: 0 auto 24px auto;
   line-height: 1.2;
   max-width: 1000px;
-  margin-left: auto;
-  margin-right: auto;
+  text-align: center;
 }
 
 .metaInfo {
@@ -223,6 +233,7 @@
 
 @media (max-width: 768px) {
   .heroSection { padding: 140px 5% 60px; min-height: auto; }
+  .backLink { top: 90px; }
   .title { font-size: 2.5rem; }
   .contentLayout { 
     grid-template-columns: 1fr; 
@@ -235,6 +246,7 @@
 
 @media (max-width: 425px) {
   .heroSection { padding: 120px 5% 40px; min-height: 250px; }
+  .backLink { top: 60px; }
   .title { font-size: 2rem; }
   .articleBody { font-size: 1.05rem; }
   .premiumQuote { padding: 24px; }

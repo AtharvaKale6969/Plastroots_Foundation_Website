@@ -51,9 +51,8 @@ const Donate = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          style={{ color: 'var(--brand-green)' }}
         >
-          Make a Difference Today
+          MAKE A DIFFERENCE TODAY
         </motion.h1>
         <motion.p 
           className={styles.heroSubtitle}

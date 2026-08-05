@@ -27,16 +27,18 @@
 .heroContent {
   position: relative;
   z-index: 2;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
 }
 
 .heroTitle {
   font-size: 4rem;
   font-weight: 800;
   color: var(--brand-green);
-  margin-bottom: 24px;
+  margin: 0 auto 24px auto;
   max-width: 1000px;
   line-height: 1.2;
   text-shadow: 0 4px 20px rgba(0,0,0,0.3);
@@ -82,22 +84,23 @@
 }
 
 .backBtn {
-  position: relative;
+  position: absolute;
+  top: 130px;
+  left: 5%;
   z-index: 10;
   display: inline-flex;
   align-items: center;
-  margin-bottom: 30px;
   gap: 8px;
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(5px);
+  background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.3);
   color: var(--white);
   padding: 10px 20px;
   border-radius: 30px;
-  font-weight: 600;
-  font-size: 1rem;
+  font-size: 0.95rem;
+  font-weight: 500;
   cursor: pointer;
   transition: all 0.3s ease;
+  backdrop-filter: blur(4px);
 }
 
 .backBtn:hover {
@@ -129,6 +132,7 @@
   /* Gradient text effect */
   background: linear-gradient(135deg, var(--brand-green), var(--brand-blue));
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   
   /* Soft shadow for depth */
@@ -355,6 +359,7 @@
     grid-template-columns: repeat(2, 1fr);
   }
   .hero { padding: 140px 5% 60px; min-height: auto; }
+  .backBtn { top: 90px; }
   .heroTitle { font-size: 2.5rem; }
   .heroDesc { font-size: 1.1rem; }
 }
@@ -364,7 +369,8 @@
   .cardsGrid { grid-template-columns: 1fr; }
   .form { grid-template-columns: 1fr; }
   .formSection { padding: 30px 15px; }
-  .hero { min-height: 250px; padding: 120px 5% 40px; }
+  .hero { min-height: 250px; padding: 140px 5% 40px; }
+  .backBtn { top: 95px; }
   .heroTitle { font-size: 2rem; }
   .heroSubtitle { font-size: 1rem; }
   .featuresGrid { grid-template-columns: 1fr; }

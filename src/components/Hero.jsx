@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import styles from './Hero.module.css';
 
@@ -23,6 +24,7 @@ const slides = [
 
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -66,6 +68,7 @@ const Hero = () => {
           </motion.p>
           
           <motion.button 
+            onClick={() => navigate('/collaborate')}
             className={`btn-primary ${styles.heroBtn}`}
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
