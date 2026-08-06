@@ -30,7 +30,9 @@ const CSRProjects = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className={styles.heroTitle}>CSR Projects</h1>
+          <h1 className={styles.heroTitle}>
+            <span style={{ color: 'white' }}>CSR</span> <span style={{ color: '#4ade80' }}>Projects</span>
+          </h1>
           <p className={styles.heroDesc}>
             Showcasing our high-impact collaborations with corporate partners to drive sustainable change and environmental stewardship.
           </p>

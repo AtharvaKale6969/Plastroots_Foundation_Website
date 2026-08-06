@@ -72,8 +72,8 @@ const Header = () => {
                 <li className={styles.dropdownItem}><a href="/initiatives/iec" className={pathname === '/initiatives/iec' ? styles.active : ''}>IEC (Information, Education & Communication)</a></li>
                 <li className={styles.dropdownItem}><a href="/initiatives/farmer-stewardship" className={pathname === '/initiatives/farmer-stewardship' ? styles.active : ''}>Farmer Stewardship Program</a></li>
                 <li className={styles.dropdownItem}><a href="/initiatives/waste-management" className={pathname === '/initiatives/waste-management' ? styles.active : ''}>Waste Management Projects</a></li>
-                <li className={styles.dropdownItem}><a href="/initiatives/health-activities" className={pathname === '/initiatives/health-activities' ? styles.active : ''}>Health Activities</a></li>
-                <li className={styles.dropdownItem}><a href="/initiatives/education-activities" className={pathname === '/initiatives/education-activities' ? styles.active : ''}>Education Activities</a></li>
+                <li className={styles.dropdownItem}><a href="/initiatives/health-activities" className={pathname === '/initiatives/health-activities' ? styles.active : ''}>HealthEd Activities</a></li>
+                <li className={styles.dropdownItem}><a href="/initiatives/education-activities" className={pathname === '/initiatives/education-activities' ? styles.active : ''}>Educational Activities</a></li>
                 <li className={styles.dropdownItem}><a href="/initiatives/women-development" className={pathname === '/initiatives/women-development' ? styles.active : ''}>Women Development</a></li>
               </ul>
             </li>

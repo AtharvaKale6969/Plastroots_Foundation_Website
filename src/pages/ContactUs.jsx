@@ -55,7 +55,7 @@ const ContactUs = () => {
             <h2 className={styles.infoTitle}>Frequently Asked Questions</h2>
             
             <div className={styles.faqList}>
-              <div className={styles.faqItem}>
+              <div className={styles.faqItemSmall}>
                 <h4>What does Plastroots Foundation do?</h4>
                 <p>We build a circular economy through sustainable waste management, rural education, and community empowerment programs.</p>
               </div>
@@ -89,7 +89,7 @@ const ContactUs = () => {
                   id="name" 
                   name="name" 
                   className={styles.formInput} 
-                  placeholder="John Doe"
+                  placeholder="Enter Your Full Name"
                   value={formData.name}
                   onChange={handleChange}
                   required 
@@ -102,7 +102,7 @@ const ContactUs = () => {
                   id="email" 
                   name="email" 
                   className={styles.formInput} 
-                  placeholder="john@example.com"
+                  placeholder="Enter Your Email Address"
                   value={formData.email}
                   onChange={handleChange}
                   required 
@@ -115,7 +115,7 @@ const ContactUs = () => {
                   id="mobile" 
                   name="mobile" 
                   className={styles.formInput} 
-                  placeholder="+91 98765 43210"
+                  placeholder="Enter 10-Digit Mobile Number"
                   value={formData.mobile}
                   onChange={handleChange}
                   required 
@@ -170,7 +170,7 @@ const ContactUs = () => {
                   <div className={styles.iconWrapper}><Phone size={24} /></div>
                   <div>
                     <h4>Call Us</h4>
-                    <p>+91 7249 791152<br/>+91 74475 86067</p>
+                    <p>+91 72497 91152<br/>+91 74475 86067</p>
                   </div>
                 </div>
               </div>

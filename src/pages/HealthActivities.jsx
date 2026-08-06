@@ -143,12 +143,12 @@ const HealthActivities = () => {
   return (
     <div className="page-wrapper">
       <Helmet>
-        <title>Health Activities - Plastroots Foundation</title>
+        <title>HealthEd Activities - Plastroots Foundation</title>
         <meta name="description" content="Improving community health through regular medical camps, hygiene awareness, and accessible healthcare initiatives driven by Plastroots Foundation." />
       </Helmet>
 
       {/* Hero Section */}
-      <section className={styles.hero} style={{ backgroundImage: 'linear-gradient(to bottom, rgba(31, 44, 51, 0.7), rgba(9, 102, 153, 0.8)), url("https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&q=80")' }}>
+      <section className={styles.hero} style={{ backgroundImage: 'linear-gradient(135deg, rgba(9, 102, 153, 0.3), rgba(6, 75, 115, 0.4)), url("/Images/HealthEd_Activity.png")', backgroundPosition: 'center', backgroundSize: 'cover' }}>
         <button 
           onClick={() => navigate('/initiatives')} 
           className={styles.backBtn}
@@ -162,7 +162,7 @@ const HealthActivities = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className={styles.heroTitle}>HealthEd Activity</h1>
+          <h1 className={styles.heroTitle}>HealthEd <span>Activities</span></h1>
           <p className={styles.heroSubtitle}>
             Focusing on two key areas: health and education.
           </p>

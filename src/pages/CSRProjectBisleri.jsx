@@ -85,7 +85,7 @@ const CSRProjectBisleri = () => {
 
             <div className={styles.genesisVisuals}>
               <div className={styles.imageCardBack}>
-                <img src="/Images/Gallery/WhatsApp Image 2026-06-13 at 6.43.41 PM (1).jpeg" alt="Collection drive" />
+                <img src="/Images/Bisleri_genesis.avif" alt="Collection drive" />
               </div>
               <div className={styles.imageCardFront}>
                 <img src="/Images/BFC_product.jpeg" alt="Bottles for Change Product" />
@@ -169,17 +169,17 @@ const CSRProjectBisleri = () => {
                 </ul>
               </div>
               <div className={styles.detailImageGroup}>
-                <div className={styles.detailImageSplit}></div>
-                <div className={styles.detailImageSplit}></div>
+                <div className={styles.detailImageSplit}>
+                  <img src="/Images/BFC_1.jpeg" alt="Institutional Workshop" />
+                </div>
+                <div className={styles.detailImageSplit}>
+                  <img src="/Images/BFC_2.jpeg" alt="Students Participating" />
+                </div>
               </div>
             </div>
 
-            {/* Detail 2: Image Left, Text Right */}
-            <div className={styles.detailRow}>
-              <div className={styles.detailImageGroup}>
-                <div className={styles.detailImageSplit}></div>
-                <div className={styles.detailImageSplit}></div>
-              </div>
+            {/* Detail 2: Text First (Mobile), Images Left (Desktop) */}
+            <div className={`${styles.detailRow} ${styles.rowReverse}`}>
               <div className={styles.detailText}>
                 <h3>Corporate Seminars: Driving Organizational Change</h3>
                 <p>The corporate sector plays a massive role in our consumption ecosystem. We partner with leading corporations to transform their office spaces into verifiable zero-waste environments. Our seminars are designed to break down complex circular economy principles into actionable steps that employees can adopt both at their desks and in their homes.</p>
@@ -189,6 +189,14 @@ const CSRProjectBisleri = () => {
                   <li><strong>Employee Engagement:</strong> Conducting high-energy town halls and interactive workshops focused on the circular economy and responsible consumption.</li>
                   <li><strong>Smart Bins Installation:</strong> Providing comprehensive, color-coded bin infrastructure across corporate campuses for streamlined, error-free segregation.</li>
                 </ul>
+              </div>
+              <div className={styles.detailImageGroup}>
+                <div className={styles.detailImageSplit}>
+                  <img src="/Images/BFC_4.jpeg" alt="Corporate Seminars 1" />
+                </div>
+                <div className={styles.detailImageSplit}>
+                  <img src="/Images/BFC_3.jpeg" alt="Corporate Seminars 2" />
+                </div>
               </div>
             </div>
 
@@ -221,28 +229,39 @@ const CSRProjectBisleri = () => {
       <section className={styles.grassrootsSection}>
         <div className={styles.container}>
           <div className={styles.grassrootsGrid}>
+            <div className={styles.grassrootsText}>
+              <h2 className={styles.sectionHeading}>
+                <span>Cultivating Community</span><br />
+                Stewardship
+              </h2>
+              <p className={styles.leadParagraph}>
+                Transforming our cities begins with transforming mindsets at the community level.
+              </p>
+              <p className={styles.standardParagraph}>
+                We believe that genuine environmental impact is impossible without the active participation of local citizens. Through targeted campaigns, we engage directly with households, housing societies, and local communities to educate them on the critical importance of source segregation and responsible plastic disposal.
+              </p>
+              <p className={styles.standardParagraph}>
+                Our outreach programs involve interactive street plays, door-to-door awareness drives, and local workshops that simplify the concepts of a circular economy. By empowering citizens with the right knowledge and tools, we transform everyday consumers into proactive environmental champions who drive sustainable change in their own neighborhoods.
+              </p>
+            </div>
+            
             <div className={styles.masonryVisuals}>
               <div className={styles.masonryCol1}>
-                <div className={styles.masonryImgLarge}>
+                <div className={styles.masonryImgSmall}>
+                  <img src="/Images/BFC_7.jpeg" alt="Community Stewardship 1" />
+                </div>
+                <div className={styles.masonryImgSmall}>
+                  <img src="/Images/BFC_10.png" alt="Community Stewardship 4" />
                 </div>
               </div>
               <div className={styles.masonryCol2}>
-                <div className={styles.masonryImgSmall}></div>
-                <div className={styles.masonryImgSmall}></div>
+                <div className={styles.masonryImgSmall}>
+                  <img src="/Images/BFC_8.jpeg" alt="Community Stewardship 2" />
+                </div>
+                <div className={styles.masonryImgSmall}>
+                  <img src="/Images/BFC_9.jpeg" alt="Community Stewardship 3" />
+                </div>
               </div>
-            </div>
-
-            <div className={styles.grassrootsText}>
-              <h2 className={styles.sectionHeading}>Empowering the Grassroots</h2>
-              <p className={styles.leadParagraph}>
-                Sustainability is deeply intertwined with social equity. 
-              </p>
-              <p className={styles.standardParagraph}>
-                We proudly formalize the informal waste sector. The incredible waste workers who power our cities are integrated as "Green Agents." Through our partnerships with municipal corporations, they are provided with dignified working conditions, fair wages, and a structured ecosystem that acknowledges their essential contribution.
-              </p>
-              <p className={styles.standardParagraph}>
-                Beyond fair compensation, our Green Agents receive comprehensive health insurance, protective gear (PPE), and financial inclusion support such as zero-balance bank accounts. We conduct continuous capacity-building workshops to elevate their skills, ensuring they transition from marginalized scavengers to respected environmental stewards.
-              </p>
             </div>
           </div>
         </div>
@@ -252,17 +271,19 @@ const CSRProjectBisleri = () => {
       <section className={styles.futureSection}>
         <div className={styles.futureContainer}>
           <div className={styles.futureContentWrapper}>
-            <div className={styles.futureHeader}>
-              <TrendingUp size={56} className={styles.futureIcon} />
+            <div className={styles.futureTextSide}>
               <h2 className={styles.futureHeading}>The Road Ahead</h2>
+              <div className={styles.futureText}>
+                <p className={styles.futureLead}>
+                  Our ongoing vision is to continuously scale the "Bottles for Change" model across emerging urban centers, establishing localized, self-sustaining collection ecosystems.
+                </p>
+                <p className={styles.futureSub}>
+                  We remain dedicated to enrolling more community members and extending our operational reach to cover wider geographical areas. By implementing adaptable and localized waste management practices, our goal is to systematically formalize the recycling sector and reduce the environmental footprint of communities at large. The journey toward practical, sustainable waste management is a continuous commitment.
+                </p>
+              </div>
             </div>
-            <div className={styles.futureText}>
-              <p className={styles.futureLead}>
-                Our vision for the next five years is to scale the "Bottles for Change" model to 10 new urban centers, establishing localized, self-sustaining collection ecosystems.
-              </p>
-              <p className={styles.futureSub}>
-                We are focused on enrolling more community members and extending our reach to cover wider geographical areas. By implementing more sustainable, localized waste management practices, we aim to continually formalize the recycling sector and reduce the environmental footprint of urban communities. The journey toward practical, sustainable waste management continues.
-              </p>
+            <div className={styles.futureImageSide}>
+              <img src="/Images/Click and graph.svg" className={styles.futureIcon} alt="Click and graph Icon" style={{ width: '100%', maxWidth: '350px', height: 'auto' }} />
             </div>
           </div>
         </div>

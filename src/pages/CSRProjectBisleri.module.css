@@ -303,8 +303,8 @@
 
 .floatingBadge {
   position: absolute;
-  top: 150px;
-  left: -30px;
+  top: -20px;
+  left: 20%;
   background: white;
   padding: 16px 24px;
   border-radius: 16px;
@@ -549,7 +549,7 @@
 
 .grassrootsGrid {
   display: grid;
-  grid-template-columns: 1.2fr 1fr;
+  grid-template-columns: 1.15fr 1fr;
   gap: 80px;
   align-items: center;
 }
@@ -598,7 +598,7 @@
 }
 
 .grassrootsText {
-  padding-right: 40px;
+  padding-right: 0px;
 }
 
 /* 5. The Road Ahead */
@@ -628,15 +628,24 @@
   display: flex;
   gap: 80px;
   align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.futureHeader {
+.futureTextSide {
+  flex: 1.2;
+}
+
+.futureImageSide {
   flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .futureIcon {
   color: #34d399;
-  margin-bottom: 24px;
+  filter: drop-shadow(0 20px 40px rgba(0,0,0,0.3));
 }
 
 .futureHeading {
@@ -645,10 +654,11 @@
   color: #ffffff;
   letter-spacing: -2px;
   line-height: 1.1;
+  margin-bottom: 30px;
 }
 
 .futureText {
-  flex: 1.2;
+  width: 100%;
 }
 
 .futureLead {
@@ -657,6 +667,7 @@
   font-weight: 600;
   line-height: 1.5;
   margin-bottom: 24px;
+  text-align: left;
 }
 
 .futureSub {
@@ -691,10 +702,10 @@
   .quoteText { font-size: 1.8rem; }
   .sectionHeading, .sectionHeadingWhite { font-size: 2.5rem; }
   .impactGrid { grid-template-columns: 1fr 1fr; }
-  .masonryVisuals { height: 400px; flex-direction: column; }
-  .masonryCol1 { padding-top: 0; height: 200px; }
-  .masonryImgLarge { height: 100%; }
-  .masonryCol2 { flex-direction: row; height: 200px; }
+  .masonryVisuals { height: auto; flex-direction: column; gap: 15px; }
+  .masonryCol1 { padding-top: 0; height: auto; flex-direction: row; gap: 15px; }
+  .masonryCol2 { flex-direction: row; height: auto; gap: 15px; }
+  .masonryImgSmall { height: auto; flex: 1; aspect-ratio: 4 / 3; }
   .detailRow, .rowReverse {
     flex-direction: column;
     gap: 40px;
@@ -708,8 +719,19 @@
     text-align: center;
     gap: 40px;
   }
+  .futureTextSide {
+    display: contents;
+  }
   .futureHeading {
     font-size: 3.5rem;
+    order: 1;
+    margin-bottom: 0;
+  }
+  .futureImageSide {
+    order: 2;
+  }
+  .futureText {
+    order: 3;
   }
 }
 

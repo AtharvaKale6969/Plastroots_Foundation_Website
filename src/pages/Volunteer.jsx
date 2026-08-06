@@ -34,7 +34,10 @@ const Volunteer = () => {
       {/* Hero Section */}
       <section 
         className={layoutStyles.hero}
-        style={{ backgroundImage: 'url("/Images/Gallery/WhatsApp Image 2026-06-13 at 6.43.41 PM (1).jpeg")' }}
+        style={{ 
+          backgroundImage: 'url("/Images/Volunteer_Hero_Section.png")',
+          backgroundPosition: 'center 30%'
+        }}
       >
         <button className={layoutStyles.backBtn} onClick={() => navigate('/collaborate')}>
           <ArrowLeft size={18} /> Back to Collaborate
@@ -46,7 +49,9 @@ const Volunteer = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className={layoutStyles.heroTitle}>BECOME A VOLUNTEER</h1>
+          <h1 className={layoutStyles.heroTitle}>
+            <span style={{ color: 'white' }}>BECOME A</span> <span style={{ color: '#4ade80' }}>VOLUNTEER</span>
+          </h1>
           <p className={layoutStyles.heroDesc}>
             Join our dedicated team of changemakers. Roll up your sleeves and make a tangible difference in your local community through hands-on environmental action.
           </p>
@@ -186,17 +191,17 @@ const Volunteer = () => {
                   
                   <div className={charityStyles.formGroup}>
                     <label className={charityStyles.label}>Full Name</label>
-                    <input type="text" name="fullName" className={charityStyles.input} placeholder="John Doe" value={formData.fullName} onChange={handleChange} required />
+                    <input type="text" name="fullName" className={charityStyles.input} placeholder="Enter Your Full Name" value={formData.fullName} onChange={handleChange} required />
                   </div>
                   
                   <div className={charityStyles.formGroup}>
                     <label className={charityStyles.label}>Phone Number</label>
-                    <input type="tel" name="phone" className={charityStyles.input} placeholder="+91 98765 43210" value={formData.phone} onChange={handleChange} required />
+                    <input type="tel" name="phone" className={charityStyles.input} placeholder="Enter 10-Digit Mobile Number" value={formData.phone} onChange={handleChange} required />
                   </div>
                   
                   <div className={`${charityStyles.formGroup} ${charityStyles.fullWidth}`}>
                     <label className={charityStyles.label}>Email Address</label>
-                    <input type="email" name="email" className={charityStyles.input} placeholder="john@example.com" value={formData.email} onChange={handleChange} required />
+                    <input type="email" name="email" className={charityStyles.input} placeholder="Enter Your Email Address" value={formData.email} onChange={handleChange} required />
                   </div>
                   
                   <div className={`${charityStyles.formGroup} ${charityStyles.fullWidth}`}>

@@ -140,7 +140,7 @@ const FarmerWelfare = () => {
       </Helmet>
 
       {/* Hero Section */}
-      <section className={styles.hero} style={{ backgroundImage: 'linear-gradient(to bottom, rgba(31, 44, 51, 0.7), rgba(9, 102, 153, 0.8)), url("https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&q=80")' }}>
+      <section className={styles.hero} style={{ backgroundImage: 'linear-gradient(135deg, rgba(9, 102, 153, 0.3), rgba(6, 75, 115, 0.4)), url("/Images/Farmers_Hero_Section.png")', backgroundPosition: 'center', backgroundSize: 'cover' }}>
         <button 
           onClick={() => navigate('/initiatives')} 
           className={styles.backBtn}
@@ -154,7 +154,7 @@ const FarmerWelfare = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className={styles.heroTitle}>FARMER STEWARDSHIP PROGRAM</h1>
+          <h1 className={styles.heroTitle}>FARMER STEWARDSHIP <span>PROGRAM</span></h1>
           <p className={styles.heroSubtitle}>
             Cultivating Knowledge. Empowering Rural Communities.
           </p>

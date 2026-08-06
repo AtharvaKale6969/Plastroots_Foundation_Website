@@ -1,13 +1,14 @@
 /* CSR Projects Listing Page Styles */
 
 .hero {
-  min-height: 50vh;
-  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  height: 60vh;
+  min-height: 400px;
+  background: linear-gradient(135deg, rgba(9, 102, 153, 0.3), rgba(6, 75, 115, 0.4)), url("/Images/CSR_Projects_Hero_section.png") center 35% / cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 100px 5% 60px;
+  padding: 120px 5% 40px;
   position: relative;
   overflow: hidden;
 }
@@ -53,7 +54,7 @@
 
 .heroDesc {
   font-size: 1.25rem;
-  color: #94a3b8;
+  color: #ffffff;
   line-height: 1.6;
 }
 

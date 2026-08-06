@@ -13,7 +13,8 @@ const Donate = () => {
     mobile: '',
     email: '',
     pan: '',
-    amount: ''
+    amount: '',
+    paymentMode: ''
   });
 
   const handleChange = (e) => {
@@ -28,7 +29,7 @@ const Donate = () => {
     e.preventDefault();
     console.log('Donation Data:', formData);
     alert('Thank you for your generous donation to Plastroots Foundation!');
-    setFormData({ fullName: '', mobile: '', email: '', pan: '', amount: '' });
+    setFormData({ fullName: '', mobile: '', email: '', pan: '', amount: '', paymentMode: '' });
   };
 
   return (
@@ -52,7 +53,7 @@ const Donate = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          MAKE A DIFFERENCE TODAY
+          MAKE A DIFFERENCE <span>TODAY</span>
         </motion.h1>
         <motion.p 
           className={styles.heroSubtitle}
@@ -198,17 +199,17 @@ const Donate = () => {
                   
                   <div className={styles.formGroup}>
                     <label className={styles.label}>Full Name</label>
-                    <input type="text" name="fullName" className={styles.input} placeholder="John Doe" value={formData.fullName} onChange={handleChange} required />
+                    <input type="text" name="fullName" className={styles.input} placeholder="Enter Your Full Name" value={formData.fullName} onChange={handleChange} required />
                   </div>
                   
                   <div className={styles.formGroup}>
                     <label className={styles.label}>Mobile Number</label>
-                    <input type="tel" name="mobile" className={styles.input} placeholder="+91 98765 43210" value={formData.mobile} onChange={handleChange} required />
+                    <input type="tel" name="mobile" className={styles.input} placeholder="Enter 10-Digit Mobile Number" value={formData.mobile} onChange={handleChange} required />
                   </div>
                   
                   <div className={styles.formGroup}>
                     <label className={styles.label}>Email Address</label>
-                    <input type="email" name="email" className={styles.input} placeholder="john@example.com" value={formData.email} onChange={handleChange} required />
+                    <input type="email" name="email" className={styles.input} placeholder="Enter Your Email Address" value={formData.email} onChange={handleChange} required />
                   </div>
                   
                   <div className={styles.formGroup}>
@@ -220,6 +221,46 @@ const Donate = () => {
                     <label className={styles.label}>Donation Amount (₹)</label>
                     <input type="number" name="amount" className={styles.input} placeholder="Enter amount (₹)" value={formData.amount} onChange={handleChange} required min="100" />
                   </div>
+
+                  {formData.amount && (
+                    <motion.div 
+                      className={`${styles.formGroup} ${styles.fullWidth}`}
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: 'auto' }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <label className={styles.label}>Select Payment Mode</label>
+                      <select name="paymentMode" className={styles.input} value={formData.paymentMode} onChange={handleChange} required>
+                        <option value="" disabled>Select Option</option>
+                        <option value="UPI">UPI</option>
+                        <option value="Bank Transfer">Bank Transfer ( NEFT / RTGS )</option>
+                      </select>
+                    </motion.div>
+                  )}
+
+                  {formData.paymentMode === 'Bank Transfer' && (
+                    <motion.div 
+                      className={`${styles.formGroup} ${styles.fullWidth}`}
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.4 }}
+                    >
+                       <div style={{ backgroundColor: '#f8fafc', border: '1px solid #cbd5e1', borderRadius: '12px', padding: '20px', marginTop: '10px' }}>
+                          <h4 style={{ color: 'var(--brand-blue)', marginBottom: '15px' }}>Bank Account Details</h4>
+                          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px', fontSize: '0.95rem' }}>
+                             <div><strong>Account Name:</strong><br/>Plastroots Foundation</div>
+                             <div><strong>Account Number:</strong><br/>XXXXXXXXXXXXX</div>
+                             <div><strong>IFSC Code:</strong><br/>XXXX0000000</div>
+                             <div><strong>Swift Code:</strong><br/>XXXXINBBXXX</div>
+                             <div><strong>Bank Name:</strong><br/>State Bank of India</div>
+                             <div><strong>Branch:</strong><br/>Nagpur Main Branch</div>
+                          </div>
+                          <div style={{ marginTop: '20px', fontSize: '0.9rem', color: 'var(--brand-blue)', backgroundColor: 'rgba(9, 102, 153, 0.05)', padding: '12px 16px', borderRadius: '8px', borderLeft: '4px solid var(--brand-blue)' }}>
+                            <strong>Note :</strong> Please use your name and mobile number as reference when making the transfer. You will receive a confirmation email once the donation is processed.
+                          </div>
+                       </div>
+                    </motion.div>
+                  )}
                   
                 </div>
               </div>

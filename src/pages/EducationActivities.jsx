@@ -148,7 +148,7 @@ const EducationActivities = () => {
       </Helmet>
 
       {/* Hero Section */}
-      <section className={styles.hero} style={{ backgroundImage: 'linear-gradient(to bottom, rgba(31, 44, 51, 0.7), rgba(9, 102, 153, 0.8)), url("https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80")' }}>
+      <section className={styles.hero} style={{ backgroundImage: 'linear-gradient(135deg, rgba(9, 102, 153, 0.3), rgba(6, 75, 115, 0.4)), url("/Images/Educational_Activity_hero_section.png")', backgroundPosition: 'center', backgroundSize: 'cover' }}>
         <button 
           onClick={() => navigate('/initiatives')} 
           className={styles.backBtn}
@@ -162,7 +162,7 @@ const EducationActivities = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className={styles.heroTitle}>Educational Activities</h1>
+          <h1 className={styles.heroTitle}>Educational <span>Activities</span></h1>
           <p className={styles.heroSubtitle}>
             Inspiring the Next Generation of Environmental Stewards.
           </p>

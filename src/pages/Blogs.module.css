@@ -4,25 +4,19 @@
 }
 
 .heroSection {
-  background: linear-gradient(135deg, #096699, #064b73);
-  padding: 180px 5% 120px;
+  background: linear-gradient(135deg, rgba(9, 102, 153, 0.3), rgba(6, 75, 115, 0.4)), url("/Images/Blogs_hero_section_new.png") center/cover no-repeat;
+  position: relative;
+  height: 60vh;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 5% 40px;
   text-align: center;
   color: white;
-  position: relative;
   overflow: hidden;
   margin-bottom: 60px;
-}
-
-.heroSection::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url('data:image/svg+xml;utf8,<svg width="20" height="20" xmlns="http://www.w3.org/2000/svg"><circle cx="2" cy="2" r="2" fill="rgba(255,255,255,0.05)"/></svg>');
-  background-size: 20px 20px;
-  pointer-events: none;
 }
 
 .heroTitle {

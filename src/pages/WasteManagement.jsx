@@ -184,7 +184,7 @@ const WasteManagement = () => {
       </Helmet>
 
       {/* Hero Section */}
-      <section className={styles.hero} style={{ backgroundImage: 'linear-gradient(to bottom, rgba(31, 44, 51, 0.7), rgba(9, 102, 153, 0.8)), url("https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&q=80")' }}>
+      <section className={styles.hero} style={{ backgroundImage: 'linear-gradient(135deg, rgba(9, 102, 153, 0.3), rgba(6, 75, 115, 0.4)), url("/Images/Waste_Manage_Hero_section.png")', backgroundPosition: 'center', backgroundSize: 'cover' }}>
         <button 
           onClick={() => navigate('/initiatives')} 
           className={styles.backBtn}
@@ -198,7 +198,7 @@ const WasteManagement = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className={styles.heroTitle}>WASTE MANAGEMENT PROJECTS</h1>
+          <h1 className={styles.heroTitle}>WASTE MANAGEMENT <span>PROJECTS</span></h1>
           <p className={styles.heroSubtitle}>
             Transforming Waste. Preserving the Planet.
           </p>

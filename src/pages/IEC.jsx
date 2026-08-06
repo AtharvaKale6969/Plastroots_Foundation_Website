@@ -170,7 +170,7 @@ const IEC = () => {
       </Helmet>
 
       {/* Hero Section */}
-      <section className={styles.hero}>
+      <section className={styles.hero} style={{ backgroundImage: 'linear-gradient(135deg, rgba(9, 102, 153, 0.3), rgba(6, 75, 115, 0.4)), url("/Images/IEC_Hero_Section.png")', backgroundPosition: 'center', backgroundSize: 'cover' }}>
         <button 
           onClick={() => navigate('/initiatives')} 
           className={styles.backBtn}
@@ -184,7 +184,7 @@ const IEC = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className={styles.heroTitle}>INFORMATION, EDUCATION & COMMUNICATION (IEC)</h1>
+          <h1 className={styles.heroTitle}>INFORMATION, EDUCATION & <span>COMMUNICATION (IEC)</span></h1>
           <p className={styles.heroSubtitle}>
             Raising Awareness. Inspiring Sustainable Change.
           </p>

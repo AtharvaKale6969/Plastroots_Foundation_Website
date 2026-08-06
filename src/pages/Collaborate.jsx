@@ -17,7 +17,9 @@ const Collaborate = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className={styles.heroTitle}>COLLABORATE WITH US</h1>
+          <h1 className={styles.heroTitle}>
+            <span style={{ color: 'white' }}>COLLABORATE</span> <span style={{ color: '#4ade80' }}>WITH US</span>
+          </h1>
           <p className={styles.heroDesc}>
             Join our mission to create a sustainable, empowered future. Whether you want to contribute financially, dedicate your time, or align your corporate goals with our grassroots efforts, there's a place for you here.
           </p>
@@ -36,6 +38,7 @@ const Collaborate = () => {
             transition={{ duration: 0.6 }}
           >
             <div className={styles.imageWrapper}>
+              <img src="/Images/CSR_Partnership_new.svg" alt="CSR Partnerships" className={`${styles.image} ${styles.csrImage}`} />
             </div>
             <div className={styles.content}>
               <div className={styles.iconWrapper}>
@@ -60,6 +63,7 @@ const Collaborate = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <div className={styles.imageWrapper}>
+              <img src="/Images/Volunteer_Cover.svg" alt="Become a Volunteer" className={styles.image} style={{ objectFit: 'contain', paddingTop: '40px', paddingBottom: '0', paddingLeft: '20px', paddingRight: '20px' }} />
             </div>
             <div className={styles.content}>
               <div className={styles.iconWrapper}>
@@ -83,7 +87,8 @@ const Collaborate = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            <div className={styles.imageWrapper}>
+            <div className={styles.imageWrapper} style={{ overflow: 'hidden' }}>
+              <img src="/Images/Donation_cover.svg" alt="Make a Donation" className={styles.image} style={{ objectFit: 'contain', transform: 'scale(1.5)' }} />
             </div>
             <div className={styles.content}>
               <div className={styles.iconWrapper}>

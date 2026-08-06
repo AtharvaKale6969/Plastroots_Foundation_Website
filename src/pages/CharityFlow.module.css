@@ -8,10 +8,16 @@
 /* Hero Section */
 .hero {
   position: relative;
-  background-image: linear-gradient(to right, #096699, #064b73);
+  height: 60vh;
+  min-height: 400px;
+  background: linear-gradient(135deg, rgba(9, 102, 153, 0.3), rgba(6, 75, 115, 0.4)), url("/Images/Donation_Hero_Section.png") center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   color: var(--white);
   text-align: center;
-  padding: 200px 20px 120px;
+  padding: 120px 5% 40px;
 }
 
 .backBtn {
@@ -42,11 +48,17 @@
 .heroTitle {
   font-size: 4rem;
   font-weight: 800;
-  color: var(--brand-green);
+  color: white;
   margin: 0 auto 24px auto;
   max-width: 1000px;
   line-height: 1.2;
-  text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.heroTitle span {
+  color: #4ade80;
+  font-family: 'Tan Mon Cheri', serif;
+  font-weight: normal;
 }
 
 .heroSubtitle {
@@ -68,7 +80,10 @@
 .widgetSection::before {
   content: '';
   position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background: url('/Images/hero_doodles.png') center/cover repeat;
   opacity: 0.05;
   pointer-events: none;
@@ -79,7 +94,7 @@
   position: relative;
   z-index: 2;
   margin: 0 auto;
-  max-width: 600px;
+  max-width: 800px;
 }
 
 .donationCard {
@@ -93,7 +108,7 @@
 .contentImage {
   width: 100%;
   border-radius: 20px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
   object-fit: contain;
   height: 400px;
 }
@@ -248,7 +263,8 @@
 }
 
 .submitBtn:hover {
-  background: #3e8e41; /* Darker green */
+  background: #3e8e41;
+  /* Darker green */
   transform: translateY(-2px);
   box-shadow: 0 10px 20px rgba(76, 175, 80, 0.3);
 }
@@ -314,7 +330,8 @@
 .coin {
   width: 70px;
   height: 70px;
-  background: #fde68a; /* soft gold */
+  background: #fde68a;
+  /* soft gold */
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -324,8 +341,8 @@
   color: #d97706;
   border: none;
   /* Clay-morphism 3D effect */
-  box-shadow: 
-    0px 20px 30px rgba(0,0,0,0.1),
+  box-shadow:
+    0px 20px 30px rgba(0, 0, 0, 0.1),
     inset -8px -8px 16px rgba(217, 119, 6, 0.4),
     inset 8px 8px 20px rgba(255, 255, 255, 0.9);
 }
@@ -334,13 +351,14 @@
   position: relative;
   width: 240px;
   height: 180px;
-  background: var(--brand-blue); /* Better, deeper color for contrast */
+  background: var(--brand-blue);
+  /* Better, deeper color for contrast */
   border-radius: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
   /* Soft 3D Minimalist Shadow on dark background */
-  box-shadow: 
+  box-shadow:
     0px 40px 60px rgba(15, 23, 42, 0.2),
     inset -12px -12px 24px rgba(0, 0, 0, 0.25),
     inset 12px 12px 24px rgba(255, 255, 255, 0.2);
@@ -352,12 +370,13 @@
   top: -20px;
   width: 100%;
   height: 40px;
-  background: #085580; /* Slightly lighter top */
+  background: #085580;
+  /* Slightly lighter top */
   border-radius: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 
+  box-shadow:
     0px 10px 20px rgba(15, 23, 42, 0.15),
     inset -5px -5px 10px rgba(0, 0, 0, 0.2),
     inset 5px 5px 10px rgba(255, 255, 255, 0.15);
@@ -366,7 +385,7 @@
 .boxSlot {
   width: 90px;
   height: 8px;
-  background: #053b59; 
+  background: #053b59;
   border-radius: 4px;
   box-shadow: inset 0px 4px 6px rgba(0, 0, 0, 0.3);
 }
@@ -383,7 +402,7 @@
   padding: 40px 30px;
   border-radius: 20px;
   text-align: center;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
   border-top: 4px solid var(--brand-green);
 }
 
@@ -423,55 +442,163 @@
 
 /* Responsive (Must be at the very end to override correctly) */
 @media (max-width: 1440px) {
-  .infoSection { padding: 60px 4%; }
+  .infoSection {
+    padding: 60px 4%;
+  }
 }
 
 @media (max-width: 1024px) {
-  .heroTitle { font-size: 4rem; }
-  .contentGrid { gap: 30px; }
-  .statsGrid { gap: 15px; }
-  .donationCard { padding: 40px; }
+  .heroTitle {
+    font-size: 4rem;
+  }
+
+  .contentGrid {
+    gap: 30px;
+  }
+
+  .statsGrid {
+    gap: 15px;
+  }
+
+  .donationCard {
+    padding: 40px;
+  }
 }
 
 @media (max-width: 768px) {
-  .pageWrapper { padding-bottom: 40px; }
-  .hero { padding: 140px 20px 60px; min-height: auto; }
-  .backBtn { top: 90px; }
-  .heroTitle { font-size: 2.5rem; }
-  .heroSubtitle { font-size: 1.1rem; }
-  .widgetSection { padding: 40px 5%; }
-  .donationCard { padding: 30px; }
-  .amountGrid { grid-template-columns: 1fr 1fr; }
-  .formGrid { grid-template-columns: 1fr; }
-  .formGroup.fullWidth { grid-column: span 1; }
-  .contentGrid { grid-template-columns: 1fr; gap: 40px; }
-  .statsGrid { grid-template-columns: 1fr; gap: 20px; }
-  .infoSection { padding: 40px 5%; }
-  .sectionTitle { font-size: 2rem; }
+  .pageWrapper {
+    padding-bottom: 40px;
+  }
+
+  .hero {
+    padding: 140px 20px 60px;
+    min-height: auto;
+  }
+
+  .backBtn {
+    top: 90px;
+  }
+
+  .heroTitle {
+    font-size: 2.5rem;
+  }
+
+  .heroSubtitle {
+    font-size: 1.1rem;
+  }
+
+  .widgetSection {
+    padding: 40px 5%;
+  }
+
+  .donationCard {
+    padding: 30px;
+  }
+
+  .amountGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .formGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .formGroup.fullWidth {
+    grid-column: span 1;
+  }
+
+  .contentGrid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .statsGrid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .infoSection {
+    padding: 40px 5%;
+  }
+
+  .sectionTitle {
+    font-size: 2rem;
+  }
 }
 
 @media (max-width: 425px) {
-  .hero { padding: 140px 20px 40px; min-height: 250px; }
-  .backBtn { top: 95px; }
-  .heroTitle { font-size: 2rem; }
-  .donationCard { padding: 20px; }
-  .amountGrid { grid-template-columns: 1fr; }
-  .customAmountInput { grid-column: span 1; }
-  .amountChip { padding: 12px; font-size: 1.1rem; }
-  .toggleContainer { flex-direction: column; }
-  .statCard { padding: 25px 20px; }
-  .contentText h3 { font-size: 1.5rem; }
+  .hero {
+    padding: 140px 20px 40px;
+    min-height: 250px;
+  }
+
+  .backBtn {
+    top: 95px;
+  }
+
+  .heroTitle {
+    font-size: 2rem;
+  }
+
+  .donationCard {
+    padding: 20px;
+  }
+
+  .amountGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .customAmountInput {
+    grid-column: span 1;
+  }
+
+  .amountChip {
+    padding: 12px;
+    font-size: 1.1rem;
+  }
+
+  .toggleContainer {
+    flex-direction: column;
+  }
+
+  .statCard {
+    padding: 25px 20px;
+  }
+
+  .contentText h3 {
+    font-size: 1.5rem;
+  }
 }
 
 @media (max-width: 375px) {
-  .heroTitle { font-size: 1.8rem; }
-  .sectionTitle { font-size: 1.8rem; }
-  .submitBtn { padding: 15px; font-size: 1.1rem; }
+  .heroTitle {
+    font-size: 1.8rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.8rem;
+  }
+
+  .submitBtn {
+    padding: 15px;
+    font-size: 1.1rem;
+  }
 }
 
 @media (max-width: 320px) {
-  .heroTitle { font-size: 1.6rem; }
-  .heroSubtitle { font-size: 0.95rem; }
-  .amountChip { font-size: 1rem; }
-  .statCard h4 { font-size: 1.1rem; }
+  .heroTitle {
+    font-size: 1.6rem;
+  }
+
+  .heroSubtitle {
+    font-size: 0.95rem;
+  }
+
+  .amountChip {
+    font-size: 1rem;
+  }
+
+  .statCard h4 {
+    font-size: 1.1rem;
+  }
 }

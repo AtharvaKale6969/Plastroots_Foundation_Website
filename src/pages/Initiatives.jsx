@@ -9,7 +9,7 @@ const initiatives = [
   {
     title: 'IEC (Information, Education & Communication)',
     desc: 'Empowering communities with the right knowledge to make informed decisions about waste segregation, recycling, and sustainable living practices.',
-    img: 'https://images.unsplash.com/photo-1577563908411-50cb98976fea?auto=format&fit=crop&q=80',
+    img: '/Images/IEC_Cover.webp',
     link: '/initiatives/iec'
   },
   {
@@ -21,25 +21,28 @@ const initiatives = [
   {
     title: 'Waste Management Projects',
     desc: 'Establishing grassroots material recovery facilities and comprehensive door-to-door collection systems to build a circular economy.',
-    img: 'https://images.unsplash.com/photo-1611284446314-60a58ac0deb9?auto=format&fit=crop&q=80',
-    link: '/initiatives/waste-management'
+    img: '/Images/Waste_Manage_cover.webp',
+    link: '/initiatives/waste-management',
+    objectPosition: 'center 25%'
   },
   {
-    title: 'Health Activities',
+    title: 'HealthEd Activities',
     desc: 'Providing health checkups, sanitation workshops, and protective gear for our informal sector workers and rural communities.',
-    img: 'https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&q=80',
-    link: '/initiatives/health-activities'
+    img: '/Images/Health_New.jpg',
+    link: '/initiatives/health-activities',
+    objectPosition: 'center 50%'
   },
   {
-    title: 'Education Activities',
+    title: 'Educational Activities',
     desc: 'Reaching out to schools and institutions to integrate environmental awareness and practical sustainability into their curriculum.',
-    img: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&q=80',
-    link: '/initiatives/education-activities'
+    img: '/Images/School_activity.webp',
+    link: '/initiatives/education-activities',
+    objectPosition: 'center 20%'
   },
   {
     title: 'Women Development',
     desc: 'Forming and training Self-Help Groups (SHGs) to lead micro-enterprises in waste recovery, driving both ecological and economic empowerment.',
-    img: 'https://images.unsplash.com/photo-1596423735880-5f2a68b4903e?auto=format&fit=crop&q=80',
+    img: '/Images/WDG_new.png',
     link: '/initiatives/women-development'
   }
 ];
@@ -62,7 +65,9 @@ const Initiatives = () => {
           transition={{ duration: 0.8 }}
           style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}
         >
-          <h1 className={styles.heroTitle}>Our Initiatives</h1>
+          <h1 className={styles.heroTitle}>
+            <span style={{ color: 'white' }}>Our</span> <span style={{ color: '#4ade80' }}>Initiatives</span>
+          </h1>
           <p className={styles.heroSubtitle}>
             Transforming grassroots challenges into sustainable opportunities across multiple dimensions of environmental and social impact.
           </p>
@@ -97,7 +102,12 @@ const Initiatives = () => {
               transition={{ duration: 0.6, delay: (idx % 2) * 0.2 }}
             >
               <div className={styles.cardImageWrapper}>
-                <img src={item.img} alt={item.title} className={styles.cardImage} />
+                <img 
+                  src={item.img} 
+                  alt={item.title} 
+                  className={styles.cardImage} 
+                  style={item.objectPosition ? { objectPosition: item.objectPosition } : {}}
+                />
               </div>
               <div className={styles.cardContent}>
                 <h3 className={styles.cardTitle}>{item.title}</h3>

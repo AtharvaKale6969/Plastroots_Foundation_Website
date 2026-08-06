@@ -35,7 +35,10 @@ const CSRPatnership = () => {
       {/* Hero Section */}
       <section 
         className={layoutStyles.hero}
-        style={{ backgroundImage: 'url("/Images/Gallery/Screenshot 2026-06-29 115828.png")' }}
+        style={{ 
+          backgroundImage: 'url("/Images/CSR_Partnership_Hero_Section.png")',
+          backgroundPosition: 'center 30%'
+        }}
       >
         <button className={layoutStyles.backBtn} onClick={() => navigate('/collaborate')}>
           <ArrowLeft size={18} /> Back to Collaborate
@@ -47,7 +50,9 @@ const CSRPatnership = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className={layoutStyles.heroTitle}>CSR PARTNERSHIPS</h1>
+          <h1 className={layoutStyles.heroTitle}>
+            <span style={{ color: 'white' }}>CSR</span> <span style={{ color: '#4ade80' }}>PARTNERSHIPS</span>
+          </h1>
           <p className={layoutStyles.heroDesc}>
             Align your corporate values with impactful, on-the-ground environmental and social initiatives. Let's build a sustainable legacy together.
           </p>
