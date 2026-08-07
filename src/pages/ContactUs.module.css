@@ -2,7 +2,7 @@
   position: relative;
   height: 60vh;
   min-height: 400px;
-  background: linear-gradient(135deg, rgba(9, 102, 153, 0.3), rgba(6, 75, 115, 0.4)), #e2e8f0;
+  background: linear-gradient(135deg, rgba(9, 102, 153, 0.15), rgba(6, 75, 115, 0.2)), url("/Images/Contact_Out_Hero Section.png") center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;

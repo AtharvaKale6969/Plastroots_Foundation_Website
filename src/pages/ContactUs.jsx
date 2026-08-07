@@ -39,7 +39,9 @@ const ContactUs = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className={styles.heroTitle}>Get in Touch</h1>
+          <h1 className={styles.heroTitle}>
+            <span style={{ color: 'white' }}>GET IN</span> <span style={{ color: '#4ade80' }}>TOUCH</span>
+          </h1>
           <p className={styles.heroSubtitle}>
             Have a question, want to volunteer, or looking to partner with us? We'd love to hear from you. Drop us a message and our team will get back to you promptly.
           </p>
