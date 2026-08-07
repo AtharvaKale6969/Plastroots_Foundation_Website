@@ -4,7 +4,7 @@
 }
 
 .heroSection {
-  background: linear-gradient(135deg, rgba(9, 102, 153, 0.3), rgba(6, 75, 115, 0.4)), url("/Images/Blogs_hero_section_new.png") center/cover no-repeat;
+  background: linear-gradient(135deg, rgba(9, 102, 153, 0.15), rgba(6, 75, 115, 0.2)), url("/Images/Blogs_hero_section_new.png") center/cover no-repeat;
   position: relative;
   height: 60vh;
   min-height: 400px;

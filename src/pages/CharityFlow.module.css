@@ -424,8 +424,8 @@
 
 .imageShowcase {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
 }
 
 .showcaseImg {
@@ -523,6 +523,10 @@
 
   .sectionTitle {
     font-size: 2rem;
+  }
+
+  .imageShowcase {
+    grid-template-columns: 1fr;
   }
 }
 

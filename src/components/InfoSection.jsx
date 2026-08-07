@@ -10,13 +10,21 @@ const InfoSection = () => {
         
         <div className={styles.contentWrapper}>
           <motion.div 
-            className={styles.imagePlaceholder}
+            className={styles.imageContainer}
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.7 }}
           >
-            <ImageIcon size={64} opacity={0.3} />
+            <div className={styles.showcaseStage}>
+              <div className={styles.staticCard}>
+                <div className={styles.glareContainer}>
+                  <div className={styles.cardGlare}></div>
+                </div>
+                <img src="/Images/Header/PF_LOGO.png" alt="Plastroots Foundation Logo" className={styles.premiumLogo} />
+              </div>
+              <div className={styles.cardShadow}></div>
+            </div>
           </motion.div>
           
           <motion.div 

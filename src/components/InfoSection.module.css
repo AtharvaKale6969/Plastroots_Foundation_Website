@@ -13,16 +13,91 @@
   margin-bottom: 80px;
 }
 
-.imagePlaceholder {
+.imageContainer {
   width: 100%;
-  aspect-ratio: 4/3;
-  background-color: var(--light-bg);
-  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--brand-green);
-  box-shadow: 0 10px 40px rgba(0,0,0,0.06);
+  padding: 40px 20px;
+}
+
+.showcaseStage {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  perspective: 1200px;
+}
+
+@keyframes spinCard {
+  0% { transform: rotateY(0deg); }
+  100% { transform: rotateY(360deg); }
+}
+
+.staticCard {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 40px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0.2) 100%);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 2px solid rgba(255,255,255,0.6);
+  box-shadow: 
+    0 30px 60px rgba(0,0,0,0.1), 
+    inset 0 0 30px rgba(255,255,255,0.8),
+    inset 20px 0 40px rgba(255,255,255,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.premiumLogo {
+  width: 65%;
+  height: auto;
+  object-fit: contain;
+  animation: spinCard 6s linear infinite;
+  will-change: transform;
+  filter: drop-shadow(0 20px 20px rgba(0,0,0,0.2));
+}
+
+@keyframes glareMove {
+  0% { transform: translateX(-150%) rotate(45deg); }
+  100% { transform: translateX(150%) rotate(45deg); }
+}
+
+.glareContainer {
+  position: absolute;
+  inset: 0;
+  border-radius: 40px;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.cardGlare {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    90deg,
+    rgba(255,255,255,0) 0%,
+    rgba(255,255,255,0.9) 50%,
+    rgba(255,255,255,0) 100%
+  );
+  animation: glareMove 4s linear infinite;
+}
+
+.cardShadow {
+  width: 80%;
+  height: 20px;
+  background: radial-gradient(ellipse at center, rgba(32, 156, 93, 0.3) 0%, rgba(0,0,0,0) 70%);
+  margin-top: 40px;
+  border-radius: 50%;
 }
 
 .textContent h2 {

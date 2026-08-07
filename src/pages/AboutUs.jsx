@@ -110,14 +110,25 @@ const AboutUs = () => {
           </motion.div>
         </div>
         <div className={styles.heroRight}>
-          <motion.img 
+          <motion.div 
+            className={styles.imageWrapper}
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&q=80" 
-            alt="About Plastroots Foundation" 
-            className={styles.heroImage}
-          />
+          >
+            <img 
+              src="/Images/DSC06584.JPG" 
+              alt="About Plastroots Foundation" 
+              className={styles.heroImage}
+            />
+            <div className={styles.directorQuoteCard}>
+              <div className={styles.quoteIcon}>"</div>
+              <div className={styles.quoteContent}>
+                <p className={styles.quoteText}>Our roots define our strength. Let's build a foundation for a greener tomorrow.</p>
+                <p className={styles.quoteAuthor}>— Kapil Jangale, Director</p>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 

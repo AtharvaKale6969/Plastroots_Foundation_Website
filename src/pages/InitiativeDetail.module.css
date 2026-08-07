@@ -9,7 +9,7 @@
   justify-content: center;
   text-align: center;
   color: var(--white);
-  padding: 120px 5% 40px;
+  padding: 180px 5% 40px;
 }
 
 .backBtn {
@@ -35,6 +35,15 @@
 .backBtn:hover {
   background: rgba(255,255,255,0.25);
   transform: translateX(-5px);
+}
+
+@media (max-width: 1024px) {
+  .backBtn {
+    top: 85px;
+    left: 20px;
+    padding: 8px 16px;
+    font-size: 0.85rem;
+  }
 }
 
 .heroContent {
@@ -1200,7 +1209,7 @@
   .heroTitle { font-size: 3rem; }
 }
 @media (max-width: 768px) {
-  .hero { padding: 140px 5% 60px; min-height: auto; }
+  .hero { padding: 180px 5% 60px; min-height: auto; }
   .backBtn { top: 90px; }
   .heroTitle { font-size: 2.2rem; }
   .heroSubtitle { font-size: 1.1rem; }
@@ -1219,7 +1228,7 @@
   .recoveryHighlights { grid-template-columns: 1fr; }
 }
 @media (max-width: 425px) {
-  .hero { padding: 120px 5% 40px; min-height: 250px; }
+  .hero { padding: 170px 5% 40px; min-height: 250px; }
   .heroTitle { font-size: 2rem; margin-bottom: 15px; }
   .heroSubtitle { font-size: 1rem; margin-bottom: 20px; }
   

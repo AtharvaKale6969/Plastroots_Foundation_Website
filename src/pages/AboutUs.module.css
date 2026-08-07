@@ -124,6 +124,9 @@
   flex: 0.4;
   position: relative;
   z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .heroImage {
@@ -139,6 +142,69 @@
 
 .heroImage:hover {
   transform: rotate(0deg) scale(1.02);
+}
+
+.imageWrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.directorQuoteCard {
+  position: absolute;
+  bottom: -30px;
+  right: -20px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  padding: 1.5rem 1.5rem 1.5rem 2rem;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+  display: flex;
+  gap: 15px;
+  max-width: 320px;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  animation: floatCard 4s ease-in-out infinite;
+  z-index: 3;
+}
+
+@keyframes floatCard {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
+}
+
+.quoteIcon {
+  font-family: 'Outfit', serif;
+  font-size: 5rem;
+  color: var(--brand-green);
+  line-height: 0.6;
+  opacity: 0.3;
+  margin-top: 10px;
+}
+
+.quoteContent {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.quoteText {
+  font-size: 0.95rem;
+  color: var(--text-dark);
+  font-weight: 600;
+  line-height: 1.5;
+  margin: 0;
+  font-style: italic;
+}
+
+.quoteAuthor {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-weight: 700;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 /* --- Vision & Mission --- */
