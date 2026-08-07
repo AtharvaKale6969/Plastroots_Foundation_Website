@@ -18,9 +18,6 @@ const InfoSection = () => {
           >
             <div className={styles.showcaseStage}>
               <div className={styles.staticCard}>
-                <div className={styles.glareContainer}>
-                  <div className={styles.cardGlare}></div>
-                </div>
                 <img src="/Images/Header/PF_LOGO.png" alt="Plastroots Foundation Logo" className={styles.premiumLogo} />
               </div>
               <div className={styles.cardShadow}></div>

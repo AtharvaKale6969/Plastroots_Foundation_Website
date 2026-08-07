@@ -52,7 +52,6 @@
   align-items: center;
   justify-content: center;
   position: relative;
-  transform-style: preserve-3d;
 }
 
 .premiumLogo {
