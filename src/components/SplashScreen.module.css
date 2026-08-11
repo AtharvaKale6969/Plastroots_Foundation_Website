@@ -28,12 +28,14 @@
   height: auto;
   margin-bottom: 1.5rem;
   filter: drop-shadow(0px 8px 16px rgba(0, 0, 0, 0.1));
+  transition: width 0.3s ease;
 }
 
 .nameImg {
   width: 280px;
   height: auto;
   filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.05));
+  transition: width 0.3s ease;
 }
 
 .taglineContainer {
@@ -43,6 +45,7 @@
   align-items: center;
   justify-content: center;
   z-index: 10;
+  width: 100%;
 }
 
 .tagline {
@@ -54,6 +57,7 @@
   letter-spacing: 3px;
   text-align: center;
   text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  transition: font-size 0.3s ease;
 }
 
 .bubblesContainer {
@@ -72,4 +76,38 @@
   background: radial-gradient(circle at 30% 30%, rgba(150, 230, 160, 0.4), rgba(40, 160, 60, 0.05));
   border: 1px solid rgba(40, 160, 60, 0.1);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .logoImg {
+    width: 110px;
+  }
+  .nameImg {
+    width: 220px;
+  }
+  .taglineContainer {
+    bottom: 25%;
+  }
+  .tagline {
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logoImg {
+    width: 90px;
+  }
+  .nameImg {
+    width: 180px;
+  }
+  .taglineContainer {
+    bottom: 20%;
+    padding: 0 1rem;
+  }
+  .tagline {
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+  }
 }

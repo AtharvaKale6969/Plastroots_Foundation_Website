@@ -51,7 +51,7 @@ const SplashScreen = ({ onComplete }) => {
       opacity: 0, 
       scale: 1.5, // Start larger
       filter: "blur(20px)", // Cinematic out-of-focus start
-      y: 20
+      y: "5vh"
     },
     visible: { 
       opacity: 1, 
@@ -65,7 +65,7 @@ const SplashScreen = ({ onComplete }) => {
       } 
     },
     shiftUp: {
-      y: -50,
+      y: "-15vh", // More responsive shift up to prevent overlap
       scale: 0.95,
       transition: { duration: 0.8, ease: "easeInOut" }
     }
