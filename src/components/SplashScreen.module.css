@@ -4,12 +4,14 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: #ffffff; /* Clean white background */
+  /* Add a very subtle radial gradient */
+  background: radial-gradient(circle at center, #ffffff 0%, #f4fcf6 100%);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   z-index: 9999;
+  overflow: hidden; /* Prevent scrollbar if logo moves */
 }
 
 .logoContainer {
@@ -17,33 +19,57 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  will-change: transform;
+  z-index: 10;
 }
 
 .logoImg {
-  width: 120px;
+  width: 140px;
   height: auto;
-  margin-bottom: 1rem;
-  /* Add a subtle shimmer/pulse effect via framer-motion in JS */
+  margin-bottom: 1.5rem;
+  filter: drop-shadow(0px 8px 16px rgba(0, 0, 0, 0.1));
 }
 
 .nameImg {
-  width: 250px;
+  width: 280px;
   height: auto;
+  filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.05));
 }
 
 .taglineContainer {
   position: absolute;
+  bottom: 30%; /* Shifted it down slightly so the logo goes up and tagline is below */
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 10;
 }
 
 .tagline {
   font-family: 'Tan Mon Cheri', serif;
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   font-weight: 800;
   color: var(--brand-green);
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
   text-align: center;
+  text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.bubblesContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 1; /* Below the logo */
+}
+
+.bubble {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(150, 230, 160, 0.4), rgba(40, 160, 60, 0.05));
+  border: 1px solid rgba(40, 160, 60, 0.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }

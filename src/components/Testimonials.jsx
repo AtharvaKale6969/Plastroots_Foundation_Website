@@ -20,7 +20,7 @@ const testimonials = [
     quote: "Superb plastic waste best purchase. The purpose was to clear.",
     author: "Arjun P.",
     role: "Corporate Employee",
-    initial: "A"
+    initial: "A"  
   },
   {
     quote: "The transparency of the brand treating people where the nature is ensured gives the peace of mind.",
