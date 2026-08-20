@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Kalam:wght@700&display=swap');
 
 .infoSection {
   padding: 100px 0;
@@ -112,35 +112,27 @@
 
 .quoteSection {
   text-align: center;
-  padding: 60px 20px;
-  background-color: var(--light-bg);
-  border-radius: 16px;
+  padding: 50px 80px;
+  background: #ffffff;
+  border-radius: 24px;
   position: relative;
   overflow: hidden;
-}
-
-.quoteIcon {
-  color: var(--brand-green);
-  opacity: 0.1;
-  position: absolute;
-}
-
-.quoteLeft {
-  top: 20px;
-  left: 40px;
-}
-
-.quoteRight {
-  bottom: 20px;
-  right: 40px;
+  box-shadow: 
+    0 25px 60px rgba(0, 0, 0, 0.03),
+    0 4px 12px rgba(0, 0, 0, 0.02),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(220, 220, 225, 0.4);
+  width: fit-content;
+  margin: 0 auto;
 }
 
 .quoteText {
-  font-family: 'Tan Mon Cheri', serif;
-  font-size: 3.5rem;
+  font-family: 'Dancing Script', cursive;
+  font-size: 5rem;
   font-weight: 700;
-  color: var(--text-dark);
-  letter-spacing: 2px;
+  color: #a8813a; /* Deep elegant gold */
+  letter-spacing: 1px;
+  text-shadow: none; /* Removing heavy shadow for a cleaner, more elegant look */
 }
 
 /* RESPONSIVE */
@@ -154,8 +146,6 @@
   .infoSection { padding: 60px 0; }
   .quoteSection { padding: 40px 20px; }
   .quoteText { font-size: 2.5rem; }
-  .quoteLeft { left: 10px; }
-  .quoteRight { right: 10px; }
 }
 @media (max-width: 425px) {
   .infoSection { padding: 40px 0; }

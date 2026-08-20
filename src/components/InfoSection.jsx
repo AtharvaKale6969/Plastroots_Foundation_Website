@@ -1,9 +1,38 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Quote, Image as ImageIcon } from 'lucide-react';
 import styles from './InfoSection.module.css';
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.08,
+      delayChildren: 0.2,
+    }
+  }
+};
+
+const childVariants = {
+  hidden: { opacity: 0, y: 20, filter: 'blur(10px)' },
+  visible: { 
+    opacity: 1, 
+    y: 0, 
+    filter: 'blur(0px)',
+    transition: { duration: 0.5, ease: "easeOut" }
+  }
+};
+
 const InfoSection = () => {
+  const writeVariants = {
+    hidden: { clipPath: 'inset(0 100% 0 0)', WebkitClipPath: 'inset(0 100% 0 0)' },
+    visible: { 
+      clipPath: 'inset(0 0 0 0)', 
+      WebkitClipPath: 'inset(0 0 0 0)',
+      transition: { duration: 2.5, ease: "linear" } 
+    }
+  };
+  
   return (
     <section className={styles.infoSection}>
       <div className="container">
@@ -49,14 +78,18 @@ const InfoSection = () => {
           className={styles.quoteSection}
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.7 }}
         >
-          <Quote size={80} className={`${styles.quoteIcon} ${styles.quoteLeft}`} />
-          <h3 className={styles.quoteText}>
-            CHANGE STARTS HERE....
-          </h3>
-          <Quote size={80} className={`${styles.quoteIcon} ${styles.quoteRight}`} />
+          <motion.h3 
+            className={styles.quoteText}
+            variants={writeVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+          >
+            Change Starts Here....
+          </motion.h3>
         </motion.div>
 
       </div>

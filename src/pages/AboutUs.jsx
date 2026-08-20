@@ -116,11 +116,13 @@ const AboutUs = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <img 
-              src="/Images/DSC06584.JPG" 
-              alt="About Plastroots Foundation" 
-              className={styles.heroImage}
-            />
+            <div className={styles.heroImageCrop}>
+              <img 
+                src="/Images/DSC06325.JPG" 
+                alt="About Plastroots Foundation" 
+                className={styles.heroImage}
+              />
+            </div>
             <div className={styles.directorQuoteCard}>
               <div className={styles.quoteIcon}>"</div>
               <div className={styles.quoteContent}>
@@ -169,7 +171,7 @@ const AboutUs = () => {
           <h3 className={styles.focusAreaTitle}>Core Focus Areas</h3>
           <div className={styles.focusAreas}>
             <div className={styles.focusCard}>
-              <div className={styles.focusCardTitle}>Rural Resource Recovery Centres (RRC) Rural</div>
+              <div className={styles.focusCardTitle}>Rural Resource Recovery Centres (R-RRC)</div>
               <div className={styles.focusCardText}>Building community-based systems for waste collection, segregation, resource recovery, and responsible recycling.</div>
             </div>
             <div className={styles.focusCard}>

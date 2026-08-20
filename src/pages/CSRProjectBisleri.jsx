@@ -133,7 +133,7 @@ const CSRProjectBisleri = () => {
           <div className={styles.centerHeading}>
             <h2 className={styles.sectionHeading}>Driving Awareness at Scale</h2>
             <p className={styles.standardParagraph}>
-              Behavioral change requires sustained engagement. Our IEC (Information, Education, and Communication) activities span across key demographics to ensure maximum penetration.
+              Behavioral change requires sustained, meaningful engagement at every level of society. Our comprehensive IEC (Information, Education, and Communication) campaigns are meticulously designed to transcend demographics, reaching students, corporate professionals, and grassroots communities alike. By blending interactive learning with actionable participation, we dismantle deeply ingrained habits and foster a culture where responsible plastic disposal is not just a duty, but a shared community value.
             </p>
           </div>
 

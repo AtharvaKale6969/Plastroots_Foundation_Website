@@ -1,0 +1,152 @@
+.section {
+  padding: 80px 0;
+  background-color: var(--white);
+  overflow: hidden;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  margin-bottom: 80px;
+}
+
+.row:last-child {
+  margin-bottom: 0;
+}
+
+.rowReverse {
+  flex-direction: row-reverse;
+}
+
+.textContent {
+  flex: 1;
+}
+
+.imageContent {
+  flex: 1;
+}
+
+.heading {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 24px;
+  background: linear-gradient(135deg, var(--brand-blue) 0%, var(--brand-green) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.2;
+}
+
+.paragraph {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.introText {
+  color: var(--text-dark);
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.highlightText {
+  color: var(--brand-blue);
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin: 25px 0;
+  padding-left: 15px;
+  border-left: 4px solid var(--brand-green);
+}
+
+.collage {
+  position: relative;
+  width: 100%;
+  height: 400px;
+}
+
+.collageImage {
+  position: absolute;
+  border-radius: 12px;
+  background-color: #e2e8f0;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+  border: 4px solid white;
+  transition: transform 0.3s ease;
+}
+
+.collageImage:hover {
+  transform: translateY(-5px) scale(1.02);
+  z-index: 10;
+}
+
+.imgRow1_1 {
+  width: 70%;
+  height: 280px;
+  top: 0;
+  left: 0;
+  background-image: url('/Images/Home/garbage_dump.webp');
+  z-index: 2;
+}
+
+.imgRow1_2 {
+  width: 65%;
+  height: 250px;
+  bottom: 0;
+  right: 0;
+  background-image: url('/Images/Waste_Manage_cover.webp');
+  z-index: 3;
+}
+
+.imgRow2_1 {
+  width: 65%;
+  height: 260px;
+  top: 0;
+  right: 0;
+  background-image: url('/Images/Woman_Development.jpg');
+  z-index: 2;
+}
+
+.imgRow2_2 {
+  width: 70%;
+  height: 250px;
+  bottom: 0;
+  left: 0;
+  background-image: url('/Images/Health_New.jpg');
+  z-index: 3;
+}
+
+@media (max-width: 992px) {
+  .row, .rowReverse {
+    flex-direction: column;
+    gap: 40px;
+  }
+  
+  .heading {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 60px 0;
+  }
+  
+  .collage {
+    height: 350px;
+  }
+}
+
+@media (max-width: 480px) {
+  .heading {
+    font-size: 1.75rem;
+  }
+  
+  .paragraph, .introText {
+    font-size: 1rem;
+  }
+}

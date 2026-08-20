@@ -1,38 +1,85 @@
 .section {
   padding: 80px 0;
-  background-color: var(--light-bg);
+  background-color: var(--white);
+  overflow: hidden;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 50px;
 }
 
 .title {
-  text-align: center;
-  margin-bottom: 50px;
-  font-size: 2.2rem;
+  font-size: 2.5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--brand-blue) 0%, var(--brand-green) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  margin-bottom: 12px;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+.subtitle {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+}
+
+.carouselContainer {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  /* Add subtle gradient masks to fade the edges */
+  mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+  padding: 20px 0;
+}
+
+.carouselTrack {
+  display: flex;
   gap: 30px;
+  width: max-content;
+  animation: scroll 40s linear infinite;
+}
+
+/* Pause animation on hover */
+.carouselContainer:hover .carouselTrack {
+  animation-play-state: paused;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    /* Since we duplicated the array, scrolling exactly half the width makes it seamless */
+    transform: translateX(calc(-50% - 15px)); 
+  }
 }
 
 .card {
-  position: relative;
-  height: 380px;
-  border-radius: 12px;
+  width: 350px;
+  height: 400px;
+  border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  position: relative;
+  flex-shrink: 0;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
   cursor: pointer;
 }
 
+.card:hover {
+  transform: translateY(-10px);
+}
+
 .cardImage {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
   background-size: cover;
   background-position: center;
-  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  background-repeat: no-repeat;
+  transition: transform 0.5s ease;
 }
 
 .card:hover .cardImage {
@@ -41,79 +88,44 @@
 
 .cardOverlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to top, rgba(9, 102, 153, 0.9) 0%, rgba(9, 102, 153, 0.4) 50%, rgba(0,0,0,0) 100%);
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.1) 100%);
   display: flex;
   align-items: flex-end;
   padding: 30px;
-  transition: background 0.4s ease;
 }
 
-.card:hover .cardOverlay {
-  background: linear-gradient(to top, rgba(9, 102, 153, 0.95) 0%, rgba(9, 102, 153, 0.85) 50%, rgba(32, 156, 93, 0.6) 100%);
-}
-
-.cardContent {
-  width: 100%;
-}
-
-.card h3 {
-  font-size: 1.35rem;
+.cardContent h3 {
   color: var(--white);
+  font-size: 1.4rem;
+  font-weight: 700;
   margin-bottom: 12px;
-  transition: transform 0.4s ease;
-  transform: translateY(20px);
+  line-height: 1.3;
 }
 
-.card p {
-  color: rgba(255, 255, 255, 0.9);
+.cardContent p {
+  color: rgba(255, 255, 255, 0.85);
   font-size: 0.95rem;
-  line-height: 1.6;
-  opacity: 0;
-  max-height: 0;
-  transform: translateY(20px);
-  transition: all 0.4s ease;
+  line-height: 1.5;
+  /* Add max height and overflow to prevent huge descriptions breaking layout */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
   overflow: hidden;
 }
 
-.card:hover h3 {
-  transform: translateY(0);
-}
-
-.card:hover p {
-  opacity: 1;
-  max-height: 200px;
-  transform: translateY(0);
-  margin-top: 16px;
-}
-
-/* RESPONSIVE */
-@media (max-width: 1024px) {
-  .grid { grid-template-columns: repeat(2, 1fr); }
-  /* Center the 3rd odd card when grid wraps to 2 columns */
-  .card:last-child:nth-child(odd) {
-    grid-column: 1 / -1;
-    justify-self: center;
-    width: calc(50% - 15px);
-  }
-}
 @media (max-width: 768px) {
-  .section { padding: 60px 0; }
-  .grid { grid-template-columns: 1fr; gap: 24px; }
-  .card { height: 320px; }
-  .card:last-child:nth-child(odd) {
-    width: 100%;
+  .section {
+    padding: 60px 0;
   }
-}
-@media (max-width: 425px) {
-  .section { padding: 40px 0; }
-  .title { font-size: 1.8rem; margin-bottom: 30px; }
-  .grid { gap: 20px; }
-  .card { height: 260px; }
-  .card h3 { font-size: 1.2rem; }
-  .card p { font-size: 0.9rem; }
-  .cardOverlay { padding: 20px; }
+  .title {
+    font-size: 2rem;
+  }
+  .card {
+    width: 280px;
+    height: 350px;
+  }
+  .cardContent h3 {
+    font-size: 1.2rem;
+  }
 }
