@@ -98,7 +98,11 @@
 @media (max-width: 1024px) {
   .section { padding: 60px 0; }
   .grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
-  .cardImage { height: 170px; margin: 8px 16px; }
+  .cardImage {
+    height: 190px;
+    margin: 8px 16px;
+    background-size: contain !important;
+  }
   .cardContent { padding: 24px; }
   .cardContent h3 { font-size: 1.4rem; }
   /* Center the 3rd odd card when grid wraps to 2 columns */
