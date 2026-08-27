@@ -123,9 +123,15 @@
 @media (max-width: 992px) {
   .row, .rowReverse {
     flex-direction: column;
+    align-items: stretch;
     gap: 40px;
   }
-  
+
+  .textContent,
+  .imageContent {
+    width: 100%;
+  }
+
   .heading {
     font-size: 2rem;
   }
@@ -135,9 +141,24 @@
   .section {
     padding: 60px 0;
   }
-  
+
   .collage {
-    height: 350px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    height: auto;
+    position: static;
+  }
+
+  .collageImage {
+    position: static;
+    width: 100% !important;
+    height: 160px !important;
+    top: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+    right: auto !important;
+    border-radius: 10px;
   }
 }
 
@@ -145,8 +166,12 @@
   .heading {
     font-size: 1.75rem;
   }
-  
+
   .paragraph, .introText {
     font-size: 1rem;
+  }
+
+  .collageImage {
+    height: 130px !important;
   }
 }
