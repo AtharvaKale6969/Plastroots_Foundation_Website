@@ -96,12 +96,16 @@
 
 /* RESPONSIVE */
 @media (max-width: 1024px) {
-  .grid { grid-template-columns: repeat(2, 1fr); }
+  .section { padding: 60px 0; }
+  .grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  .cardImage { height: 170px; margin: 8px 16px; }
+  .cardContent { padding: 24px; }
+  .cardContent h3 { font-size: 1.4rem; }
   /* Center the 3rd odd card when grid wraps to 2 columns */
   .card:last-child:nth-child(odd) {
     grid-column: 1 / -1;
     justify-self: center;
-    width: calc(50% - 15px);
+    width: calc(50% - 12px);
   }
 }
 @media (max-width: 768px) {

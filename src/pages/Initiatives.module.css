@@ -55,10 +55,14 @@
   margin: 0 auto;
 }
 
+@media (max-width: 1024px) {
+  .cardImageWrapper { height: 200px; }
+  .cardContent { padding: 1.8rem 1.6rem; }
+}
+
 @media (max-width: 900px) {
-  .gridContainer {
-    grid-template-columns: 1fr;
-  }
+  .gridContainer { grid-template-columns: 1fr; }
+  .cardImageWrapper { height: 220px; }
 }
 
 .card {
