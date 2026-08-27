@@ -702,6 +702,25 @@
   .quoteText { font-size: 1.8rem; }
   .sectionHeading, .sectionHeadingWhite { font-size: 2.5rem; }
   .impactGrid { grid-template-columns: 1fr 1fr; }
+  /* Convert overlapping collage to stacked layout */
+  .genesisVisuals {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .imageCardBack, .imageCardFront {
+    position: static;
+    width: 100%;
+    height: 240px;
+    border: none;
+  }
+  .floatingBadge {
+    position: static;
+    margin: 0 auto;
+    top: auto;
+    left: auto;
+  }
   .masonryVisuals { height: auto; flex-direction: column; gap: 15px; }
   .masonryCol1 { padding-top: 0; height: auto; flex-direction: row; gap: 15px; }
   .masonryCol2 { flex-direction: row; height: auto; gap: 15px; }
@@ -739,13 +758,22 @@
   .hero { padding: 120px 5% 40px; min-height: 250px; }
   .heroTitle { font-size: 2rem; margin-bottom: 15px; }
   .subtitle { font-size: 0.95rem; }
-  
   .genesisSection, .impactSection, .awarenessSection, .grassrootsSection, .futureSection { padding: 40px 5%; }
   .quoteSection { padding: 40px 5%; }
   .quoteWrapper { padding: 30px 20px; }
+  .impactGrid { grid-template-columns: 1fr 1fr; }
   .impactNumber { font-size: 1.8rem; }
   .genesisGrid, .grassrootsGrid { gap: 40px; }
   .awarenessDetails { margin-top: 60px; gap: 60px; }
+  .imageCardBack, .imageCardFront { height: 180px; }
+  .futureHeading { font-size: 2.5rem; }
+}
+
+@media (max-width: 320px) {
+  .impactGrid { grid-template-columns: 1fr; }
+  .impactCard { padding: 30px 15px; }
+  .futureHeading { font-size: 2rem; }
+  .sectionHeading, .sectionHeadingWhite { font-size: 1.8rem; }
 }
 
 @media (max-width: 320px) {

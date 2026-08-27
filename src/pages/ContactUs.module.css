@@ -323,26 +323,23 @@ textarea.formInput {
 
 /* RESPONSIVE HERO */
 @media (max-width: 1024px) {
-  .heroTitle { font-size: 4rem; }
+  .heroTitle { font-size: 3.5rem; }
 }
 @media (max-width: 768px) {
-  .hero { padding: 140px 5% 60px; min-height: auto; }
+  .hero { padding: 140px 5% 60px; min-height: 350px; }
   .heroTitle { font-size: 2.5rem; }
-}
-@media (max-width: 768px) {
-  .hero { min-height: 350px; }
-  .heroTitle { font-size: 4rem; }
   .heroSubtitle { font-size: 1.1rem; }
-  
   .contactContainer { margin-top: 40px; margin-bottom: 40px; }
   .infoColumn, .formColumn { padding: 40px 20px; }
   .mapInfoSection { padding: 40px 5% 60px 5%; }
   .mapInfoContainer { padding: 2rem; gap: 2rem; }
+  .largeMapWrapper { height: 300px; }
 }
 @media (max-width: 425px) {
   .hero { padding: 120px 5% 40px; min-height: 250px; }
   .heroTitle { font-size: 2rem; margin-bottom: 15px; }
   .heroSubtitle { font-size: 1rem; }
+  .infoColumn, .formColumn { padding: 30px 15px; }
 }
 @media (max-width: 320px) {
   .heroTitle { font-size: 1.6rem; }

@@ -139,13 +139,11 @@
 
 /* RESPONSIVE HERO */
 @media (max-width: 1024px) {
-  .heroTitle { font-size: 4rem; }
+  .heroTitle { font-size: 3.5rem; }
 }
 @media (max-width: 768px) {
-  .hero { padding: 140px 5% 60px; min-height: auto; }
+  .hero { padding: 140px 5% 60px; min-height: 350px; }
   .heroTitle { font-size: 2.5rem; }
-  .hero { min-height: 350px; }
-  .heroTitle { font-size: 4rem; }
   .heroSubtitle { font-size: 1.1rem; }
   .initiativesSection { padding: 40px 5%; }
   .sectionHeader { margin-bottom: 2rem; }

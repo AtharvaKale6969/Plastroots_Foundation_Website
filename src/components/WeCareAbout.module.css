@@ -115,17 +115,23 @@
 }
 
 @media (max-width: 768px) {
-  .section {
-    padding: 60px 0;
-  }
-  .title {
-    font-size: 2rem;
-  }
-  .card {
-    width: 280px;
-    height: 350px;
-  }
-  .cardContent h3 {
-    font-size: 1.2rem;
-  }
+  .section { padding: 60px 0; }
+  .title { font-size: 2rem; }
+  .card { width: 280px; height: 350px; }
+  .cardContent h3 { font-size: 1.2rem; }
+}
+
+@media (max-width: 425px) {
+  .section { padding: 40px 0; }
+  .title { font-size: 1.8rem; }
+  .subtitle { font-size: 0.95rem; }
+  .card { width: 240px; height: 300px; }
+  .cardContent h3 { font-size: 1.1rem; }
+  .cardContent p { font-size: 0.9rem; }
+}
+
+@media (max-width: 320px) {
+  .title { font-size: 1.5rem; }
+  .card { width: 200px; height: 270px; }
+  .cardContent h3 { font-size: 1rem; }
 }

@@ -141,6 +141,7 @@
 }
 @media (max-width: 900px) {
   .contentWrapper { grid-template-columns: 1fr; gap: 30px; margin-bottom: 50px; }
+  .quoteSection { padding: 50px 40px; }
 }
 @media (max-width: 768px) {
   .infoSection { padding: 60px 0; }
@@ -152,4 +153,8 @@
   .textContent h2 { font-size: 1.8rem; margin-bottom: 16px; }
   .textContent p { font-size: 1rem; margin-bottom: 12px; }
   .quoteText { font-size: 1.5rem; letter-spacing: 1px; }
+}
+@media (max-width: 320px) {
+  .quoteText { font-size: 1.2rem; }
+  .textContent h2 { font-size: 1.5rem; }
 }

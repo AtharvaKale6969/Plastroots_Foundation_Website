@@ -164,18 +164,14 @@
 }
 
 @media (max-width: 1024px) {
-  .heroTitle { font-size: 4rem; }
+  .heroTitle { font-size: 3.5rem; }
 }
 @media (max-width: 768px) {
-  .hero { padding: 140px 5% 60px; min-height: auto; }
+  .hero { padding: 140px 5% 60px; min-height: 350px; }
   .heroTitle { font-size: 2.5rem; }
-  .hero { min-height: 350px; }
-  .heroTitle { font-size: 4rem; }
   .heroDesc { font-size: 1.1rem; }
   .projectsSection { padding: 60px 5%; }
-  .grid {
-    grid-template-columns: 1fr;
-  }
+  .grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 425px) {
   .hero { padding: 120px 5% 40px; min-height: 250px; }

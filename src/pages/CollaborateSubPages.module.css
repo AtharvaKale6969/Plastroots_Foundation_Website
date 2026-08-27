@@ -338,11 +338,12 @@
 
 @media (max-width: 1024px) {
   .pageLayout {
-    grid-template-columns: 350px 1fr;
+    grid-template-columns: 280px 1fr;
     gap: 40px;
   }
-  .heroTitle { font-size: 4rem; }
-  .quoteText { font-size: 2.2rem; }
+  .heroTitle { font-size: 3.5rem; }
+  .quoteText { font-size: 1.9rem; }
+  .infoTitle { font-size: 2rem; }
 }
 
 @media (max-width: 768px) {
