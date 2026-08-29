@@ -22,7 +22,7 @@
 
 .backBtn {
   position: absolute;
-  top: 130px;
+  top: 150px;
   left: 5%;
   z-index: 10;
   display: inline-flex;
@@ -471,12 +471,18 @@
   }
 
   .hero {
-    padding: 140px 20px 60px;
+    padding: 95px 20px 60px;
+    height: auto;
     min-height: auto;
+    justify-content: flex-start;
   }
 
   .backBtn {
-    top: 90px;
+    position: relative;
+    top: auto;
+    left: auto;
+    align-self: flex-start;
+    margin-bottom: 1.5rem;
   }
 
   .heroTitle {
@@ -532,12 +538,12 @@
 
 @media (max-width: 425px) {
   .hero {
-    padding: 140px 20px 40px;
+    padding: 95px 20px 40px;
     min-height: 250px;
   }
 
   .backBtn {
-    top: 95px;
+    top: auto;
   }
 
   .heroTitle {

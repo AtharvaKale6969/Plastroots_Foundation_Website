@@ -7,7 +7,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 60px;
-  align-items: center;
+  align-items: stretch;
 }
 
 .impactHeader {
@@ -15,8 +15,9 @@
   color: var(--white);
   padding: 40px;
   border-radius: 12px;
-  margin-bottom: 40px;
+  margin-bottom: 50px;
   box-shadow: 0 10px 30px rgba(9, 102, 153, 0.2);
+  text-align: center;
 }
 
 .impactHeader h2 {
@@ -35,6 +36,7 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
+  align-content: center;
 }
 
 .statCard {
@@ -105,15 +107,19 @@
 }
 @media (max-width: 768px) {
   .section { padding: 60px 0; }
-  .impactHeader { padding: 30px; }
+  .impactHeader { padding: 30px; margin-bottom: 36px; }
+  .impactHeader h2 { font-size: 1.6rem; }
 }
 @media (max-width: 600px) {
-  .statsGrid { grid-template-columns: 1fr; }
+  .statsGrid { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 425px) {
   .section { padding: 40px 0; }
-  .impactHeader { padding: 24px; margin-bottom: 30px; }
-  .impactHeader h2 { font-size: 1.5rem; }
+  .impactHeader { padding: 24px; margin-bottom: 28px; }
+  .impactHeader h2 { font-size: 1.4rem; }
   .statValue { font-size: 1.5rem; }
   .statCard { padding: 16px 12px; }
+}
+@media (max-width: 375px) {
+  .statsGrid { grid-template-columns: 1fr; }
 }

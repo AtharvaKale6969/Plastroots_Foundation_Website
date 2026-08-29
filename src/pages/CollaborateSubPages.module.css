@@ -86,7 +86,7 @@
 
 .backBtn {
   position: absolute;
-  top: 130px;
+  top: 150px;
   left: 5%;
   z-index: 10;
   display: inline-flex;
@@ -360,8 +360,8 @@
   .cardsGrid {
     grid-template-columns: repeat(2, 1fr);
   }
-  .hero { padding: 140px 5% 60px; min-height: auto; }
-  .backBtn { top: 90px; }
+  .hero { padding: 95px 5% 60px; height: auto; min-height: auto; justify-content: flex-start; }
+  .backBtn { position: relative; top: auto; left: auto; align-self: flex-start; margin-bottom: 1.5rem; }
   .heroTitle { font-size: 2.5rem; }
   .heroDesc { font-size: 1.1rem; }
 }
@@ -371,8 +371,8 @@
   .cardsGrid { grid-template-columns: 1fr; }
   .form { grid-template-columns: 1fr; }
   .formSection { padding: 30px 15px; }
-  .hero { min-height: 250px; padding: 140px 5% 40px; }
-  .backBtn { top: 95px; }
+  .hero { min-height: 250px; padding: 95px 5% 40px; }
+  .backBtn { top: auto; }
   .heroTitle { font-size: 2rem; }
   .heroSubtitle { font-size: 1rem; }
   .featuresGrid { grid-template-columns: 1fr; }

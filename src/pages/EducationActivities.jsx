@@ -119,11 +119,11 @@ const EducationChart = () => {
           <BarChart
             data={data}
             layout="vertical"
-            margin={{ top: 20, right: 30, left: 40, bottom: 5 }}
+            margin={{ top: 20, right: 20, left: 0, bottom: 5 }}
           >
             <CartesianGrid strokeDasharray="3 3" horizontal={false} stroke="#e2e8f0" />
             <XAxis hide={true} type="number" domain={[0, 110]} />
-            <YAxis dataKey="name" type="category" axisLine={false} tickLine={false} tick={{ fill: '#64748b' }} />
+            <YAxis dataKey="name" type="category" width={130} axisLine={false} tickLine={false} tick={{ fill: '#64748b', fontSize: 11 }} />
             <RechartsTooltip content={<CustomTooltip />} cursor={{ fill: '#f1f5f9' }} />
             <Bar dataKey="visualValue" name="Impact" radius={[0, 4, 4, 0]}>
               {data.map((entry, index) => (

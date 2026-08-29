@@ -14,7 +14,7 @@
 
 .backBtn {
   position: absolute;
-  top: 130px;
+  top: 150px;
   left: 5%;
   z-index: 10;
   display: inline-flex;
@@ -39,7 +39,7 @@
 
 @media (max-width: 1024px) {
   .backBtn {
-    top: 85px;
+    top: 120px;
     left: 20px;
     padding: 8px 16px;
     font-size: 0.85rem;
@@ -1209,8 +1209,8 @@
   .heroTitle { font-size: 3rem; }
 }
 @media (max-width: 768px) {
-  .hero { padding: 180px 5% 60px; min-height: auto; }
-  .backBtn { top: 90px; }
+  .hero { padding: 95px 5% 60px; height: auto; min-height: auto; justify-content: flex-start; }
+  .backBtn { position: relative; top: auto; left: auto; align-self: flex-start; margin-bottom: 1.5rem; }
   .heroTitle { font-size: 2.2rem; }
   .heroSubtitle { font-size: 1.1rem; }
   
@@ -1222,13 +1222,14 @@
   .chartWrapper { padding: 1.5rem; }
   
   /* Layout optimizations */
-  div[class*="Container"]:not(.dashboardContainer), section { padding-top: 60px !important; padding-bottom: 60px !important; }
+  div[class*="Container"]:not(.dashboardContainer), .splitSection, .focusSection, .educationSection, .masonrySection, .ctaSection, .recoverySection { padding-top: 60px !important; padding-bottom: 60px !important; }
   .workflowContainer, .facilityGridContainer, .rrcEffectsContainer { margin-top: 40px !important; padding-top: 40px !important; }
   .workflowSteps, .facilityGrid, .effectsGrid, .metricsGrid, .impactGrid { gap: 30px !important; }
   .recoveryHighlights { grid-template-columns: 1fr; }
 }
 @media (max-width: 425px) {
-  .hero { padding: 170px 5% 40px; min-height: 250px; }
+  .hero { padding: 95px 5% 40px; min-height: 250px; }
+  .backBtn { top: auto; }
   .heroTitle { font-size: 2rem; margin-bottom: 15px; }
   .heroSubtitle { font-size: 1rem; margin-bottom: 20px; }
   

@@ -114,16 +114,29 @@ const WasteChart = () => {
     return null;
   };
 
+  const CustomXTick = ({ x, y, payload }) => {
+    const words = payload.value.split(' ');
+    return (
+      <g transform={`translate(${x},${y})`}>
+        {words.map((word, i) => (
+          <text key={i} x={0} dy={6 + i * 13} textAnchor="middle" fill="#64748b" fontSize={11}>
+            {word}
+          </text>
+        ))}
+      </g>
+    );
+  };
+
   return (
-    <div style={{ width: '100%', height: 350, marginTop: '20px' }}>
+    <div style={{ width: '100%', height: 380, marginTop: '20px' }}>
       <InViewChart>
         <ResponsiveContainer width="100%" height="100%">
           <BarChart
             data={data}
-            margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
+            margin={{ top: 20, right: 30, left: 20, bottom: 15 }}
           >
             <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e2e8f0" />
-            <XAxis dataKey="name" axisLine={false} tickLine={false} tick={{ fill: '#64748b' }} />
+            <XAxis dataKey="name" axisLine={false} tickLine={false} tick={<CustomXTick />} interval={0} height={58} />
             <YAxis hide={true} domain={[0, 110]} />
             <RechartsTooltip content={<CustomTooltip />} cursor={{ fill: '#f1f5f9' }} />
             <Bar dataKey="visualValue" radius={[6, 6, 0, 0]}>

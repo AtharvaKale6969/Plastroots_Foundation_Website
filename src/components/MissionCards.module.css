@@ -27,12 +27,17 @@
 .cardImage {
   height: 250px;
   background-color: var(--white);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  position: relative;
-  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin: 10px 20px;
+  overflow: hidden;
+}
+
+.cardIcon {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .cardContent h3 {
@@ -98,11 +103,7 @@
 @media (max-width: 1024px) {
   .section { padding: 60px 0; }
   .grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
-  .cardImage {
-    height: 190px;
-    margin: 8px 16px;
-    background-size: contain !important;
-  }
+  .cardImage { height: 210px; margin: 8px 16px; }
   .cardContent { padding: 24px; }
   .cardContent h3 { font-size: 1.4rem; }
   /* Center the 3rd odd card when grid wraps to 2 columns */

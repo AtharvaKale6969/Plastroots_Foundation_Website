@@ -97,26 +97,6 @@ a:hover {
   color: var(--white);
 }
 
-/* GLOBAL HERO FIX: Prevent flexbox upward overflow under fixed header */
-.page-wrapper > section:first-of-type,
-[class*="pageWrapper"] > section:first-of-type {
-  padding-top: 160px !important;
-  padding-bottom: 100px !important;
-  align-items: flex-start !important;
-}
-
-@media (max-width: 768px) {
-  .page-wrapper > section:first-of-type,
-  [class*="pageWrapper"] > section:first-of-type {
-    padding-top: 140px !important;
-    padding-bottom: 80px !important;
-  }
-}
-
-.page-wrapper > section:first-of-type > div {
-  margin-top: auto;
-  margin-bottom: auto;
-}
 
 /* Remove arrows/spinners from number inputs */
 input::-webkit-outer-spin-button,

@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 import { useNavigate } from 'react-router-dom';
-import { Target, Lightbulb, ChevronRight, Leaf, Recycle, Megaphone, Landmark } from 'lucide-react';
+import { Target, Lightbulb, Leaf, Recycle, Megaphone, Landmark, Home, Users, Briefcase, Check } from 'lucide-react';
 import styles from './AboutUs.module.css';
 
 const teamMembers = [
@@ -14,11 +14,137 @@ const teamMembers = [
 ];
 
 const sdgs = [
-  { id: 3, label: "Good Health", color: "#4C9F38", img: "/Images/SDG/Health.avif" },
-  { id: 5, label: "Gender Equality", color: "#FF3A21", img: "/Images/SDG/Gender_Equality.webp" },
-  { id: 11, label: "Sustainable Cities", color: "#FD6925", img: "/Images/SDG/Sustainable_City.avif" },
-  { id: 13, label: "Climate Action", color: "#3F7E44", img: "/Images/SDG/Climate%20action.jpg" },
-  { id: 6, label: "Clean Water", color: "#26BDE2", img: "/Images/SDG/Clean_Water.jpg" }
+  { id: 3, label: "Good Health & Well-Being", color: "#4C9F38", img: "/Images/SDG/Health.avif", align: "Community health camps, hygiene awareness & sanitation programs" },
+  { id: 5, label: "Gender Equality", color: "#FF3A21", img: "/Images/SDG/Gender_Equality.webp", align: "Women empowerment, skill development & livelihood opportunities" },
+  { id: 11, label: "Sustainable Cities", color: "#FD6925", img: "/Images/SDG/Sustainable_City.avif", align: "Solid waste management & cleaner, more responsible communities" },
+  { id: 13, label: "Climate Action", color: "#3F7E44", img: "/Images/SDG/Climate%20action.jpg", align: "Plastic recovery, recycling & circular economy practices" },
+  { id: 6, label: "Clean Water & Sanitation", color: "#26BDE2", img: "/Images/SDG/Clean_Water.jpg", align: "Water hygiene initiatives & responsible waste disposal" }
+];
+
+const focusAreas = [
+  {
+    number: "01",
+    Icon: Recycle,
+    variant: "green",
+    title: "Sustainable Waste Management & Circular Economy",
+    bullets: [
+      "Implement waste management solutions in villages, towns and cities",
+      "Promote source segregation, collection, sorting, recycling and resource recovery",
+      "Operate MRF/RRC centres and plastic waste management initiatives",
+      "Reduce open dumping and promote responsible food waste management",
+      "Encourage reuse, recycling and recovery of materials"
+    ],
+    impact: "We aim to reduce waste reaching landfills, recover valuable resources and build cleaner communities through a circular economy approach."
+  },
+  {
+    number: "02",
+    Icon: Megaphone,
+    variant: "blue",
+    title: "Environmental Awareness & Behaviour Change (IEC)",
+    bullets: [
+      "Conduct IEC campaigns in schools, colleges, villages and urban communities",
+      "Organise awareness sessions, workshops, street plays and cleanliness drives",
+      "Promote waste segregation, plastic reduction and responsible consumption",
+      "Engage students, youth, citizens and local institutions in environmental action",
+      "Conduct door-to-door campaigns and community engagement activities"
+    ],
+    impact: "We aim to turn awareness into action by changing everyday habits and encouraging people to take responsibility for their environment."
+  },
+  {
+    number: "03",
+    Icon: Home,
+    variant: "green",
+    title: "Rural, Community Development & Health",
+    bullets: [
+      "Work with villages, local bodies and communities to address local needs",
+      "Conduct health, hygiene and sanitation awareness programmes",
+      "Support cleanliness, sanitation and community-development initiatives",
+      "Promote tree plantation and healthy, sustainable community practices",
+      "Build participation through local partnerships and grassroots initiatives"
+    ],
+    impact: "We aim to create cleaner, healthier and more resilient communities where environmental improvement and well-being grow together."
+  },
+  {
+    number: "04",
+    Icon: Users,
+    variant: "blue",
+    title: "Women Empowerment, Livelihood & Skill Development",
+    bullets: [
+      "Conduct skill-development and capacity-building programmes",
+      "Create livelihood opportunities linked to waste management and sustainability",
+      "Support women's participation in waste collection, segregation and recycling",
+      "Provide training in practical, entrepreneurial and income-generating skills",
+      "Encourage women's leadership, confidence and economic participation"
+    ],
+    impact: "We aim to create opportunities, dignity and economic independence for women, enabling them to become active contributors and leaders in their communities."
+  },
+  {
+    number: "05",
+    Icon: Briefcase,
+    variant: "green",
+    title: "CSR, Sustainability & Community Impact",
+    bullets: [
+      "Design and implement CSR projects with corporates and institutions",
+      "Develop projects based on real environmental and community needs",
+      "Implement initiatives in waste management, education, health and community development",
+      "Build long-term partnerships for scalable and sustainable solutions",
+      "Monitor, document and measure project outcomes and impact"
+    ],
+    impact: "We transform CSR support into meaningful, measurable impact — creating partnerships that contribute to environmental sustainability and community development."
+  }
+];
+
+const journeyMilestones = [
+  {
+    year: "2019",
+    Icon: Leaf,
+    variant: "seed",
+    title: "The Seed Was Planted",
+    subtitle: "Parent Company Founded",
+    image: "/Images/Our%20Journey/About-us-1024x587.jpeg",
+    body: "Our parent company, Plastroots Waste Management & Solutions Pvt. Ltd., began working in waste management. There was no Foundation yet — but the work, the challenges, the learning and the dream of creating a cleaner and more sustainable society had already begun.",
+    highlight: "We worked with communities, understood the realities of waste management and witnessed the challenges faced by villages."
+  },
+  {
+    year: "2023",
+    Icon: Leaf,
+    variant: "green",
+    title: "Foundation Established",
+    subtitle: "RRC Experiment Begins",
+    image: "/Images/Our%20Journey/About-us-1024x587.jpeg",
+    body: "Plastroots Foundation officially began as a Section 8 non-profit. We established an RRC (Resource Recovery Centre) as an experimental model to understand what sustainable, community-level waste management could look like — and it became a learning ground that gave us confidence to move forward.",
+    highlight: "The RRC became more than a waste centre. It became a model for what community-driven waste management could look like."
+  },
+  {
+    year: "2024",
+    Icon: Recycle,
+    variant: "blue",
+    title: "Rural Expansion & Women Empowerment",
+    subtitle: "Zilla Parishad Partnership",
+    image: "/Images/Our%20Journey/WhatsApp%20Image%202026-06-11%20at%202.55.58%20PM.jpeg",
+    body: "Our work expanded into rural areas through a Zilla Parishad partnership. Recognising that women are central to sustainable waste operations, we began formal SHG programmes, regular health check-ups, ration support and safety facilities for women Safai Kamgars.",
+    highlight: "We were no longer only managing waste — we were building a system where the environment and the people working for it could grow together."
+  },
+  {
+    year: "2025",
+    Icon: Megaphone,
+    variant: "green",
+    title: "CSR & Bottle for Change",
+    subtitle: "Bisleri Partnership",
+    image: "/Images/Our%20Journey/Plastroots%20Foundation%20organized%20an%20Awareness%20Rally%20at%20Z.P.U.%20Primary%20School,%20Nanda%20(Koradi)%20und.webp",
+    body: "We entered the CSR space with Bisleri's Bottle for Change project. Through awareness activities and community engagement, we carried an important message: plastic waste, when managed responsibly, can be recovered and recycled.",
+    highlight: "Community participation + environmental awareness + structured waste management — all at a larger scale."
+  },
+  {
+    year: "2026",
+    Icon: Landmark,
+    variant: "blue",
+    title: "MRF Expansion & Scaling the Mission",
+    subtitle: "6 New RRC/MRF Centres Planned",
+    image: "/Images/Our%20Journey/RRC.png",
+    body: "Based on our RRC experience, we are now heading towards establishing six more RRC/MRF centres across Nagpur district with Zilla Parishad. Our focus is MRF operations, solid waste management, IEC programmes and tackling illegal dumping.",
+    highlight: "RRC Experiment → Model → Opportunity → A larger vision of sustainable waste management across Nagpur and beyond."
+  }
 ];
 
 const AnimatedNumber = ({ value }) => {
@@ -29,56 +155,23 @@ const AnimatedNumber = ({ value }) => {
   useEffect(() => {
     if (isInView) {
       let iterations = 0;
-      const maxIterations = 20; // How many times it flashes
+      const maxIterations = 20;
       const finalValueStr = value < 10 ? `0${value}` : `${value}`;
-
       const interval = setInterval(() => {
         if (iterations >= maxIterations) {
           clearInterval(interval);
           setDisplayValue(finalValueStr);
         } else {
-          // Lottery effect: flash random matching double digits (e.g. 77, 88, 99)
           const randomDigit = Math.floor(Math.random() * 9) + 1;
           setDisplayValue(`${randomDigit}${randomDigit}`);
           iterations++;
         }
-      }, 60); // 60ms between flashes
-
+      }, 60);
       return () => clearInterval(interval);
     }
   }, [isInView, value]);
 
   return <span ref={ref}>{displayValue}</span>;
-};
-
-const AnimatedText = ({ text, className }) => {
-  const words = text.split(" ");
-  return (
-    <motion.div 
-      className={className}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.3 }}
-      variants={{
-        visible: { transition: { staggerChildren: 0.03 } }
-      }}
-    >
-      {words.map((word, i) => (
-        <React.Fragment key={i}>
-          <motion.span
-            variants={{
-              hidden: { opacity: 0, filter: 'blur(10px)', y: 10 },
-              visible: { opacity: 1, filter: 'blur(0px)', y: 0 }
-            }}
-            style={{ display: "inline-block", willChange: "opacity, filter, transform" }}
-          >
-            {word}
-          </motion.span>
-          {" "}
-        </React.Fragment>
-      ))}
-    </motion.div>
-  );
 };
 
 const AboutUs = () => {
@@ -87,13 +180,13 @@ const AboutUs = () => {
     <div className={styles.aboutPage}>
       <Helmet>
         <title>About Us - Plastroots Foundation</title>
-        <meta name="description" content="Learn about our mission to turn waste into opportunity. Plastroots Foundation operates at the grassroots to foster environmental stewardship and build a circular future." />
+        <meta name="description" content="Born from a 2019 dream, Plastroots Foundation is a Section 8 non-profit committed to sustainable waste management, rural development, women empowerment and environmental awareness." />
       </Helmet>
-      
+
       {/* 1. Hero Section */}
       <section className={styles.heroSection}>
         <div className={styles.heroLeft}>
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
@@ -101,27 +194,23 @@ const AboutUs = () => {
             <div className={styles.heroEyebrow}>About Us</div>
             <h1 className={styles.heroTitle}>Plastroots Foundation</h1>
             <p className={styles.heroSubtitle}>
-              Plastroots Foundation is a not-for-profit organization registered under Section 8 of the Companies Act 2013, committed to driving a positive change through our integrated approach to social, economic and environmental initiatives. With our passion for transformation, we strive to create a sustainable impact and empower communities.
+              Born from a 2019 dream and officially established in 2023, Plastroots Foundation is a Section 8 non-profit committed to sustainable waste management, rural development, women empowerment and environmental awareness — because real change must reach the ground where people live.
             </p>
             <div className={styles.heroButtons}>
               <button className={styles.primaryBtn} onClick={() => navigate('/contact')}>Get In Touch</button>
-              <button className={styles.secondaryBtn} onClick={() => navigate('/initiatives')}>Plastroots Foundation Initiatives</button>
+              <button className={styles.secondaryBtn} onClick={() => navigate('/initiatives')}>Our Initiatives</button>
             </div>
           </motion.div>
         </div>
         <div className={styles.heroRight}>
-          <motion.div 
+          <motion.div
             className={styles.imageWrapper}
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <div className={styles.heroImageCrop}>
-              <img 
-                src="/Images/DSC06325.JPG" 
-                alt="About Plastroots Foundation" 
-                className={styles.heroImage}
-              />
+              <img src="/Images/DSC06325.JPG" alt="About Plastroots Foundation" className={styles.heroImage} />
             </div>
             <div className={styles.directorQuoteCard}>
               <div className={styles.quoteIcon}>"</div>
@@ -134,101 +223,114 @@ const AboutUs = () => {
         </div>
       </section>
 
-      {/* 2. Basic About Us: Who We Are & Core Focus Areas */}
-      <section className={styles.splitSection}>
-        <div className={styles.leftPanel}>
-          <div className={styles.panelTitle}>Our Core Belief</div>
-          <AnimatedText 
-            className={styles.quoteBlock}
-            text="Every piece of waste has a story. Most end up in landfills, drains, or open spaces, quietly choking our environment. We believe they deserve a better ending."
-          />
-          <div className={styles.highlightText}>
-            "Turning Waste Into Opportunity"
-          </div>
-          <div className={styles.subText}>
-            Working at the absolute grassroots of rural and peri-urban India, we don't just manage waste, we transform it into valuable resources. By empowering communities and fostering environmental stewardship, we are bridging the gap between ecology and economy to build a circular future where nothing is wasted and everyone thrives, one community at a time.
-          </div>
-          
-          <div className={styles.leftPanelImageGrid}>
-            <div className={styles.leftPanelImageCard}>
-              <img src="/Images/Gallery/IMG_20260425_142236_073.jpg.jpeg" alt="Initiative 1" />
-            </div>
-            <div className={styles.leftPanelImageCard}>
-              <img src="/Images/Initivaties-2.jpeg" alt="Initiative 2" />
-            </div>
-          </div>
-        </div>
-        
-        <div className={styles.rightPanel}>
-          <h2 className={styles.rightTitle}>WHO WE ARE?</h2>
-          <p className={styles.rightText}>
-            Plastroots Foundation was founded on a simple yet profound conviction: lasting environmental change must take root at the community level. Operating at the critical intersection of ecological preservation, sustainable livelihoods, and public health, we actively engage with India's rural and peri-urban landscapes. Rather than waiting for waste crises to overwhelm urban centers, we proactively intervene where the challenges originate, working hand-in-hand with local residents to forge resilient, community-led solutions.
-          </p>
-          <p className={styles.rightText} style={{ marginTop: '1rem' }}>
-            Our mission extends beyond mere waste management; we are dedicated to building a thriving circular economy that benefits everyone. By transforming discarded materials into valuable resources, we create new economic opportunities while safeguarding natural ecosystems. Through grassroots education, women's empowerment, and strategic partnerships, Plastroots Foundation is committed to nurturing a generation of environmental stewards and proving that true sustainability is born from local action.
-          </p>
-          
-          <h3 className={styles.focusAreaTitle}>Core Focus Areas</h3>
-          <div className={styles.focusAreas}>
-            <div className={styles.focusCard}>
-              <div className={styles.focusCardTitle}>Rural Resource Recovery Centres (R-RRC)</div>
-              <div className={styles.focusCardText}>Building community-based systems for waste collection, segregation, resource recovery, and responsible recycling.</div>
-            </div>
-            <div className={styles.focusCard}>
-              <div className={styles.focusCardTitle}>Information, Education & Communication (IEC)</div>
-              <div className={styles.focusCardText}>Creating awareness and driving behavioural change through campaigns, workshops, school programs, and community engagement activities.</div>
-            </div>
-            <div className={styles.focusCard}>
-              <div className={styles.focusCardTitle}>CSR Project Implementation</div>
-              <div className={styles.focusCardText}>Designing and executing impactful CSR initiatives with end-to-end planning, implementation, monitoring, and reporting.</div>
-            </div>
+      {/* 2. Origin Story */}
+      <section className={styles.storySection}>
+        <div className="container">
+          <div className={styles.storyGrid}>
+            <motion.div
+              className={styles.storyLeft}
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+            >
+              <span className={styles.sectionEyebrow}>Who We Are — Our Story</span>
+              <h2 className={styles.storyHeadline}>
+                A Movement That<br />
+                <span className={styles.accentGreen}>Found Its Name</span>
+              </h2>
+              <p className={styles.storySubheadline}>
+                Our roots go deeper than our founding date — this is where the story really began.
+              </p>
+              <p className={styles.storyBody}>
+                If you ask us when the dream began, we would take you back to 2019 — four years before we had an official name.
+              </p>
+              <p className={styles.storyBody}>
+                Our parent company, Plastroots Waste Management & Solutions Pvt. Ltd., started working in waste management with a simple conviction: change must reach the ground where people live, not remain a conversation.
+              </p>
+              <p className={styles.storyBody}>
+                As we worked on the ground, we realised waste management is about people — awareness, dignity, livelihoods and responsibility. That understanding gave birth to Plastroots Foundation. Today, our work goes beyond waste, from villages to cities, because the need for responsible waste management has no boundaries.
+              </p>
+            </motion.div>
+
+            <motion.div
+              className={styles.storyRight}
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, delay: 0.15 }}
+            >
+              <div className={styles.manifestoCard}>
+                <div className={styles.manifestoHeader}>
+                  <div className={styles.manifestoHeaderIcon}>
+                    <Leaf size={18} />
+                  </div>
+                  <span className={styles.manifestoLabel}>What We Stand For Today</span>
+                </div>
+                <ul className={styles.manifestoList}>
+                  {[
+                    "Create awareness in communities",
+                    "Encourage responsible waste segregation",
+                    "Support waste management systems",
+                    "Create opportunities for communities",
+                    "Empower women through skills & livelihoods",
+                    "Work with local bodies for lasting solutions"
+                  ].map((item, i) => (
+                    <li key={i}>
+                      <span className={styles.manifestoCheck}><Check size={14} /></span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+                <blockquote className={styles.manifestoQuote}>
+                  "Real change happens when people become a part of the solution."
+                </blockquote>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
 
-      {/* 3. Mission, Vision & SDG Goals */}
-      <section className={styles.visionMissionSection} style={{ marginTop: '50px', zIndex: 1, position: 'relative' }}>
-        <motion.div 
-          className={styles.card}
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <div className={styles.iconWrapper}>
-            <Target size={40} />
+      {/* 4. Core Focus Areas */}
+      <section className={styles.focusSection}>
+        <div className="container">
+          <div className={styles.focusSectionHeader}>
+            <h2 className={styles.sectionTitle}>Our Core Focus Areas</h2>
+            <p className={styles.sectionSubtitle}>Five pillars through which we create lasting, sustainable community impact</p>
           </div>
-          <h2 className={styles.cardTitle}>Vision</h2>
-          <p className={styles.cardText}>
-            Our vision is to empower marginalized communities, foster inclusivity and pave the way for a sustainable and equitable future.
-          </p>
-        </motion.div>
-
-        <motion.div 
-          className={styles.card}
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-        >
-          <div className={styles.iconWrapper}>
-            <Lightbulb size={40} />
+          <div className={styles.focusGrid}>
+            {focusAreas.map((area, i) => (
+              <motion.div
+                key={i}
+                className={`${styles.focusCard} ${area.variant === 'blue' ? styles.focusCardBlue : styles.focusCardGreen}`}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.08 }}
+              >
+                <div className={styles.focusCardTop}>
+                  <span className={styles.focusNumber}>{area.number}</span>
+                  <div className={styles.focusIconWrap}><area.Icon size={24} /></div>
+                </div>
+                <h3 className={styles.focusCardTitle}>{area.title}</h3>
+                <ul className={styles.focusBullets}>
+                  {area.bullets.slice(0, 4).map((b, j) => <li key={j}>{b}</li>)}
+                </ul>
+              </motion.div>
+            ))}
           </div>
-          <h2 className={styles.cardTitle}>Mission</h2>
-          <p className={styles.cardText}>
-            Our mission includes improving working conditions, promoting gender equality and women's empowerment with environmental awareness & health. We preserve nature's diversity, promote upcycled/recycled products for a circular economy, seeking collaborations for mutual support and resources.
-          </p>
-        </motion.div>
+        </div>
       </section>
 
+      {/* 5. SDG Goals */}
       <section className={styles.sdgSection}>
         <h2 className={styles.sectionTitle}>Sustainable Development Goals</h2>
         <p className={styles.sectionSubtitle}>We are deeply committed to aligning our initiatives with the United Nations Sustainable Development Goals to create a better world.</p>
         <div className={styles.sdgGrid}>
           {sdgs.map((sdg) => (
-            <motion.div 
-              key={sdg.id} 
-              className={styles.sdgItem} 
+            <motion.div
+              key={sdg.id}
+              className={styles.sdgItem}
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
@@ -237,123 +339,74 @@ const AboutUs = () => {
                 <img src={sdg.img} alt={sdg.label} className={styles.sdgImage} />
               </div>
               <div className={styles.sdgContent} style={{ borderTop: `4px solid ${sdg.color}` }}>
-                <h3 className={styles.sdgId} style={{ color: sdg.color }}><AnimatedNumber value={sdg.id} /></h3>
-                <p className={styles.sdgLabel}>{sdg.label}</p>
+                <p className={styles.sdgLabel} style={{ color: sdg.color }}>{sdg.label}</p>
+                <p className={styles.sdgAlign}>{sdg.align}</p>
               </div>
             </motion.div>
           ))}
         </div>
       </section>
 
-      {/* 4. History & Journey Next */}
+      {/* 6. Journey Timeline */}
       <section className={styles.journeySection}>
+        <div className={styles.journeyInner}>
         <div className={styles.journeyLeft}>
           <h2 className={styles.journeyTitle}>Our Journey</h2>
           <div className={styles.journeySubtitle}>From Idea to Impact</div>
-          <p className={styles.journeyText} style={{ marginBottom: '1.5rem', fontStyle: 'italic', fontWeight: 500, color: 'var(--brand-green)' }}>
+          <p className={styles.journeyText} style={{ fontStyle: 'italic', fontWeight: 500, color: 'var(--brand-green)', marginBottom: '2rem' }}>
             "Every Meaningful Change Starts With A Simple Step."
           </p>
-          <p className={styles.journeyText}>
-            What began as a grassroots effort to address local waste challenges has evolved into a movement driven by awareness, community participation, resource recovery, and sustainable action.
-          </p>
-          <br/>
-          <p className={styles.journeyText}>
-            Over the years, we have expanded our efforts from local awareness programs to comprehensive waste management systems, CSR partnerships, and large-scale community engagement initiatives.
-          </p>
+          <div className={styles.journeyYears}>
+            {journeyMilestones.map((m, i) => (
+              <div key={i} className={styles.journeyYearItem}>
+                <span className={`${styles.journeyYearDot} ${m.variant === 'seed' ? styles.journeyYearDotSeed : ''}`} />
+                <div>
+                  <span className={styles.journeyYearLabel}>{m.year}</span>
+                  <span className={styles.journeyYearTitle}>{m.title}</span>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
 
         <div className={styles.timelinePanel}>
-          {/* 2023 */}
-          <motion.div 
-            className={styles.timelineItem}
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: false, amount: 0.3 }}
-            transition={{ duration: 0.6, type: "spring", bounce: 0.2 }}
-          >
-            <div className={styles.timelineIcon}><Leaf size={35} /></div>
-            <div className={styles.timelineContent}>
-              <div className={styles.timelineYear}>2023</div>
-              <div className={styles.timelineImageWrapper}>
-                <img src="/Images/Our%20Journey/About-us-1024x587.jpeg" alt="2023 Journey" className={styles.timelineImage} />
+          {journeyMilestones.map((milestone, i) => (
+            <motion.div
+              key={i}
+              className={styles.timelineItem}
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: false, amount: 0.3 }}
+              transition={{ duration: 0.6, type: "spring", bounce: 0.2 }}
+            >
+              <div className={`${styles.timelineIcon} ${
+                milestone.variant === 'blue' ? styles.timelineIconBlue :
+                milestone.variant === 'seed' ? styles.timelineIconSeed : ''
+              }`}>
+                <milestone.Icon size={35} />
               </div>
-              <div className={styles.timelineContentTitle}>FOUNDATION ESTABLISHED</div>
-              <div className={styles.timelineContentText}>A vision for sustainable communities took root.</div>
-              <div className={styles.timelineBubble}>
-                We started with simple belief - communities can lead the way towards a cleaner, greener future.
+              <div className={`${styles.timelineContent} ${
+                milestone.variant === 'blue' ? styles.timelineContentBlue :
+                milestone.variant === 'seed' ? styles.timelineContentSeed : ''
+              }`}>
+                <div className={styles.timelineYear}>{milestone.year}</div>
+                <span className={styles.timelineSubtitleBadge}>{milestone.subtitle}</span>
+                <div className={styles.timelineImageWrapper}>
+                  <img src={milestone.image} alt={`${milestone.year} Journey`} className={styles.timelineImage} />
+                </div>
+                <div className={styles.timelineContentTitle}>{milestone.title}</div>
+                <div className={styles.timelineContentText}>{milestone.body}</div>
+                <div className={`${styles.timelineBubble} ${milestone.variant === 'blue' ? styles.bubbleBlue : milestone.variant === 'seed' ? styles.bubbleSeed : ''}`}>
+                  {milestone.highlight}
+                </div>
               </div>
-            </div>
-          </motion.div>
-
-          {/* 2024 */}
-          <motion.div 
-            className={styles.timelineItem}
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: false, amount: 0.3 }}
-            transition={{ duration: 0.6, type: "spring", bounce: 0.2 }}
-          >
-            <div className={`${styles.timelineIcon} ${styles.timelineIconBlue}`}><Recycle size={35} /></div>
-            <div className={`${styles.timelineContent} ${styles.timelineContentBlue}`}>
-              <div className={styles.timelineYear}>2024</div>
-              <div className={styles.timelineImageWrapper}>
-                <img src="/Images/Our%20Journey/WhatsApp%20Image%202026-06-11%20at%202.55.58%20PM.jpeg" alt="2024 Journey" className={styles.timelineImage} />
-              </div>
-              <div className={styles.timelineContentTitle}>Pilot Programs & Capacity Building</div>
-              <div className={styles.timelineContentText}>Volunteer Mobilization & Planning.</div>
-              <div className={`${styles.timelineBubble} ${styles.bubbleBlue}`}>
-                The foundation moved from vision to action by initiating pilot projects and building the capacity needed for long-term community impact.
-              </div>
-            </div>
-          </motion.div>
-
-          {/* 2025 */}
-          <motion.div 
-            className={styles.timelineItem}
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: false, amount: 0.3 }}
-            transition={{ duration: 0.6, type: "spring", bounce: 0.2 }}
-          >
-            <div className={styles.timelineIcon}><Megaphone size={35} /></div>
-            <div className={styles.timelineContent}>
-              <div className={styles.timelineYear}>2025</div>
-              <div className={styles.timelineImageWrapper}>
-                <img src="/Images/Our%20Journey/Plastroots%20Foundation%20organized%20an%20Awareness%20Rally%20at%20Z.P.U.%20Primary%20School,%20Nanda%20(Koradi)%20und.webp" alt="2025 Journey" className={styles.timelineImage} />
-              </div>
-              <div className={styles.timelineContentTitle}>IEC Community Engagement & CSR Partnerships</div>
-              <div className={styles.timelineContentText}>Schools & Communities became active participants in environmental change.</div>
-              <div className={styles.timelineBubble}>
-                IEC activities, school programs & campaigns helped spread awareness & inspire action.
-              </div>
-            </div>
-          </motion.div>
-
-          {/* 2026 */}
-          <motion.div 
-            className={styles.timelineItem}
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: false, amount: 0.3 }}
-            transition={{ duration: 0.6, type: "spring", bounce: 0.2 }}
-          >
-            <div className={`${styles.timelineIcon} ${styles.timelineIconBlue}`}><Landmark size={35} /></div>
-            <div className={`${styles.timelineContent} ${styles.timelineContentBlue}`}>
-              <div className={styles.timelineYear}>2026</div>
-              <div className={styles.timelineImageWrapper}>
-                <img src="/Images/Our%20Journey/RRC.png" alt="2026 Journey" className={styles.timelineImage} />
-              </div>
-              <div className={styles.timelineContentTitle}>RRC Operations & Government Projects</div>
-              <div className={styles.timelineContentText}>RRC helped strengthen local waste management.</div>
-              <div className={`${styles.timelineBubble} ${styles.bubbleBlue}`}>
-                What started with community-based waste management grew into larger collaborations, helping us scale sustainable solutions and reach more communities & Government bodies.
-              </div>
-            </div>
-          </motion.div>
+            </motion.div>
+          ))}
+        </div>
         </div>
       </section>
 
-      {/* 5. Impact & Contribution */}
+      {/* 7. Impact Stats */}
       <section className={styles.impactSection}>
         <h2 className={styles.sectionTitle}>Our Contribution to Society</h2>
         <p className={styles.sectionSubtitle}>
@@ -369,8 +422,8 @@ const AboutUs = () => {
             { value: "6,500+", label: "Tonnes Plastic Recycled" },
             { value: "270+", label: "Awareness Sessions Conducted" }
           ].map((stat, index) => (
-            <motion.div 
-              key={index} 
+            <motion.div
+              key={index}
               className={styles.impactCard}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -384,19 +437,18 @@ const AboutUs = () => {
         </div>
       </section>
 
-      {/* 6. Team Members Section */}
+      {/* 8. Team */}
       <section className={styles.teamSection}>
         <h2 className={styles.sectionTitle}>Leadership & Visionaries</h2>
         <p className={styles.sectionSubtitle}>
           The dedicated minds and passionate innovators driving our mission to create a sustainable, empowered future.
         </p>
-        
+
         <div className={styles.teamContainer}>
-          {/* Left Column (Dilip & Apurva) */}
           <div className={styles.sideColumn}>
             {[teamMembers[1], teamMembers[2]].map((member, index) => (
-              <motion.div 
-                key={`left-${index}`} 
+              <motion.div
+                key={`left-${index}`}
                 className={styles.teamCardSmall}
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -416,9 +468,8 @@ const AboutUs = () => {
             ))}
           </div>
 
-          {/* Center Column (Kapil) */}
           <div className={styles.centerColumn}>
-            <motion.div 
+            <motion.div
               className={styles.teamCardLarge}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -438,11 +489,10 @@ const AboutUs = () => {
             </motion.div>
           </div>
 
-          {/* Right Column (Nikita & Rohit) */}
           <div className={styles.sideColumn}>
             {[teamMembers[3], teamMembers[4]].map((member, index) => (
-              <motion.div 
-                key={`right-${index}`} 
+              <motion.div
+                key={`right-${index}`}
                 className={styles.teamCardSmall}
                 initial={{ opacity: 0, x: 30 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -463,7 +513,6 @@ const AboutUs = () => {
           </div>
         </div>
       </section>
-
     </div>
   );
 };

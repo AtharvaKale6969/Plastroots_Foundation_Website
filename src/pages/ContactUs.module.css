@@ -2,7 +2,7 @@
   position: relative;
   height: 60vh;
   min-height: 400px;
-  background: linear-gradient(135deg, rgba(9, 102, 153, 0.15), rgba(6, 75, 115, 0.2)), url("/Images/Contact_Out_Hero Section.png") center/cover no-repeat;
+  background: linear-gradient(135deg, rgba(9, 102, 153, 0.15), rgba(6, 75, 115, 0.2)), url("/Images/Contact_Us page.png") center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -319,6 +319,15 @@ textarea.formInput {
   height: 100%;
   border: none;
   filter: contrast(110%);
+}
+
+/* LARGE DESKTOP */
+@media (min-width: 1200px) {
+  .hero {
+    height: 75vh;
+    min-height: 540px;
+    background: linear-gradient(135deg, rgba(9, 102, 153, 0.1), rgba(6, 75, 115, 0.14)), url("/Images/Contact_Us page.png") center 65%/cover no-repeat;
+  }
 }
 
 /* RESPONSIVE HERO */

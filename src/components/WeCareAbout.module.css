@@ -1,7 +1,6 @@
 .section {
   padding: 80px 0;
   background-color: var(--white);
-  overflow: hidden;
 }
 
 .header {
@@ -25,52 +24,25 @@
   font-size: 1.1rem;
 }
 
-.carouselContainer {
-  width: 100%;
-  overflow: hidden;
-  position: relative;
-  /* Add subtle gradient masks to fade the edges */
-  mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
-  -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
-  padding: 20px 0;
-}
-
-.carouselTrack {
-  display: flex;
-  gap: 30px;
-  width: max-content;
-  animation: scroll 40s linear infinite;
-}
-
-/* Pause animation on hover */
-.carouselContainer:hover .carouselTrack {
-  animation-play-state: paused;
-}
-
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    /* Since we duplicated the array, scrolling exactly half the width makes it seamless */
-    transform: translateX(calc(-50% - 15px)); 
-  }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
 }
 
 .card {
-  width: 350px;
-  height: 400px;
+  height: 260px;
   border-radius: 16px;
   overflow: hidden;
   position: relative;
-  flex-shrink: 0;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
 }
 
 .card:hover {
-  transform: translateY(-10px);
+  transform: translateY(-6px);
+  box-shadow: 0 16px 36px rgba(0,0,0,0.15);
 }
 
 .cardImage {
@@ -83,55 +55,68 @@
 }
 
 .card:hover .cardImage {
-  transform: scale(1.1);
+  transform: scale(1.07);
 }
 
 .cardOverlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.1) 100%);
+  background: linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.35) 55%, rgba(0,0,0,0.05) 100%);
   display: flex;
   align-items: flex-end;
-  padding: 30px;
+  padding: 24px;
 }
 
 .cardContent h3 {
   color: var(--white);
-  font-size: 1.4rem;
+  font-size: 1.15rem;
   font-weight: 700;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
   line-height: 1.3;
 }
 
 .cardContent p {
   color: rgba(255, 255, 255, 0.85);
-  font-size: 0.95rem;
+  font-size: 0.875rem;
   line-height: 1.5;
-  /* Add max height and overflow to prevent huge descriptions breaking layout */
   display: -webkit-box;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .grid { grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .card { height: 230px; }
 }
 
 @media (max-width: 768px) {
   .section { padding: 60px 0; }
   .title { font-size: 2rem; }
-  .card { width: 280px; height: 350px; }
-  .cardContent h3 { font-size: 1.2rem; }
+  .grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .card { height: 220px; }
+  .cardContent h3 { font-size: 1.05rem; }
 }
 
 @media (max-width: 425px) {
   .section { padding: 40px 0; }
   .title { font-size: 1.8rem; }
   .subtitle { font-size: 0.95rem; }
-  .card { width: 240px; height: 300px; }
-  .cardContent h3 { font-size: 1.1rem; }
-  .cardContent p { font-size: 0.9rem; }
+  .grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .card { height: 180px; }
+  .cardContent h3 { font-size: 0.95rem; }
+  .cardContent p { font-size: 0.8rem; }
+  .cardOverlay { padding: 16px; }
+}
+
+@media (max-width: 375px) {
+  .grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .card { height: 165px; }
 }
 
 @media (max-width: 320px) {
   .title { font-size: 1.5rem; }
-  .card { width: 200px; height: 270px; }
-  .cardContent h3 { font-size: 1rem; }
+  .grid { grid-template-columns: 1fr; gap: 12px; }
+  .card { height: 200px; }
 }

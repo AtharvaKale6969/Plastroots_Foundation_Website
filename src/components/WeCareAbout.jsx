@@ -35,9 +35,6 @@ const features = [
 ];
 
 const WeCareAbout = () => {
-  // Duplicate features array for seamless infinite scroll
-  const duplicatedFeatures = [...features, ...features];
-
   return (
     <section className={styles.section}>
       <div className="container">
@@ -45,15 +42,13 @@ const WeCareAbout = () => {
           <h2 className={styles.title}>How We Are Changing the Narrative</h2>
           <p className={styles.subtitle}>Our action plan for driving lasting impact</p>
         </div>
-      </div>
-      
-      <div className={styles.carouselContainer}>
-        <div className={styles.carouselTrack}>
-          {duplicatedFeatures.map((feature, index) => (
+
+        <div className={styles.grid}>
+          {features.map((feature, index) => (
             <div key={index} className={styles.card}>
-              <div 
-                className={styles.cardImage} 
-                style={{ backgroundImage: `url('${feature.image}')` }} 
+              <div
+                className={styles.cardImage}
+                style={{ backgroundImage: `url('${feature.image}')` }}
               />
               <div className={styles.cardOverlay}>
                 <div className={styles.cardContent}>

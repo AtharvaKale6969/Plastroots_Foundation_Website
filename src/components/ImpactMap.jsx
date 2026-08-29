@@ -10,62 +10,27 @@ const ImpactMap = () => {
   return (
     <section className={styles.section}>
       <div className="container">
+
+        {/* Full-width header */}
+        <motion.div
+          className={styles.impactHeader}
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <h2>Our Impact - PLASTROOTS FOUNDATION</h2>
+          <p>
+            Together we are creating a lasting, sustainable impact in India.
+            Our reach continues to grow, and our numbers reflect our dedication
+            to environmental stewardship and community empowerment.
+          </p>
+        </motion.div>
+
+        {/* Map + Stats side by side */}
         <div className={styles.grid}>
 
-          {/* Left Column: Impact Header & Stats */}
-          <div className={styles.leftCol}>
-            <motion.div
-              className={styles.impactHeader}
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <h2>Our Impact - PLASTROOTS FOUNDATION</h2>
-              <p>
-                Together we are creating a lasting, sustainable impact in India.
-                Our reach continues to grow, and our numbers reflect our dedication
-                to environmental stewardship and community empowerment.
-              </p>
-            </motion.div>
-
-            <motion.div
-              className={styles.statsGrid}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={{
-                hidden: { opacity: 0 },
-                visible: { opacity: 1, transition: { staggerChildren: 0.2 } }
-              }}
-            >
-              <motion.div className={styles.statCard} variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}>
-                <div className={styles.statLabel}>Schools Reached</div>
-                <div className={styles.statValue}>20+</div>
-                <div className={styles.statDesc}>Awareness in Nagpur District</div>
-              </motion.div>
-
-              <motion.div className={styles.statCard} variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}>
-                <div className={styles.statLabel}>Swachchta Sathis</div>
-                <div className={styles.statValue}>25+</div>
-                <div className={styles.statDesc}>Uplifted & empowered</div>
-              </motion.div>
-
-              <motion.div className={styles.statCard} variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}>
-                <div className={styles.statLabel}>People Impacted</div>
-                <div className={`${styles.statValue} ${styles.statHighlight}`}>10,000+</div>
-                <div className={styles.statDesc}>Direct & indirect beneficiaries</div>
-              </motion.div>
-
-              <motion.div className={styles.statCard} variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}>
-                <div className={styles.statLabel}>SHGs Trained</div>
-                <div className={styles.statValue}>210+</div>
-                <div className={styles.statDesc}>Waste management practices</div>
-              </motion.div>
-            </motion.div>
-          </div>
-
-          {/* Right Column: Interactive Map */}
+          {/* Left: Interactive Map */}
           <motion.div
             className={styles.mapContainer}
             initial={{ opacity: 0, scale: 0.95 }}
@@ -77,7 +42,7 @@ const ImpactMap = () => {
               projection="geoMercator"
               projectionConfig={{
                 scale: 800,
-                center: [82.5, 24] // Center coordinates for India
+                center: [82.5, 24]
               }}
               width={450}
               height={480}
@@ -91,7 +56,6 @@ const ImpactMap = () => {
                       geography={geo}
                       onMouseEnter={() => {
                         const props = geo.properties;
-                        // Support various common TopoJSON property keys for India states
                         const stateName = props.ST_NM || props.NAME_1 || props.name || props.id || "Region";
                         setTooltipContent(stateName);
                       }}
@@ -129,7 +93,42 @@ const ImpactMap = () => {
                 {tooltipContent}
               </div>
             )}
+          </motion.div>
 
+          {/* Right: KPI Stat Cards */}
+          <motion.div
+            className={styles.statsGrid}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={{
+              hidden: { opacity: 0 },
+              visible: { opacity: 1, transition: { staggerChildren: 0.2 } }
+            }}
+          >
+            <motion.div className={styles.statCard} variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}>
+              <div className={styles.statLabel}>Schools Reached</div>
+              <div className={styles.statValue}>20+</div>
+              <div className={styles.statDesc}>Awareness in Nagpur District</div>
+            </motion.div>
+
+            <motion.div className={styles.statCard} variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}>
+              <div className={styles.statLabel}>Swachchta Sathis</div>
+              <div className={styles.statValue}>25+</div>
+              <div className={styles.statDesc}>Uplifted & empowered</div>
+            </motion.div>
+
+            <motion.div className={styles.statCard} variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}>
+              <div className={styles.statLabel}>People Impacted</div>
+              <div className={`${styles.statValue} ${styles.statHighlight}`}>10,000+</div>
+              <div className={styles.statDesc}>Direct & indirect beneficiaries</div>
+            </motion.div>
+
+            <motion.div className={styles.statCard} variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}>
+              <div className={styles.statLabel}>SHGs Trained</div>
+              <div className={styles.statValue}>210+</div>
+              <div className={styles.statDesc}>Waste management practices</div>
+            </motion.div>
           </motion.div>
 
         </div>

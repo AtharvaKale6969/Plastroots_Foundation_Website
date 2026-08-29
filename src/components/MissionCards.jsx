@@ -59,13 +59,8 @@ const MissionCards = () => {
         >
           {cards.map((card, index) => (
             <motion.div key={index} className={styles.card} variants={cardVariants}>
-              <div 
-                className={styles.cardImage}
-                style={{ 
-                  backgroundImage: `url("${card.image}")`,
-                  backgroundSize: card.bgSize || 'contain'
-                }}
-              >
+              <div className={styles.cardImage}>
+                <img src={card.image} alt={card.title} className={styles.cardIcon} />
               </div>
               <div className={styles.cardContent}>
                 <h3>{card.title}</h3>
