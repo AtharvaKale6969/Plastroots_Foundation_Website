@@ -90,7 +90,7 @@ const focusAreas = [
       "Build long-term partnerships for scalable and sustainable solutions",
       "Monitor, document and measure project outcomes and impact"
     ],
-    impact: "We transform CSR support into meaningful, measurable impact — creating partnerships that contribute to environmental sustainability and community development."
+    impact: "We transform CSR support into meaningful, measurable impact, creating partnerships that contribute to environmental sustainability and community development."
   }
 ];
 
@@ -102,7 +102,7 @@ const journeyMilestones = [
     title: "The Seed Was Planted",
     subtitle: "Parent Company Founded",
     image: "/Images/Our%20Journey/About-us-1024x587.jpeg",
-    body: "Our parent company, Plastroots Waste Management & Solutions Pvt. Ltd., began working in waste management. There was no Foundation yet — but the work, the challenges, the learning and the dream of creating a cleaner and more sustainable society had already begun.",
+    body: "Our parent company, Plastroots Waste Management & Solutions Pvt. Ltd., began working in waste management. There was no Foundation yet, but the work, the challenges, the learning and the dream of creating a cleaner and more sustainable society had already begun.",
     highlight: "We worked with communities, understood the realities of waste management and witnessed the challenges faced by villages."
   },
   {
@@ -112,7 +112,7 @@ const journeyMilestones = [
     title: "Foundation Established",
     subtitle: "RRC Experiment Begins",
     image: "/Images/Our%20Journey/About-us-1024x587.jpeg",
-    body: "Plastroots Foundation officially began as a Section 8 non-profit. We established an RRC (Resource Recovery Centre) as an experimental model to understand what sustainable, community-level waste management could look like — and it became a learning ground that gave us confidence to move forward.",
+    body: "Plastroots Foundation officially began as a Section 8 non-profit. We established an RRC (Resource Recovery Centre) as an experimental model to understand what sustainable, community-level waste management could look like, and it became a learning ground that gave us confidence to move forward.",
     highlight: "The RRC became more than a waste centre. It became a model for what community-driven waste management could look like."
   },
   {
@@ -123,7 +123,7 @@ const journeyMilestones = [
     subtitle: "Zilla Parishad Partnership",
     image: "/Images/Our%20Journey/WhatsApp%20Image%202026-06-11%20at%202.55.58%20PM.jpeg",
     body: "Our work expanded into rural areas through a Zilla Parishad partnership. Recognising that women are central to sustainable waste operations, we began formal SHG programmes, regular health check-ups, ration support and safety facilities for women Safai Kamgars.",
-    highlight: "We were no longer only managing waste — we were building a system where the environment and the people working for it could grow together."
+    highlight: "We were no longer only managing waste; we were building a system where the environment and the people working for it could grow together."
   },
   {
     year: "2025",
@@ -133,7 +133,7 @@ const journeyMilestones = [
     subtitle: "Bisleri Partnership",
     image: "/Images/Our%20Journey/Plastroots%20Foundation%20organized%20an%20Awareness%20Rally%20at%20Z.P.U.%20Primary%20School,%20Nanda%20(Koradi)%20und.webp",
     body: "We entered the CSR space with Bisleri's Bottle for Change project. Through awareness activities and community engagement, we carried an important message: plastic waste, when managed responsibly, can be recovered and recycled.",
-    highlight: "Community participation + environmental awareness + structured waste management — all at a larger scale."
+    highlight: "Community participation + environmental awareness + structured waste management, all at a larger scale."
   },
   {
     year: "2026",
@@ -194,7 +194,7 @@ const AboutUs = () => {
             <div className={styles.heroEyebrow}>About Us</div>
             <h1 className={styles.heroTitle}>Plastroots Foundation</h1>
             <p className={styles.heroSubtitle}>
-              Born from a 2019 dream and officially established in 2023, Plastroots Foundation is a Section 8 non-profit committed to sustainable waste management, rural development, women empowerment and environmental awareness — because real change must reach the ground where people live.
+              Born from a 2019 dream and officially established in 2023, Plastroots Foundation is a Section 8 non-profit committed to sustainable waste management, rural development, women empowerment and environmental awareness, because real change must reach the ground where people live.
             </p>
             <div className={styles.heroButtons}>
               <button className={styles.primaryBtn} onClick={() => navigate('/contact')}>Get In Touch</button>
@@ -216,7 +216,7 @@ const AboutUs = () => {
               <div className={styles.quoteIcon}>"</div>
               <div className={styles.quoteContent}>
                 <p className={styles.quoteText}>Our roots define our strength. Let's build a foundation for a greener tomorrow.</p>
-                <p className={styles.quoteAuthor}>— Kapil Jangale, Director</p>
+                <p className={styles.quoteAuthor}>Kapil Jangale, Director</p>
               </div>
             </div>
           </motion.div>
@@ -234,22 +234,22 @@ const AboutUs = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
             >
-              <span className={styles.sectionEyebrow}>Who We Are — Our Story</span>
+              <span className={styles.sectionEyebrow}>Who We Are: Our Story</span>
               <h2 className={styles.storyHeadline}>
                 A Movement That<br />
                 <span className={styles.accentGreen}>Found Its Name</span>
               </h2>
               <p className={styles.storySubheadline}>
-                Our roots go deeper than our founding date — this is where the story really began.
+                Our roots go deeper than our founding date; this is where the story really began.
               </p>
               <p className={styles.storyBody}>
-                If you ask us when the dream began, we would take you back to 2019 — four years before we had an official name.
+                If you ask us when the dream began, we would take you back to 2019, four years before we had an official name.
               </p>
               <p className={styles.storyBody}>
                 Our parent company, Plastroots Waste Management & Solutions Pvt. Ltd., started working in waste management with a simple conviction: change must reach the ground where people live, not remain a conversation.
               </p>
               <p className={styles.storyBody}>
-                As we worked on the ground, we realised waste management is about people — awareness, dignity, livelihoods and responsibility. That understanding gave birth to Plastroots Foundation. Today, our work goes beyond waste, from villages to cities, because the need for responsible waste management has no boundaries.
+                As we worked on the ground, we realised waste management is about people: awareness, dignity, livelihoods and responsibility. That understanding gave birth to Plastroots Foundation. Today, our work goes beyond waste, from villages to cities, because the need for responsible waste management has no boundaries.
               </p>
             </motion.div>
 
