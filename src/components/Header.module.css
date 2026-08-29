@@ -191,9 +191,9 @@
 }
 
 /* ============================================
-   RESPONSIVE: Tablet & Mobile (≤1280px)
+   RESPONSIVE: Tablet & Mobile (≤1440px)
    ============================================ */
-@media (max-width: 1280px) {
+@media (max-width: 1440px) {
   .rightNav {
     display: none;
   }
