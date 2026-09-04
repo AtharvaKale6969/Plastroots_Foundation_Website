@@ -181,8 +181,9 @@
   .middleCol { padding: 0; justify-content: flex-start; border-right: none; }
   .rightCol { grid-column: span 1; padding-left: 0; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.15); }
 
-  .footerBrand { gap: 10px; margin-bottom: 10px; font-size: 1.05rem; }
-  .footerLogo { height: 48px; padding: 5px 10px; }
+  /* Brand: logo stacked above name, not squished side-by-side */
+  .footerBrand { flex-direction: column; align-items: flex-start; gap: 8px; margin-bottom: 10px; font-size: 1.05rem; }
+  .footerLogo { height: 56px; padding: 6px 12px; }
   .footerDesc { font-size: 0.875rem; }
 
   .footerTitle { font-size: 0.95rem; margin-bottom: 12px; }
@@ -190,15 +191,15 @@
   .footerLinks a { font-size: 0.875rem; }
   .quickLinksGrid { gap: 8px 14px; }
 
-  /* Links (left) + Social (right) side by side */
+  /* Links (left) | separator | Follow Us (right, centered) */
   .middleContent {
     flex-direction: row;
-    gap: 20px;
+    gap: 0;
     align-items: flex-start;
   }
-  .linksSection { flex: 1; min-width: 0; }
-  .socialSection { flex-shrink: 0; }
-  .socialLinks { flex-direction: column; gap: 8px; }
+  .linksSection { flex: 1; min-width: 0; padding-right: 16px; border-right: 1px solid rgba(255,255,255,0.2); }
+  .socialSection { flex-shrink: 0; padding-left: 16px; display: flex; flex-direction: column; align-items: center; }
+  .socialLinks { flex-direction: column; gap: 8px; align-items: center; }
   .socialLinks a { width: 36px; height: 36px; }
 
   .contactItem { margin-bottom: 10px; font-size: 0.875rem; gap: 10px; }
@@ -214,8 +215,7 @@
 @media (max-width: 425px) {
   .footer { padding: 32px 0 16px; }
   .footerGrid { gap: 16px; margin-bottom: 18px; }
-  .footerBrand { flex-direction: row; align-items: center; }
-  .footerLogo { height: 40px; padding: 4px 8px; }
+  .footerLogo { height: 44px; padding: 5px 10px; }
   .contactItem { font-size: 0.82rem; gap: 8px; margin-bottom: 8px; }
 }
 
