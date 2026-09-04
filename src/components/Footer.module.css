@@ -179,7 +179,7 @@
   }
   .leftCol { padding-right: 0; border-right: none; }
   .middleCol { padding: 0; justify-content: flex-start; border-right: none; }
-  .rightCol { grid-column: span 1; padding-left: 0; padding-top: 0; border-top: none; }
+  .rightCol { grid-column: span 1; padding-left: 0; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.15); }
 
   .footerBrand { gap: 10px; margin-bottom: 10px; font-size: 1.05rem; }
   .footerLogo { height: 48px; padding: 5px 10px; }
