@@ -171,37 +171,60 @@
 }
 
 @media (max-width: 768px) {
+  .footer { padding: 40px 0 20px; }
   .footerGrid {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 20px;
+    margin-bottom: 24px;
   }
-  .rightCol { grid-column: span 1; padding-top: 0; border-top: none; }
-  .middleCol { padding: 0; justify-content: flex-start; }
-  .leftCol { padding-right: 0; }
+  .leftCol { padding-right: 0; border-right: none; }
+  .middleCol { padding: 0; justify-content: flex-start; border-right: none; }
+  .rightCol { grid-column: span 1; padding-left: 0; padding-top: 0; border-top: none; }
+
+  .footerBrand { gap: 10px; margin-bottom: 10px; font-size: 1.05rem; }
+  .footerLogo { height: 48px; padding: 5px 10px; }
+  .footerDesc { font-size: 0.875rem; }
+
+  .footerTitle { font-size: 0.95rem; margin-bottom: 12px; }
+  .footerLinks li { margin-bottom: 8px; }
+  .footerLinks a { font-size: 0.875rem; }
+  .quickLinksGrid { gap: 8px 14px; }
+
+  /* Links (left) + Social (right) side by side */
   .middleContent {
-    flex-direction: column;
-    gap: 40px;
+    flex-direction: row;
+    gap: 20px;
+    align-items: flex-start;
   }
+  .linksSection { flex: 1; min-width: 0; }
+  .socialSection { flex-shrink: 0; }
+  .socialLinks { flex-direction: column; gap: 8px; }
+  .socialLinks a { width: 36px; height: 36px; }
+
+  .contactItem { margin-bottom: 10px; font-size: 0.875rem; gap: 10px; }
+
   .bottomBar {
     flex-direction: column;
-    gap: 15px;
+    gap: 8px;
+    padding-top: 16px;
     text-align: center;
   }
 }
 
 @media (max-width: 425px) {
-  .footerBrand { flex-direction: column; align-items: flex-start; }
-  .quickLinksGrid { gap: 15px; }
-  .footer { padding: 60px 0 30px; }
+  .footer { padding: 32px 0 16px; }
+  .footerGrid { gap: 16px; margin-bottom: 18px; }
+  .footerBrand { flex-direction: row; align-items: center; }
+  .footerLogo { height: 40px; padding: 4px 8px; }
+  .contactItem { font-size: 0.82rem; gap: 8px; margin-bottom: 8px; }
 }
 
 @media (max-width: 375px) {
-  .footerTitle { font-size: 1rem; }
-  .footerDesc { font-size: 0.9rem; }
-  .contactItem { font-size: 0.9rem; }
+  .footerDesc { font-size: 0.84rem; }
+  .footerLinks a { font-size: 0.84rem; }
 }
 
 @media (max-width: 320px) {
-  .footerLogo { height: 60px; }
-  .socialLinks a { width: 38px; height: 38px; }
+  .footerLogo { height: 36px; }
+  .socialLinks a { width: 32px; height: 32px; }
 }
