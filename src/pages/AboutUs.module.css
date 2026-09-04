@@ -1141,7 +1141,8 @@
   .sideColumn, .centerColumn { max-width: 400px; width: 100%; margin: 0 auto; }
   .centerColumn { order: -1; }
   .journeyInner { flex-direction: column; }
-  .journeyLeft { position: static; height: auto; }
+  .journeyLeft { display: none; }
+  .timelinePanel { width: 100%; }
   .timelinePanel::before { left: 30px; }
   .timelineItem { gap: 1.5rem; }
   .timelineIcon { width: 60px; height: 60px; }
