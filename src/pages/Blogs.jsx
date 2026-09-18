@@ -1,66 +1,16 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 import { ArrowRight, Clock, Calendar, Leaf, Bookmark } from 'lucide-react';
+import { blogPosts, categories, getFeaturedBlog, getDirectorBlog, getBlogsByCategory } from '../data/blogData';
 import styles from './Blogs.module.css';
-
-const categories = ["All", "Environment", "Waste Management", "Sustainability", "CSR", "Social Impact"];
-
-const featuredBlog = {
-  id: "featured",
-  title: "Featured Blog: The Silent Crisis",
-  excerpt: "As technology accelerates, so does e-waste. Discover the grassroots movements transforming hazardous materials into circular opportunities.",
-  date: "August 12, 2026",
-  readTime: "6 MIN READ",
-  category: "Waste Management"
-};
-
-const blogPosts = [
-  {
-    id: "1",
-    title: "Blog 1",
-    excerpt: "How local communities are taking charge to remove plastic pollution from our coastlines and restore marine ecosystems.",
-    date: "July 24, 2026",
-    readTime: "4 MIN READ",
-    category: "Environment",
-    height: "tall"
-  },
-  {
-    id: "2",
-    title: "Blog 2",
-    excerpt: "Explore the strategic benefits of integrating ESG frameworks into your core operations and how it impacts long-term profitability.",
-    date: "June 10, 2026",
-    readTime: "5 MIN READ",
-    category: "CSR",
-    height: "medium"
-  },
-  {
-    id: "3",
-    title: "Blog 3",
-    excerpt: "A deep dive into how transitioning from a linear to a circular economy is the only viable solution to the plastic crisis.",
-    date: "May 18, 2026",
-    readTime: "7 MIN READ",
-    category: "Sustainability",
-    height: "tall"
-  },
-  {
-    id: "4",
-    title: "Blog 4",
-    excerpt: "Discover how self-help groups and education are creating new pathways for women in rural India while protecting the environment.",
-    date: "April 05, 2026",
-    readTime: "4 MIN READ",
-    category: "Social Impact",
-    height: "short"
-  }
-];
 
 const Blogs = () => {
   const [activeCategory, setActiveCategory] = useState("All");
-
-  const filteredPosts = activeCategory === "All" 
-    ? blogPosts 
-    : blogPosts.filter(post => post.category === activeCategory);
+  const featuredBlog = getFeaturedBlog();
+  const directorBlog = getDirectorBlog();
+  const filteredPosts = getBlogsByCategory(activeCategory);
 
   return (
     <>
@@ -72,12 +22,11 @@ const Blogs = () => {
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
       </Helmet>
-      
+
       <main className={styles.blogsPage}>
-        
-        {/* Page Header / Hero Section */}
+
         <section className={styles.heroSection}>
-          <motion.div 
+          <motion.div
             className="container"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -88,49 +37,89 @@ const Blogs = () => {
           </motion.div>
         </section>
 
-        {/* Featured Blog */}
-        <section className={styles.featuredSection}>
-          <div className="container">
-            <motion.div 
-              className={styles.featuredCard}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7 }}
-            >
-              <div className={styles.featuredImagePlaceholder}>
-                <div className={styles.placeholderIcon}>
-                  <Leaf size={64} />
+        {directorBlog && (
+          <section className={styles.directorSection}>
+            <div className="container">
+              <motion.div
+                className={styles.featuredCard}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7 }}
+              >
+                <div className={styles.directorFeaturedImage}>
+                  {directorBlog.authorImage && (
+                    <img src={directorBlog.authorImage} alt={directorBlog.author} className={styles.directorAvatar} />
+                  )}
+                  <div className={styles.directorFeaturedLabel}>From the Director's Desk</div>
                 </div>
-                <div className={styles.featuredBadge}>Featured: {featuredBlog.category}</div>
-              </div>
-              <div className={styles.featuredContent}>
-                <h2 className={styles.featuredTitle}>{featuredBlog.title}</h2>
-                <p className={styles.featuredExcerpt}>{featuredBlog.excerpt}</p>
-                
-                <div className={styles.metaInfo}>
-                  <span className={styles.metaItem}><Calendar size={14} /> {featuredBlog.date}</span>
-                  <span className={styles.metaDivider}>•</span>
-                  <span className={styles.metaItem}><Clock size={14} /> {featuredBlog.readTime}</span>
-                </div>
-                
-                <Link to={`/blogs/${featuredBlog.id}`} className={styles.readMoreBtn}>
-                  Read This Article <ArrowRight size={18} />
-                </Link>
-              </div>
-            </motion.div>
-          </div>
-        </section>
+                <div className={styles.featuredContent}>
+                  <h2 className={styles.featuredTitle}>{directorBlog.title}</h2>
+                  {directorBlog.subtitle && <p className={styles.directorFeaturedSub}>{directorBlog.subtitle}</p>}
+                  <p className={styles.featuredExcerpt}>{directorBlog.excerpt}</p>
 
-        {/* Latest Articles & Sidebar */}
+                  <div className={styles.metaInfo}>
+                    <span className={styles.metaItem}><Calendar size={14} /> {directorBlog.date}</span>
+                    <span className={styles.metaDivider}>&bull;</span>
+                    <span className={styles.metaItem}><Clock size={14} /> {directorBlog.readTime}</span>
+                  </div>
+
+                  <Link to={`/blogs/${directorBlog.id}`} className={styles.readMoreBtn}>
+                    Read This Article <ArrowRight size={18} />
+                  </Link>
+                </div>
+              </motion.div>
+            </div>
+          </section>
+        )}
+
+        {featuredBlog && (
+          <section className={styles.featuredSection}>
+            <div className="container">
+              <h3 className={styles.featuredSectionHeading}>Featured Article</h3>
+              <motion.div
+                className={styles.featuredCard}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7 }}
+              >
+                <div className={styles.featuredImagePlaceholder}>
+                  {featuredBlog.image ? (
+                    <img src={featuredBlog.image} alt={featuredBlog.title} className={styles.featuredImage} />
+                  ) : (
+                    <div className={styles.placeholderIcon}>
+                      <Leaf size={64} />
+                    </div>
+                  )}
+                  <div className={styles.featuredBadge}>{featuredBlog.category}</div>
+                </div>
+                <div className={styles.featuredContent}>
+                  <h2 className={styles.featuredTitle}>{featuredBlog.title}</h2>
+                  <p className={styles.featuredExcerpt}>{featuredBlog.excerpt}</p>
+
+                  <div className={styles.metaInfo}>
+                    <span className={styles.metaItem}><Calendar size={14} /> {featuredBlog.date}</span>
+                    <span className={styles.metaDivider}>&bull;</span>
+                    <span className={styles.metaItem}><Clock size={14} /> {featuredBlog.readTime}</span>
+                  </div>
+
+                  <Link to={`/blogs/${featuredBlog.id}`} className={styles.readMoreBtn}>
+                    Read This Article <ArrowRight size={18} />
+                  </Link>
+                </div>
+              </motion.div>
+            </div>
+          </section>
+        )}
+
         <section className={styles.mainContent}>
           <div className={`container ${styles.contentLayout}`}>
-            
+
             <div className={styles.articlesColumn}>
               <div className={styles.articlesHeader}>
                 <h3 className={styles.sectionHeading}>Latest Articles</h3>
-                
-                {/* Category Filter */}
+
                 <div className={styles.categoryFilter}>
                   {categories.map((category) => (
                     <button
@@ -143,34 +132,38 @@ const Blogs = () => {
                   ))}
                 </div>
               </div>
-              
+
               <div className={styles.masonryGrid}>
                 <AnimatePresence>
-                  {filteredPosts.map((post, index) => (
-                    <motion.article 
-                      key={post.title}
+                  {filteredPosts.map((post) => (
+                    <motion.article
+                      key={post.id}
                       layout
                       initial={{ opacity: 0, scale: 0.9 }}
                       animate={{ opacity: 1, scale: 1 }}
                       exit={{ opacity: 0, scale: 0.9 }}
                       transition={{ duration: 0.4 }}
-                      className={`${styles.blogCard} ${styles[post.height]}`}
+                      className={`${styles.blogCard} ${styles[post.height] || ''}`}
                     >
                       <div className={styles.cardImagePlaceholder}>
-                        <div className={styles.placeholderIconSmall}>
-                          <Leaf size={32} />
-                        </div>
+                        {post.image ? (
+                          <img src={post.image} alt={post.title} className={`${styles.cardImage} ${post.isDirectorLetter ? styles.directorCardImage : ''}`} />
+                        ) : (
+                          <div className={styles.placeholderIconSmall}>
+                            <Leaf size={32} />
+                          </div>
+                        )}
                         <div className={styles.categoryTag}>{post.category}</div>
                       </div>
                       <div className={styles.cardContent}>
                         <div className={styles.metaInfo}>
                           <span className={styles.metaItem}>{post.date}</span>
-                          <span className={styles.metaDivider}>•</span>
+                          <span className={styles.metaDivider}>&bull;</span>
                           <span className={styles.metaItem}>{post.readTime}</span>
                         </div>
                         <h4 className={styles.cardTitle}>{post.title}</h4>
                         <p className={styles.cardExcerpt}>{post.excerpt}</p>
-                        
+
                         <div className={styles.cardFooter}>
                           <Link to={`/blogs/${post.id}`} className={styles.cardLink}>
                             Read Article <ArrowRight size={16} />
@@ -183,11 +176,11 @@ const Blogs = () => {
                     </motion.article>
                   ))}
                 </AnimatePresence>
-                
+
                 {filteredPosts.length === 0 && (
-                  <motion.div 
-                    initial={{ opacity: 0 }} 
-                    animate={{ opacity: 1 }} 
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
                     className={styles.noPostsMessage}
                   >
                     No articles found in this category yet.
@@ -197,7 +190,7 @@ const Blogs = () => {
             </div>
 
             <aside className={styles.sidebarColumn}>
-              <motion.div 
+              <motion.div
                 className={styles.newsletterCard}
                 initial={{ opacity: 0, x: 30 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -219,8 +212,7 @@ const Blogs = () => {
                 </div>
               </motion.div>
 
-              {/* Support Our Cause Widget */}
-              <motion.div 
+              <motion.div
                 className={styles.supportCard}
                 initial={{ opacity: 0, x: 30 }}
                 whileInView={{ opacity: 1, x: 0 }}

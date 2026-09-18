@@ -28,7 +28,7 @@ const Header = () => {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   const toggleDropdown = (e, name) => {
-    if (window.innerWidth <= 1024) {
+    if (window.innerWidth <= 1440) {
       e.preventDefault();
       setActiveDropdown(activeDropdown === name ? null : name);
     }
