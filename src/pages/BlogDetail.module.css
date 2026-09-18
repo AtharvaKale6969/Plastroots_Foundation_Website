@@ -656,8 +656,10 @@
 .copyToast {
   position: fixed;
   bottom: 32px;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: fit-content;
   background: #1a1a2e;
   color: white;
   padding: 14px 28px;
