@@ -5,6 +5,7 @@ import styles from './ImpactMap.module.css';
 
 const geoUrl = "/india-topojson.json";
 
+
 const ImpactMap = () => {
   const [tooltipContent, setTooltipContent] = useState("");
   return (
@@ -108,25 +109,25 @@ const ImpactMap = () => {
           >
             <motion.div className={styles.statCard} variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}>
               <div className={styles.statLabel}>Schools Reached</div>
-              <div className={styles.statValue}>20+</div>
+              <div className={styles.statValue}>500+</div>
               <div className={styles.statDesc}>Awareness in Nagpur District</div>
             </motion.div>
 
             <motion.div className={styles.statCard} variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}>
               <div className={styles.statLabel}>Swachchta Sathis</div>
-              <div className={styles.statValue}>25+</div>
+              <div className={styles.statValue}>50+</div>
               <div className={styles.statDesc}>Uplifted & empowered</div>
             </motion.div>
 
             <motion.div className={styles.statCard} variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}>
               <div className={styles.statLabel}>People Impacted</div>
-              <div className={`${styles.statValue} ${styles.statHighlight}`}>10,000+</div>
+              <div className={`${styles.statValue} ${styles.statHighlight}`}>1 Lakh+</div>
               <div className={styles.statDesc}>Direct & indirect beneficiaries</div>
             </motion.div>
 
             <motion.div className={styles.statCard} variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}>
               <div className={styles.statLabel}>SHGs Trained</div>
-              <div className={styles.statValue}>210+</div>
+              <div className={styles.statValue}>250+</div>
               <div className={styles.statDesc}>Waste management practices</div>
             </motion.div>
           </motion.div>

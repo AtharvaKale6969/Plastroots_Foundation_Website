@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowLeft, Megaphone, School, Leaf, Droplets, Target, RefreshCcw, TrendingUp } from 'lucide-react';
+import { ArrowLeft, Megaphone, School, Leaf, Users, Droplets, Target, RefreshCcw, TrendingUp } from 'lucide-react';
 import styles from './CSRProjectBisleri.module.css';
 
 const CSRProjectBisleri = () => {
@@ -88,7 +88,7 @@ const CSRProjectBisleri = () => {
                 <img src="/Images/Bisleri_genesis.avif" alt="Collection drive" />
               </div>
               <div className={styles.imageCardFront}>
-                <img src="/Images/BFC_product.jpeg" alt="Bottles for Change Product" />
+                <img src="/Images/Bisleri Products.jpeg" alt="Bottles for Change Product" />
               </div>
               <div className={styles.floatingBadge}>
                 <Leaf size={24} color="#10b981" />
@@ -120,7 +120,7 @@ const CSRProjectBisleri = () => {
               <div className={styles.impactLabel}>Awareness Campaigns</div>
             </div>
             <div className={styles.impactCard}>
-              <div className={styles.impactNumber}>120+</div>
+              <div className={styles.impactNumber}>500+</div>
               <div className={styles.impactLabel}>Schools Engaged</div>
             </div>
           </div>
@@ -149,9 +149,9 @@ const CSRProjectBisleri = () => {
               <p>Engaging corporate employees through interactive sessions and office collection drives.</p>
             </div>
             <div className={styles.timelineCard}>
-              <div className={styles.timelineIcon}><Leaf size={28} /></div>
-              <h3>Tree Plantation</h3>
-              <p>Organizing massive community greening initiatives to restore local biodiversity and sequester carbon.</p>
+              <div className={styles.timelineIcon}><Users size={28} /></div>
+              <h3>RWA Engagement</h3>
+              <p>Partnering with Resident Welfare Associations to drive sustainable waste management at the community level.</p>
             </div>
           </div>
 
@@ -203,21 +203,21 @@ const CSRProjectBisleri = () => {
             {/* Detail 3: Text Left, Image Right */}
             <div className={styles.detailRow}>
               <div className={styles.detailText}>
-                <h3>Tree Plantation & Community Greening</h3>
-                <p>While plastic recycling is our core focus, we recognize that true environmental restoration requires active rebuilding of our natural habitats. Our massive tree plantation drives serve as a powerful communal activity that physically transforms degraded urban spaces into thriving green lungs.</p>
-                <p>These initiatives are deeply community-driven. We don't just plant saplings, we establish long-term care committees comprised of local residents who adopt these green spaces. This ensures a high survival rate for the trees and fosters a deep sense of environmental ownership among the citizens.</p>
+                <h3>Resident Welfare Association (RWA) Engagement</h3>
+                <p>Resident Welfare Associations are at the heart of community-level change. By partnering directly with RWAs, we bring structured waste management practices into housing societies, colonies, and residential clusters where daily waste generation is highest.</p>
+                <p>Our approach goes beyond awareness. We work with RWA committees to set up source segregation systems, designate collection points, and establish regular collection schedules. This ensures that recyclable materials are recovered efficiently and diverted from landfills.</p>
                 <ul>
-                  <li><strong>Native Species Focus:</strong> We strictly plant indigenous trees that require less water, support local wildlife, and adapt perfectly to the regional climate.</li>
-                  <li><strong>Community Adoption:</strong> Empowering local resident welfare associations (RWAs) to take lifelong ownership of the newly planted urban forests.</li>
-                  <li><strong>Biodiversity Tracking:</strong> Monitoring the growth of the trees and tracking the return of local flora and fauna to these revitalized areas over time.</li>
+                  <li><strong>Source Segregation Setup:</strong> Helping societies implement effective wet and dry waste separation at the household level through hands-on guidance and training.</li>
+                  <li><strong>Collection Infrastructure:</strong> Establishing dedicated collection points and coordinating with waste collection teams for timely and systematic pickups.</li>
+                  <li><strong>Sustained Engagement:</strong> Conducting regular follow-ups, feedback sessions, and refresher workshops to ensure long-term adoption of responsible waste practices.</li>
                 </ul>
               </div>
               <div className={styles.detailImageGroup}>
                 <div className={styles.detailImageSplit}>
-                  <img src="/Images/Tree Plantation.jpeg" alt="Tree Plantation & Community Greening 1" />
+                  <img src="/Images/Hostel_1.jpeg" alt="RWA Engagement 1" />
                 </div>
                 <div className={styles.detailImageSplit}>
-                  <img src="/Images/Gallery/WhatsApp Image 2026-06-05 at 3.39.14 PM.jpeg" alt="Tree Plantation & Community Greening 2" />
+                  <img src="/Images/Hostel_2.jpeg" alt="RWA Engagement 2" />
                 </div>
               </div>
             </div>

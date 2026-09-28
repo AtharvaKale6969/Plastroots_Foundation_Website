@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
-import { ArrowLeft, HeartPulse, ShieldPlus, BookOpen, Stethoscope, LineChart, Syringe, GraduationCap } from 'lucide-react';
+import { ArrowLeft, HeartPulse, ShieldPlus, Stethoscope, LineChart, Syringe, Droplets, Activity } from 'lucide-react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip as RechartsTooltip, ResponsiveContainer, Cell } from 'recharts';
 import styles from './InitiativeDetail.module.css';
 
@@ -11,65 +11,67 @@ import InViewChart from '../components/InViewChart';
 
 const impactStats = [
   { end: 100, suffix: '+', label: 'Health Camps' },
-  { end: 10000, suffix: '+', label: 'Lives Impacted' },
-  { end: 50, suffix: '+', label: 'Schools Reached' }
+  { end: 100000, suffix: '+', label: 'Lives Impacted' },
+  { end: 300, suffix: '+', label: 'Villages Reached' }
 ];
 
 const focusAreas = [
-  { 
+  {
     title: 'Health & Hygiene Initiatives',
-    desc: 'Our health-oriented programs are designed to support and promote essential hygiene and well-being within local communities.',
-    extraDesc: 'By providing access to basic health resources and conducting targeted awareness campaigns, we aim to prevent disease and foster a culture of wellness among vulnerable populations.',
+    desc: 'Our health-oriented programs are designed to support and promote essential hygiene and well-being within local communities, with a special focus on informal sector workers, waste pickers, and rural families.',
+    extraDesc: 'By providing access to basic health resources, conducting targeted awareness campaigns, and organising regular medical camps, we aim to prevent disease and foster a culture of wellness among the most vulnerable populations. Our approach combines on-ground outreach with partnerships with local healthcare providers to ensure sustained impact.',
     bullets: [
-      'Conducting targeted health awareness campaigns',
-      'Supporting community hygiene initiatives to prevent disease',
-      'Ensuring vulnerable populations have access to basic health resources'
+      'Conducting targeted health awareness campaigns reaching thousands of families annually',
+      'Supporting community hygiene initiatives including clean water and sanitation drives',
+      'Ensuring vulnerable populations have access to basic health resources and protective gear',
+      'Distributing hygiene kits and PPE to waste workers and sanitation staff'
     ],
     img: '/Images/Health_1.jpeg'
   },
-  { 
-    title: 'Educational Activities',
-    desc: 'We conduct comprehensive educational activities tailored for students as well as government and private sector staff, providing them with critical awareness and tools.',
-    extraDesc: 'Education is the foundation for lasting change. We believe that empowering individuals with the right resources can inspire them to become self-driven volunteers in their own communities.',
+  {
+    title: 'Preventive Healthcare & Sanitation',
+    desc: 'We focus on preventive health measures and sanitation infrastructure to address the root causes of illness in rural and underserved communities, rather than treating symptoms after the fact.',
+    extraDesc: 'Rather than waiting for illness to strike, our programs emphasise early detection, regular checkups, and building awareness around sanitation practices that prevent disease from spreading in the first place. We work closely with local health departments and community health workers to create lasting behavioural change around hygiene and wellness.',
     bullets: [
-      'Workshops designed specifically for school and college students',
-      'Training sessions for government and private sector employees',
-      'Equipping individuals with resources to become self-driven volunteers'
+      'Organising free health checkups, blood tests, and screening camps in rural areas',
+      'Distributing protective gear, masks, and hygiene kits to informal sector workers',
+      'Promoting clean water access, sanitation, and safe waste handling practices',
+      'Training community health volunteers to sustain health awareness at the grassroots level'
     ],
-    img: '/Images/Edu_act.jpg'
+    img: '/Images/Health_Checkup_1.webp'
   }
 ];
 
-const healthEdActivities = [
+const healthActivities = [
   {
     title: 'Medical Camps',
-    desc: 'Organizing free health checkups and providing basic medical resources to underserved areas.',
+    desc: 'Organizing free health checkups, blood pressure screenings, and basic diagnostic services in underserved rural and urban areas where healthcare access remains limited.',
     icon: Stethoscope
   },
   {
     title: 'Hygiene Workshops',
-    desc: 'Teaching essential sanitation practices to prevent common diseases in rural communities.',
+    desc: 'Conducting hands-on sanitation workshops that teach essential practices like handwashing, menstrual hygiene management, and safe food handling to prevent common diseases.',
     icon: ShieldPlus
   },
   {
-    title: 'School Programs',
-    desc: 'Integrating health and wellness education into school curriculums.',
-    icon: BookOpen
-  },
-  {
     title: 'Vaccination Drives',
-    desc: 'Supporting local authorities in immunizing vulnerable populations.',
+    desc: 'Partnering with local health authorities and NGOs to run immunization camps, ensuring vulnerable populations, especially children and the elderly, receive timely protection.',
     icon: Syringe
   },
   {
+    title: 'Sanitation Awareness',
+    desc: 'Promoting clean water access, open-defecation-free communities, proper waste handling, and sanitation infrastructure development across rural villages.',
+    icon: Droplets
+  },
+  {
     title: 'Mental Health Awareness',
-    desc: 'Breaking stigmas and providing psychological support systems for youth.',
+    desc: 'Breaking stigmas around mental health through community dialogues, counselling referrals, and awareness campaigns that help individuals seek support without shame.',
     icon: HeartPulse
   },
   {
-    title: 'Professional Training',
-    desc: 'Conducting capacity-building sessions for private and government sector employees.',
-    icon: GraduationCap
+    title: 'Health Monitoring',
+    desc: 'Conducting regular follow-up checkups, maintaining health records, and tracking long-term health outcomes to measure and improve the impact of our programmes.',
+    icon: Activity
   }
 ];
 
@@ -80,12 +82,12 @@ const successStories = [
     img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80"
   },
   {
-    quote: "Through the educational workshops, our school now has a dedicated health and hygiene committee run by students.",
+    quote: "After the hygiene awareness sessions, our village saw a noticeable drop in waterborne diseases within months.",
     author: "Sneha Patel",
     img: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=100&q=80"
   },
   {
-    quote: "The professional training sessions empowered our team to lead wellness initiatives within our own organization.",
+    quote: "The vaccination drive reached our remote area for the first time. Our children are now protected and healthy.",
     author: "Priya Sharma",
     img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=100&q=80"
   }
@@ -94,8 +96,8 @@ const successStories = [
 const HealthChart = () => {
   const data = [
     { name: 'Health Camps', actualValue: '100+', visualValue: 70, color: '#096699' },
-    { name: 'Lives Impacted', actualValue: '10,000+', visualValue: 100, color: '#0284c7' },
-    { name: 'Schools Reached', actualValue: '50+', visualValue: 55, color: '#0369a1' }
+    { name: 'Lives Impacted', actualValue: '1,00,000+', visualValue: 100, color: '#0284c7' },
+    { name: 'Villages Reached', actualValue: '300+', visualValue: 55, color: '#0369a1' }
   ];
 
   const CustomTooltip = ({ active, payload }) => {
@@ -156,7 +158,7 @@ const HealthActivities = () => {
   return (
     <div className="page-wrapper">
       <Helmet>
-        <title>HealthEd Activities - Plastroots Foundation</title>
+        <title>Health Activities - Plastroots Foundation</title>
         <meta name="description" content="Improving community health through regular medical camps, hygiene awareness, and accessible healthcare initiatives driven by Plastroots Foundation." />
       </Helmet>
 
@@ -175,12 +177,12 @@ const HealthActivities = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className={styles.heroTitle}>HealthEd <span>Activities</span></h1>
+          <h1 className={styles.heroTitle}>Health <span>Activities</span></h1>
           <p className={styles.heroSubtitle}>
-            Focusing on two key areas: health and education.
+            Providing health checkups, sanitation workshops, and protective gear for communities.
           </p>
           <p className={styles.heroDesc}>
-            We are committed to providing health-oriented programs and equipping individuals with the resources they need to uplift their own lives through education and holistic well-being.
+            We are committed to providing health-oriented programs that ensure access to preventive healthcare, hygiene awareness, and essential medical resources for our informal sector workers and rural communities.
           </p>
         </motion.div>
       </section>
@@ -191,7 +193,7 @@ const HealthActivities = () => {
           <div className={styles.dashboardHeader}>
             <div>
               <h2 className={styles.dashboardTitle}>Impact & Reach</h2>
-              <p className={styles.dashboardSubtitle}>Monitoring the progress of our health and education initiatives.</p>
+              <p className={styles.dashboardSubtitle}>Monitoring the progress of our health initiatives across communities.</p>
             </div>
           </div>
 
@@ -239,7 +241,7 @@ const HealthActivities = () => {
         </div>
       </section>
 
-      {/* The Need for HealthEd (Split Layout) */}
+      {/* The Need for Health (Split Layout) */}
       <section className={styles.splitSection}>
         <div className={styles.splitContainer}>
           <motion.div 
@@ -249,12 +251,12 @@ const HealthActivities = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
           >
-            <h2 className={styles.splitTitle}>Why Health & Education?</h2>
+            <h2 className={styles.splitTitle}>Why Health Matters</h2>
             <p className={styles.splitDesc}>
-              A healthy community is an empowered community. Without basic health and hygiene, true progress stalls. We focus on bridging the gap between healthcare resources and those who need them most.
+              A healthy community is an empowered community. Without basic health and hygiene, true progress stalls. We focus on bridging the gap between healthcare resources and those who need them most, particularly waste workers, daily-wage labourers, and families in remote villages with little or no access to clinics.
             </p>
             <p className={styles.splitDesc}>
-              Simultaneously, our educational initiatives aim to sustain this progress. By equipping the younger generation and working professionals with the right knowledge, we create a ripple effect of well-being and self-sufficiency that lasts generations.
+              Our preventive healthcare approach addresses the root causes of illness in underserved areas. Through regular health camps, sanitation awareness, and access to protective equipment, we ensure that communities can stay healthy and productive. By training local health volunteers and partnering with government health centres, we create sustainable systems that continue to serve communities long after our camps conclude.
             </p>
           </motion.div>
           <motion.div 
@@ -318,7 +320,7 @@ const HealthActivities = () => {
           Delivering critical care and awareness through diverse, high-impact activities.
         </p>
         <div className={styles.eduGrid}>
-          {healthEdActivities.map((activity, idx) => {
+          {healthActivities.map((activity, idx) => {
             const Icon = activity.icon;
             return (
               <motion.div 
@@ -375,7 +377,7 @@ const HealthActivities = () => {
         >
           <h2 className={styles.ctaTitle}>Support Our Mission</h2>
           <p className={styles.ctaDesc}>
-            Join us in building a healthier, more educated community. Your contribution can provide critical resources to those in need.
+            Join us in building a healthier community. Your contribution can provide critical healthcare resources to those in need.
           </p>
           <button className={styles.ctaBtn} onClick={() => navigate('/collaborate')}>Get Involved</button>
         </motion.div>

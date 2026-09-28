@@ -6,7 +6,6 @@ const galleryData = [
   { id: 1, src: "/Images/Gallery/Bisleri_1.jpeg", category: "Project" },
   { id: 2, src: "/Images/Gallery/ChatGPT Image Jun 29, 2026, 06_02_02 PM.png", category: "Campaign" },
   { id: 3, src: "/Images/Gallery/I am thrilled to inform you that our recent cleanliness campaign was a resounding success, than.webp", category: "Campaign" },
-  { id: 4, src: "/Images/Gallery/IMG_20260425_142236_073.jpg.jpeg", category: "Event" },
   { id: 5, src: "/Images/Gallery/Plastroots Foundation organized an Awareness Rally at Z.P.U. Primary School, Nanda (Koradi) und.webp", category: "College Drive" },
   { id: 6, src: "/Images/Gallery/Screenshot 2026-06-29 115828.png", category: "Project" },
   { id: 7, src: "/Images/Gallery/Screenshot 2026-06-29 120001.png", category: "Event" },

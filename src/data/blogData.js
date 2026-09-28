@@ -2,7 +2,7 @@ export const blogPosts = [
   {
     id: "from-challenging-beginning-to-wider-social-impact",
     title: "From a Challenging Beginning to Creating Wider Social Impact",
-    subtitle: "My journey with Plastroots Foundation",
+    subtitle: "",
     excerpt: "I am Kapil Jangale, Director of Plastroots Foundation. My journey in the social impact space has been full of challenges, learning, and, most importantly, purpose.",
     date: "September 18, 2026",
     isoDate: "2026-09-18",
@@ -312,7 +312,7 @@ export const blogPosts = [
       },
       {
         type: "paragraph",
-        text: "Therefore, real power rests in something so intrinsic, the very meaning of our capacity and efficiency that often has remained unheard from the marginalized segment for quite a long time in history, that will lead to development; instead of only asking \"What will this Waste do?\", we could rather ask —"
+        text: "Therefore, real power rests in something so intrinsic, the very meaning of our capacity and efficiency that often has remained unheard from the marginalized segment for quite a long time in history, that will lead to development; instead of only asking \"What will this Waste do?\", we could rather ask:"
       },
       {
         type: "callout",
@@ -538,6 +538,142 @@ export const blogPosts = [
       {
         type: "callout",
         text: "Waste management will never start with the collection vehicle; rather, the true genesis of this whole process lies with what an individual does with the waste in his or her hand."
+      }
+    ]
+  },
+  {
+    id: "celebrating-with-responsibility",
+    title: "Celebrating With Responsibility: Because What We Leave Behind Matters Too",
+    subtitle: "Rethinking how we celebrate for a cleaner tomorrow",
+    excerpt: "Celebrations are an important part of our lives. But once the celebration is over, there is another side that often receives far less attention: the waste that remains behind.",
+    date: "September 28, 2026",
+    isoDate: "2026-09-28",
+    readTime: "8 MIN READ",
+    category: "Waste Management",
+    author: "Plastroots Editorial",
+    authorRole: "Plastroots Foundation",
+    authorImage: "/Images/Header/PF_LOGO.png",
+    authorBio: "Plastroots Foundation is committed to building a cleaner, greener and more sustainable future through environmental awareness, education and actionable grassroots initiatives across India.",
+    image: "/Images/Cleanliness Drive_1.jpeg",
+    height: "tall",
+    featured: false,
+    isDirectorLetter: false,
+    content: [
+      {
+        type: "paragraph",
+        text: "Celebrations are an important part of our lives. Festivals, religious occasions, weddings, community gatherings and public events bring people together through traditions, food, music, colours and shared experiences. We put considerable thought into how we celebrate, what we serve, how we decorate and how we make the occasion memorable. But once the celebration is over, there is another side that often receives far less attention: the waste that remains behind."
+      },
+      {
+        type: "paragraph",
+        text: "Plastic cups and plates, bottles, food packaging, decorations, thermocol, flowers and leftover food can quickly turn a vibrant celebration into a significant waste-generating event. For most of us, the moment something leaves our hands and enters a bin, we consider our responsibility finished. But waste does not disappear simply because it has been taken away from our sight."
+      },
+      {
+        type: "heading",
+        text: "The Part of Celebration We Often Overlook"
+      },
+      {
+        type: "paragraph",
+        text: "A celebration may last for a few hours, but the materials used during it can remain in the waste stream for much longer. What was purchased for convenience or decoration may have a life far beyond the occasion itself."
+      },
+      {
+        type: "paragraph",
+        text: "The larger concern is not simply the quantity of waste generated, but what happens to it afterwards. When food waste, plastic, paper and other materials are mixed together, recyclable resources can lose their value and organic waste becomes more difficult to process. Materials that could have been recovered, reused or recycled can eventually end up in dumping grounds because they were never separated at the point of disposal."
+      },
+      {
+        type: "paragraph",
+        text: "This is why responsible waste management cannot begin after the celebration. It has to begin with the way we plan the celebration."
+      },
+      {
+        type: "heading",
+        text: "Celebration Does Not Have to Mean More Waste"
+      },
+      {
+        type: "paragraph",
+        text: "Being responsible does not mean giving up our traditions or making celebrations less joyful. It means reconsidering the way we use resources while preserving the essence of the occasion."
+      },
+      {
+        type: "paragraph",
+        text: "Reusable utensils can replace many single-use products. Cloth, paper and natural materials can replace unnecessary plastic decorations. Food can be planned more thoughtfully to minimise wastage. Separate collection of wet and dry waste can help recyclable materials reach the appropriate recovery systems instead of being lost in mixed waste."
+      },
+      {
+        type: "paragraph",
+        text: "None of these changes require us to celebrate less. They simply encourage us to celebrate with greater awareness."
+      },
+      {
+        type: "heading",
+        text: "There Are People Behind the Clean-Up"
+      },
+      {
+        type: "paragraph",
+        text: "There is also a human side to the waste generated by our celebrations that is easy to overlook."
+      },
+      {
+        type: "paragraph",
+        text: "When a public space looks clean the morning after an event, the waste has not disappeared. Someone has collected it, transported it, sorted it and handled what we left behind."
+      },
+      {
+        type: "paragraph",
+        text: "Waste workers form an essential part of keeping our communities clean, yet their contribution often remains invisible. Responsible celebration should therefore extend beyond reducing the amount of waste we generate. It should also mean recognising the dignity, safety and importance of the people who manage that waste."
+      },
+      {
+        type: "quote",
+        text: "The cleanliness we enjoy after a celebration should never depend on ignoring the people who make it possible."
+      },
+      {
+        type: "heading",
+        text: "From Waste to Resource"
+      },
+      {
+        type: "paragraph",
+        text: "Perhaps one of the biggest changes we need is in the way we look at discarded materials. Not everything that enters a bin has to become useless."
+      },
+      {
+        type: "paragraph",
+        text: "A bottle can become recycled material. Organic waste can become compost. Paper and cardboard can return to productive use. Decorations and other materials can sometimes be reused rather than discarded after a single occasion."
+      },
+      {
+        type: "paragraph",
+        text: "But these possibilities depend heavily on what we do at the point where waste is generated."
+      },
+      {
+        type: "paragraph",
+        text: "Segregation is not simply about keeping two bins. It is about giving different materials the opportunity to follow the right path."
+      },
+      {
+        type: "heading",
+        text: "Responsibility Is Part of Celebration"
+      },
+      {
+        type: "paragraph",
+        text: "Our traditions have continued across generations because they have evolved with changing times. There is no reason why environmental responsibility cannot become part of that evolution."
+      },
+      {
+        type: "paragraph",
+        text: "A responsible celebration is not one that produces absolutely no waste. It is one where we consciously consider what we consume, what we discard, where it goes and who handles it afterwards."
+      },
+      {
+        type: "paragraph",
+        text: "The objective is not to take away from celebration. It is to ensure that the happiness created by an occasion does not leave behind an unnecessary environmental burden."
+      },
+      {
+        type: "heading",
+        text: "The Question We Must Ask"
+      },
+      {
+        type: "paragraph",
+        text: "We often ask how we can make our celebrations bigger, brighter and more memorable. Perhaps we should also begin asking a different question:"
+      },
+      {
+        type: "quote",
+        text: "What are we leaving behind when the celebration is over?"
+      },
+      {
+        type: "paragraph",
+        text: "Because the true impact of a celebration is not limited to the hours in which we enjoy it. It also lies in the materials we consume, the waste we generate, the resources we recover and the responsibility we show towards the environment and the people who manage it."
+      },
+      {
+        type: "paragraph",
+        text: "Celebrating with responsibility does not mean celebrating less. It means understanding that what we leave behind matters too."
       }
     ]
   }

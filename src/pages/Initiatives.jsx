@@ -26,7 +26,7 @@ const initiatives = [
     objectPosition: 'center 25%'
   },
   {
-    title: 'HealthEd Activities',
+    title: 'Health Activities',
     desc: 'Providing health checkups, sanitation workshops, and protective gear for our informal sector workers and rural communities.',
     img: '/Images/Health_New.jpg',
     link: '/initiatives/health-activities',

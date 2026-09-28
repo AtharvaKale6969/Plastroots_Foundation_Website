@@ -11,7 +11,7 @@ import InViewChart from '../components/InViewChart';
 const impactStats = [
   { end: 270, suffix: '+', label: 'Awareness Campaigns' },
   { end: 390000, suffix: '+', label: 'Citizens Reached' },
-  { end: 120, suffix: '+', label: 'Schools Engaged' }
+  { end: 500, suffix: '+', label: 'Schools Engaged' }
 ];
 
 const focusAreas = [
@@ -48,7 +48,18 @@ const focusAreas = [
     ],
     img: '/Images/Spot_clean.webp'
   },
-  { 
+  {
+    title: 'Tree Plantation & Community Greening',
+    desc: 'Conducting large-scale tree plantation drives that bring communities together while restoring green cover and raising environmental awareness.',
+    extraDesc: 'These initiatives are deeply community-driven. We establish long-term care committees comprised of local residents who adopt these green spaces. This ensures a high survival rate for the trees and fosters a deep sense of environmental ownership among the citizens.',
+    bullets: [
+      'Native species focus for better adaptation to regional climate',
+      'Community adoption through local resident welfare associations',
+      'Biodiversity tracking to monitor growth and ecological revival'
+    ],
+    img: '/Images/Tree Plantation.jpeg'
+  },
+  {
     title: 'Upcycling Installations',
     desc: 'Installing creative upcycled products to visually demonstrate the value of waste and encourage recycling practices.',
     extraDesc: 'Waste is just a resource in the wrong place. We install public art and functional furniture made entirely from recycled plastics and discarded materials to spark conversations and prove the circular economy works.',

@@ -5,30 +5,30 @@ const features = [
   {
     image: "/Images/IEC_Cover.webp",
     title: "Spreading Social & Environmental Awareness through IEC",
-    desc: "Empowering individuals with knowledge to make informed choices that positively affect our society and environment."
+    desc: "Empowering individuals with knowledge for informed, impactful choices."
   },
   {
     image: "/Images/Waste_Manage_cover.webp",
     title: "Waste Management",
-    desc: "Implementing end-to-end solutions for responsible waste collection, segregation, and processing."
+    desc: "End-to-end solutions for responsible waste collection, segregation, and processing."
   },
   {
-    image: "/Images/circular_economy.png",
+    image: "/Images/Upcycling_1.png",
     title: "Sustainability",
-    desc: "Promoting a circular economy where resources are reused and recycled to protect ecological balance."
+    desc: "Promoting a circular economy where resources are reused and recycled."
   },
   {
-    image: "/Images/Woman_Development.jpg",
+    image: "/Images/Empowering_Women_1.jpg",
     title: "Empowering Women",
-    desc: "Integrating women into mainstream industries with skill development and formal employment for a dignified livelihood."
+    desc: "Skill development and formal employment for a dignified livelihood."
   },
   {
     image: "/Images/Health_New.jpg",
     title: "Health & Education for all",
-    desc: "Building the foundation of empowered communities through hygiene initiatives, health camps, and education programs."
+    desc: "Hygiene initiatives, health camps, and education programs for all."
   },
   {
-    image: "/Images/Initivaties-2.jpeg",
+    image: "/Images/Rural area development.jpg",
     title: "Rural Area Development",
     desc: "Fostering inclusive growth by bridging the gap between local bodies and rural communities."
   }

@@ -9,7 +9,7 @@ import AnimatedCounter from '../components/AnimatedCounter';
 import InViewChart from '../components/InViewChart';
 
 const impactStats = [
-  { end: 120, suffix: '+', label: 'Partner Schools' },
+  { end: 500, suffix: '+', label: 'Partner Schools' },
   { end: 36000, suffix: '+', label: 'Students Reached' },
   { end: 270, suffix: '+', label: 'Awareness Sessions' }
 ];

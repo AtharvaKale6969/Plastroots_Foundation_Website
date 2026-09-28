@@ -89,7 +89,7 @@
   height: 280px;
   top: 0;
   left: 0;
-  background-image: url('/Images/Home/garbage_dump.webp');
+  background-image: url('/Images/Dumpyard_1.jpg');
   z-index: 2;
 }
 
@@ -98,7 +98,7 @@
   height: 250px;
   bottom: 0;
   right: 0;
-  background-image: url('/Images/Waste_Manage_cover.webp');
+  background-image: url('/Images/Trash_1.jpg');
   z-index: 3;
 }
 
@@ -107,7 +107,7 @@
   height: 260px;
   top: 0;
   right: 0;
-  background-image: url('/Images/Woman_Development.jpg');
+  background-image: url('/Images/RRC Staff 2.jpeg');
   z-index: 2;
 }
 
@@ -116,7 +116,7 @@
   height: 250px;
   bottom: 0;
   left: 0;
-  background-image: url('/Images/Health_New.jpg');
+  background-image: url('/Images/Gallery/Rally_1.webp');
   z-index: 3;
 }
 

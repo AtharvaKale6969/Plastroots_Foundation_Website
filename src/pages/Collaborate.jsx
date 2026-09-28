@@ -71,7 +71,7 @@ const Collaborate = () => {
               </div>
               <h2 className={styles.title}>Become a Volunteer</h2>
               <p className={styles.text}>
-                We believe in the power of community action. As a volunteer, you will be at the forefront of our campaigns—leading cleanliness drives, educating students in eco-clubs, and working side-by-side with our Self-Help Groups. Gain invaluable grassroots experience while making a lasting impact in your community.
+                We believe in the power of community action. As a volunteer, you will be at the forefront of our campaigns, leading cleanliness drives, educating students in eco-clubs, and working side-by-side with our Self-Help Groups. Gain invaluable grassroots experience while making a lasting impact in your community.
               </p>
               <button className={styles.ctaBtn} onClick={() => navigate('/collaborate/volunteer')}>
                 Join Our Team

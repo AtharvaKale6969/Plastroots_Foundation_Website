@@ -11,7 +11,7 @@ import AnimatedCounter from '../components/AnimatedCounter';
 import InViewChart from '../components/InViewChart';
 
 const impactStats = [
-  { end: 7000, suffix: '+', label: 'Tonnes Waste Collected' },
+  { end: 10000, suffix: '+', label: 'Tonnes Waste Collected' },
   { end: 6500, suffix: '+', label: 'Tonnes Plastic Recycled' },
   { end: 390000, suffix: '+', label: 'Citizens Engaged' }
 ];
@@ -160,9 +160,10 @@ const collectionImages = [
 ];
 
 const segregationImages = [
-  '/Images/Initivaties-2.jpeg',
-  '/Images/07.jpg',
-  '/Images/06.jpg'
+  '/Images/RRC Staff 1.jpeg',
+  '/Images/RRC Staff 3.jpeg',
+  '/Images/RRC Staff 2.jpeg',
+  '/Images/07.jpg'
 ];
 
 const storageImages = [
