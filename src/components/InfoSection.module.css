@@ -150,6 +150,10 @@
 }
 @media (max-width: 425px) {
   .infoSection { padding: 40px 0; }
+  .imageContainer { padding: 20px 20px; }
+  .showcaseStage { max-width: 200px; }
+  .staticCard { border-radius: 28px; }
+  .cardShadow { margin-top: 20px; }
   .textContent h2 { font-size: 1.8rem; margin-bottom: 16px; }
   .textContent p { font-size: 1rem; margin-bottom: 12px; }
   .quoteText { font-size: 1.5rem; letter-spacing: 1px; }
