@@ -70,7 +70,6 @@ const Testimonials = () => {
       >
         {[...testimonials, ...testimonials].map((item, index) => (
           <div key={index} className={styles.card}>
-            <div className={styles.quoteIcon}>"</div>
             <div className={styles.stars}>
               {[1, 2, 3, 4, 5].map(star => <Star key={star} size={14} fill="currentColor" />)}
             </div>

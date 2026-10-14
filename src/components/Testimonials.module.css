@@ -66,16 +66,6 @@
   border-radius: 0 0 3px 3px;
 }
 
-.quoteIcon {
-  font-size: 3rem;
-  line-height: 1;
-  font-family: Georgia, serif;
-  color: var(--brand-blue);
-  opacity: 0.15;
-  margin-bottom: 4px;
-  user-select: none;
-}
-
 .stars {
   color: #f59e0b;
   display: flex;
