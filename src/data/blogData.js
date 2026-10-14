@@ -676,6 +676,168 @@ export const blogPosts = [
         text: "Celebrating with responsibility does not mean celebrating less. It means understanding that what we leave behind matters too."
       }
     ]
+  },
+  {
+    id: "villages-leading-indias-waste-revolution",
+    title: "Villages Leading the Frontline of India's Waste Revolution",
+    excerpt: "In cities, waste collection vehicles usually visit every alternate day. But in many Indian villages, proper waste collection systems are still missing. Now imagine if villages managed waste differently.",
+    date: "September 30, 2026",
+    isoDate: "2026-09-30",
+    readTime: "6 MIN READ",
+    category: "Waste Management",
+    author: "Plastroots Editorial",
+    authorRole: "Content Team",
+    image: "/Images/Waste_Blog_1.jpg",
+    height: "medium",
+    featured: false,
+    content: [
+      {
+        type: "paragraph",
+        text: "In cities, waste collection vehicles usually visit every alternate day. But in many Indian villages, proper waste collection systems are still missing. People often dump waste in open places or burn it, leading to pollution and health issues."
+      },
+      {
+        type: "paragraph",
+        text: "Now imagine if villages managed waste differently. They could not only solve their local waste problem but also spark a real revolution."
+      },
+      {
+        type: "paragraph",
+        text: "Every day, rural India generates thousands of tonnes of plastic and other waste. Instead of treating it as a burden, this waste can become an opportunity: cleaner villages, new jobs, and stronger local economies. With proper segregation, recycling, and reuse, villages can truly turn waste into wealth."
+      },
+      {
+        type: "heading",
+        text: "The Plastic Problem"
+      },
+      {
+        type: "paragraph",
+        text: "Plastic is the biggest challenge in rural waste management. Open dumping makes areas dirty and unhealthy, while plastic blocks drains, pollutes water sources, and damages farms. Burning plastic in the open places creates harmful or toxic smoke to the air, harming both people and the environment."
+      },
+      {
+        type: "heading",
+        text: "How Villages Can Turn Waste into Wealth"
+      },
+      {
+        type: "list",
+        items: [
+          "Segregate waste: Separate wet waste, dry waste, and plastic at the source.",
+          "Recycle and reuse: Plastics can be repurposed into bags, furniture, or useful products.",
+          "Send to cement factories: Non-recyclable plastic can be sent to cement factories to replace coal as fuel.",
+          "Compost wet waste: Organic waste can be turned into compost to enrich farming."
+        ]
+      },
+      {
+        type: "paragraph",
+        text: "This process not only reduces waste but also creates value and keeps villages clean."
+      },
+      {
+        type: "heading",
+        text: "Villages as Leaders in Waste Management"
+      },
+      {
+        type: "paragraph",
+        text: "Gram Panchayats can set up Material Recovery Facilities (MRFs) where waste is collected, sorted, and processed. Women can be employed in these facilities, creating livelihood opportunities, while youth can be trained in waste management for future jobs."
+      },
+      {
+        type: "paragraph",
+        text: "One inspiring example comes from Koradi in Nagpur district, where Plastroots runs an MRF covering 47 Gram Panchayats. Waste is collected, segregated, and then sent to recyclers or cement factories. This model has generated income, reduced pollution, and kept villages cleaner."
+      },
+      {
+        type: "heading",
+        text: "Challenges and the Way Forward"
+      },
+      {
+        type: "paragraph",
+        text: "Of course, challenges remain such as lack of awareness, funds, and infrastructure. But organizations like the Plastroots and Plastroots Foundation are working to spread awareness, train villagers, and establish waste facilities. Villages can connect with us directly using the contact details available on our website and social media platforms."
+      },
+      {
+        type: "heading",
+        text: "A Cleaner Tomorrow"
+      },
+      {
+        type: "paragraph",
+        text: "If every village treats waste as a resource, India can move toward a cleaner, greener, and smarter future. Villages have the power not just to participate but to lead India's waste revolution."
+      }
+    ]
+  },
+  {
+    id: "waste-management-in-india",
+    title: "Waste Management In India",
+    excerpt: "In India, waste is not a problem to hide but a resource to use wisely. Our country produces approximately 1.45 lakh metric tonnes of solid waste daily.",
+    date: "September 30, 2026",
+    isoDate: "2026-09-30",
+    readTime: "5 MIN READ",
+    category: "Waste Management",
+    author: "Plastroots Editorial",
+    authorRole: "Content Team",
+    image: "/Images/Waste_Blog_2.jpg",
+    height: "medium",
+    featured: false,
+    content: [
+      {
+        type: "paragraph",
+        text: "In India, waste is not a problem to hide but a resource to use wisely. Managing waste today means securing a cleaner India tomorrow. Do you know how much waste India generates every day? Our country produces approximately 1.45 lakh metric tonnes of solid waste daily."
+      },
+      {
+        type: "paragraph",
+        text: "According to a 2024 report published by Clean India Journal, India is expected to surpass Germany, Japan, and Brazil and currently ranked 4th, 5th, and 6th respectively in terms of waste generation in the coming years."
+      },
+      {
+        type: "heading",
+        text: "Why Waste Management Is Becoming More Challenging?"
+      },
+      {
+        type: "paragraph",
+        text: "Waste management in India is becoming increasingly difficult due to a combination of environmental, social, and economic factors. Key reasons include:"
+      },
+      {
+        type: "list",
+        items: [
+          "Rapid population growth",
+          "Changing lifestyles and consumption patterns",
+          "Limited landfill space",
+          "Inadequate waste segregation",
+          "Rising hazardous and e-waste",
+          "Poor waste management infrastructure",
+          "Impact of climate change",
+          "Low public awareness and participation"
+        ]
+      },
+      {
+        type: "heading",
+        text: "Challenges"
+      },
+      {
+        type: "paragraph",
+        text: "Many households mix wet and dry waste, making recycling difficult. This is one of the biggest challenges in waste management."
+      },
+      {
+        type: "paragraph",
+        text: "Numerous landfill sites are overflowing, causing severe pollution."
+      },
+      {
+        type: "paragraph",
+        text: "The lack of modern composting facilities, recycling plants, and waste-to-energy units makes it even harder to manage waste effectively."
+      },
+      {
+        type: "paragraph",
+        text: "Ragpickers and waste pickers handle a significant share of recycling work, yet they do not have access to proper safety equipment or social security."
+      },
+      {
+        type: "paragraph",
+        text: "Despite bans, single-use plastics are still widely used, adding to the problem of plastic pollution."
+      },
+      {
+        type: "paragraph",
+        text: "In addition, e-waste and biomedical waste are increasing day by day without proper disposal facilities."
+      },
+      {
+        type: "heading",
+        text: "Government Initiatives and Individual Responsibility"
+      },
+      {
+        type: "paragraph",
+        text: "Government initiatives like the Swachh Bharat Mission focus on raising awareness, conducting cleanliness drives, and improving waste collection. However, we should also take individual initiatives to make these efforts truly effective. We can help by segregating waste at source, reducing single-use plastics, composting kitchen waste, and reusing materials. A cleaner India begins with each of us taking responsibility for the waste we create."
+      }
+    ]
   }
 ];
 
@@ -694,6 +856,6 @@ export function getDirectorBlog() {
 }
 
 export function getBlogsByCategory(category) {
-  if (category === "All") return blogPosts;
-  return blogPosts.filter(post => post.category === category);
+  const posts = category === "All" ? [...blogPosts] : blogPosts.filter(post => post.category === category);
+  return posts.sort((a, b) => new Date(b.isoDate) - new Date(a.isoDate));
 }

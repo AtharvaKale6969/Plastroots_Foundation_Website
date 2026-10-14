@@ -107,18 +107,18 @@ const educationalActivities = [
 
 const successStories = [
   {
-    quote: "The street play performed in our village completely shifted how people view plastic waste. Everyone is talking about segregation now.",
-    author: "Priya Sharma",
+    quote: "The awareness workshop at our school changed how students think about waste. They now lead segregation drives in their own neighborhoods.",
+    author: "Sarthak Gaikwad, Teacher, Bharti Vidya Mandir, Rameshwari",
     img: "https://images.unsplash.com/photo-1532372320572-cda25653a26d?auto=format&fit=crop&w=100&q=80"
   },
   {
-    quote: "After the door-to-door campaign, our neighborhood's recycling compliance went from 20% to nearly 90% in just two months.",
-    author: "Rahul Verma",
+    quote: "Plastroots conducted an incredible awareness rally at our school. The students and staff were truly inspired to take action for a cleaner environment.",
+    author: "Gajanan Potdar, Principal, Manavata Vidyalaya, Manewada",
     img: "https://images.unsplash.com/photo-1560415755-bd80d06eda60?auto=format&fit=crop&w=100&q=80"
   },
   {
-    quote: "The school seminar was a hit! My children now actively ensure we compost our organic waste at home.",
-    author: "Anjali Gupta",
+    quote: "The IEC sessions at our college were very impactful. Our students now actively participate in waste collection drives and community outreach.",
+    author: "Dipak Waghmare, Instructor, Orange City College of Social Work",
     img: "https://images.unsplash.com/photo-1589923158776-cb4485d99fd6?auto=format&fit=crop&w=100&q=80"
   }
 ];
@@ -198,9 +198,6 @@ const IEC = () => {
           <h1 className={styles.heroTitle}>INFORMATION, EDUCATION & <span>COMMUNICATION (IEC)</span></h1>
           <p className={styles.heroSubtitle}>
             Raising Awareness. Inspiring Sustainable Change.
-          </p>
-          <p className={styles.heroDesc}>
-            Through our IEC Initiative, we empower communities by raising awareness, promoting knowledge sharing, and facilitating behavior change on social and environmental issues using workshops, multimedia campaigns, and direct engagement.
           </p>
         </motion.div>
       </section>

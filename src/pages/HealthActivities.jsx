@@ -77,18 +77,18 @@ const healthActivities = [
 
 const successStories = [
   {
-    quote: "The free health camp helped my family get the medical attention we couldn't afford. It changed our lives.",
-    author: "Ramesh Kumar",
+    quote: "The health and hygiene awareness camp organized at our hostel was very helpful. The residents learned about sanitation practices that have improved daily health standards.",
+    author: "Rama Barapathre, Warden, Govt. Boys Hostel, New Khapri",
     img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80"
   },
   {
-    quote: "After the hygiene awareness sessions, our village saw a noticeable drop in waterborne diseases within months.",
-    author: "Sneha Patel",
+    quote: "Plastroots conducted health awareness sessions in our hostel that educated residents on hygiene and preventive care. It has had a lasting impact on the community.",
+    author: "Jay Gaikwad, President, Samaj Kalyan Boys Hostel, Katol Naka",
     img: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=100&q=80"
   },
   {
-    quote: "The vaccination drive reached our remote area for the first time. Our children are now protected and healthy.",
-    author: "Priya Sharma",
+    quote: "The sanitation and health drive in our Gram Panchayat helped villagers understand the connection between waste management and health. It was a much-needed initiative.",
+    author: "Anilji Nehare, Sarpanch, Grampanchayat Metpanjra, Katol",
     img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=100&q=80"
   }
 ];

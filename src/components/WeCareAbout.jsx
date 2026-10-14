@@ -3,7 +3,7 @@ import styles from './WeCareAbout.module.css';
 
 const features = [
   {
-    image: "/Images/IEC_Cover.webp",
+    image: "/Images/Path Natya_2.jpg",
     title: "Spreading Social & Environmental Awareness through IEC",
     desc: "Empowering individuals with knowledge for informed, impactful choices."
   },
@@ -25,7 +25,8 @@ const features = [
   {
     image: "/Images/Health_New.jpg",
     title: "Health & Education for all",
-    desc: "Hygiene initiatives, health camps, and education programs for all."
+    desc: "Hygiene initiatives, health camps, and education programs for all.",
+    imagePosition: "center 60%"
   },
   {
     image: "/Images/Rural area development.jpg",
@@ -48,7 +49,7 @@ const WeCareAbout = () => {
             <div key={index} className={styles.card}>
               <div
                 className={styles.cardImage}
-                style={{ backgroundImage: `url('${feature.image}')` }}
+                style={{ backgroundImage: `url('${feature.image}')`, ...(feature.imagePosition && { backgroundPosition: feature.imagePosition }) }}
               />
               <div className={styles.cardOverlay}>
                 <div className={styles.cardContent}>

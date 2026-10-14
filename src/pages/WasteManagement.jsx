@@ -76,18 +76,18 @@ const wasteActivities = [
 
 const successStories = [
   {
-    quote: "Our neighborhood used to have a massive garbage dump. With the new segregation and collection system, it's now a beautiful community park.",
-    author: "Kavita Rao",
+    quote: "Since Plastroots started waste collection in our hostel, the entire premises has become cleaner. Proper segregation has made a visible difference in our community.",
+    author: "Mahesh Mankar, President, Samaj Kalyan Hostel, Hinga",
     img: "https://images.unsplash.com/photo-1532372320572-cda25653a26d?auto=format&fit=crop&w=100&q=80"
   },
   {
-    quote: "The composting unit we set up processes all the organic waste from 50 houses. We use the compost for our rooftop gardens!",
-    author: "Vikram Singh",
+    quote: "The waste management system set up by Plastroots in our society has been very effective. Residents are now actively participating in source segregation.",
+    author: "Satvik Wase, Member, Forest Department Housing Society, Nasai",
     img: "https://images.unsplash.com/photo-1589923158776-cb4485d99fd6?auto=format&fit=crop&w=100&q=80"
   },
   {
-    quote: "Learning to upcycle old clothes into durable bags has given me a new source of income while reducing textile waste.",
-    author: "Pooja Desai",
+    quote: "As a restaurant, managing waste was always a challenge. Plastroots helped us set up a proper system for segregation and responsible disposal.",
+    author: "Vishal Dangore, Manager, Vasvi Restaurant & Maple Banquet, Nagpur",
     img: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=100&q=80"
   }
 ];

@@ -37,78 +37,78 @@ const Blogs = () => {
           </motion.div>
         </section>
 
-        {directorBlog && (
-          <section className={styles.directorSection}>
+        {(directorBlog || featuredBlog) && (
+          <section className={styles.highlightSection}>
             <div className="container">
-              <motion.div
-                className={styles.featuredCard}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.7 }}
-              >
-                <div className={styles.directorFeaturedImage}>
-                  {directorBlog.authorImage && (
-                    <img src={directorBlog.authorImage} alt={directorBlog.author} className={styles.directorAvatar} />
-                  )}
-                  <div className={styles.directorFeaturedLabel}>From the Director's Desk</div>
-                </div>
-                <div className={styles.featuredContent}>
-                  <h2 className={styles.featuredTitle}>{directorBlog.title}</h2>
-                  {directorBlog.subtitle && <p className={styles.directorFeaturedSub}>{directorBlog.subtitle}</p>}
-                  <p className={styles.featuredExcerpt}>{directorBlog.excerpt}</p>
-
-                  <div className={styles.metaInfo}>
-                    <span className={styles.metaItem}><Calendar size={14} /> {directorBlog.date}</span>
-                    <span className={styles.metaDivider}>&bull;</span>
-                    <span className={styles.metaItem}><Clock size={14} /> {directorBlog.readTime}</span>
-                  </div>
-
-                  <Link to={`/blogs/${directorBlog.id}`} className={styles.readMoreBtn}>
-                    Read This Article <ArrowRight size={18} />
-                  </Link>
-                </div>
-              </motion.div>
-            </div>
-          </section>
-        )}
-
-        {featuredBlog && (
-          <section className={styles.featuredSection}>
-            <div className="container">
-              <h3 className={styles.featuredSectionHeading}>Featured Article</h3>
-              <motion.div
-                className={styles.featuredCard}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.7 }}
-              >
-                <div className={styles.featuredImagePlaceholder}>
-                  {featuredBlog.image ? (
-                    <img src={featuredBlog.image} alt={featuredBlog.title} className={styles.featuredImage} />
-                  ) : (
-                    <div className={styles.placeholderIcon}>
-                      <Leaf size={64} />
+              <div className={styles.highlightGrid}>
+                {directorBlog && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.7 }}
+                    className={styles.highlightCard}
+                  >
+                    <div className={styles.directorImageWrapper}>
+                      {directorBlog.image && (
+                        <img src={directorBlog.image} alt={directorBlog.title} className={styles.featuredImage} />
+                      )}
+                      <div className={styles.directorOverlay}>
+                        {directorBlog.authorImage && (
+                          <img src={directorBlog.authorImage} alt={directorBlog.author} className={styles.directorAvatar} />
+                        )}
+                        <div className={styles.directorFeaturedLabel}>From the Director's Desk</div>
+                      </div>
                     </div>
-                  )}
-                  <div className={styles.featuredBadge}>{featuredBlog.category}</div>
-                </div>
-                <div className={styles.featuredContent}>
-                  <h2 className={styles.featuredTitle}>{featuredBlog.title}</h2>
-                  <p className={styles.featuredExcerpt}>{featuredBlog.excerpt}</p>
+                    <div className={styles.highlightContent}>
+                      <h2 className={styles.highlightTitle}>{directorBlog.title}</h2>
+                      <p className={styles.highlightExcerpt}>{directorBlog.excerpt}</p>
+                      <div className={styles.metaInfo}>
+                        <span className={styles.metaItem}><Calendar size={14} /> {directorBlog.date}</span>
+                        <span className={styles.metaDivider}>&bull;</span>
+                        <span className={styles.metaItem}><Clock size={14} /> {directorBlog.readTime}</span>
+                      </div>
+                      <Link to={`/blogs/${directorBlog.id}`} className={styles.readMoreBtn}>
+                        Read This Article <ArrowRight size={18} />
+                      </Link>
+                    </div>
+                  </motion.div>
+                )}
 
-                  <div className={styles.metaInfo}>
-                    <span className={styles.metaItem}><Calendar size={14} /> {featuredBlog.date}</span>
-                    <span className={styles.metaDivider}>&bull;</span>
-                    <span className={styles.metaItem}><Clock size={14} /> {featuredBlog.readTime}</span>
-                  </div>
-
-                  <Link to={`/blogs/${featuredBlog.id}`} className={styles.readMoreBtn}>
-                    Read This Article <ArrowRight size={18} />
-                  </Link>
-                </div>
-              </motion.div>
+                {featuredBlog && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.7, delay: 0.15 }}
+                    className={styles.highlightCard}
+                  >
+                    <div className={styles.featuredImagePlaceholder}>
+                      {featuredBlog.image ? (
+                        <img src={featuredBlog.image} alt={featuredBlog.title} className={styles.featuredImage} />
+                      ) : (
+                        <div className={styles.placeholderIcon}>
+                          <Leaf size={64} />
+                        </div>
+                      )}
+                      <div className={styles.featuredBadge}>{featuredBlog.category}</div>
+                    </div>
+                    <div className={styles.highlightContent}>
+                      <h3 className={styles.featuredSectionHeading}>Featured Article</h3>
+                      <h2 className={styles.highlightTitle}>{featuredBlog.title}</h2>
+                      <p className={styles.highlightExcerpt}>{featuredBlog.excerpt}</p>
+                      <div className={styles.metaInfo}>
+                        <span className={styles.metaItem}><Calendar size={14} /> {featuredBlog.date}</span>
+                        <span className={styles.metaDivider}>&bull;</span>
+                        <span className={styles.metaItem}><Clock size={14} /> {featuredBlog.readTime}</span>
+                      </div>
+                      <Link to={`/blogs/${featuredBlog.id}`} className={styles.readMoreBtn}>
+                        Read This Article <ArrowRight size={18} />
+                      </Link>
+                    </div>
+                  </motion.div>
+                )}
+              </div>
             </div>
           </section>
         )}

@@ -88,7 +88,7 @@ const CSRProjectBisleri = () => {
                 <img src="/Images/Bisleri_genesis.avif" alt="Collection drive" />
               </div>
               <div className={styles.imageCardFront}>
-                <img src="/Images/Bisleri Products.jpeg" alt="Bottles for Change Product" />
+                <img src="/Images/Bisleri_Products_2.jpeg" alt="Bottles for Change Product" />
               </div>
               <div className={styles.floatingBadge}>
                 <Leaf size={24} color="#10b981" />
@@ -108,19 +108,19 @@ const CSRProjectBisleri = () => {
           </div>
           <div className={styles.impactGrid}>
             <div className={styles.impactCard}>
-              <div className={styles.impactNumber}>6,500+</div>
-              <div className={styles.impactLabel}>Tonnes Plastic Recycled</div>
+              <div className={styles.impactNumber}>40MT+</div>
+              <div className={styles.impactLabel}>Waste Collection Each Month</div>
             </div>
             <div className={styles.impactCard}>
-              <div className={styles.impactNumber}>3,90,000+</div>
+              <div className={styles.impactNumber}>10,000+</div>
               <div className={styles.impactLabel}>Citizens Engaged</div>
             </div>
             <div className={styles.impactCard}>
-              <div className={styles.impactNumber}>270+</div>
+              <div className={styles.impactNumber}>65+</div>
               <div className={styles.impactLabel}>Awareness Campaigns</div>
             </div>
             <div className={styles.impactCard}>
-              <div className={styles.impactNumber}>500+</div>
+              <div className={styles.impactNumber}>25+</div>
               <div className={styles.impactLabel}>Schools Engaged</div>
             </div>
           </div>

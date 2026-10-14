@@ -12,24 +12,6 @@ const impactStats = [
   { value: '50+', label: 'Agricultural Experts Consulted' }
 ];
 
-const focusAreas = [
-  { 
-    title: 'Soil Testing & Health',
-    img: 'https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&q=80'
-  },
-  { 
-    title: 'Modern Crop Scheduling',
-    img: 'https://images.unsplash.com/photo-1592982537447-6f2a6a0c5c13?auto=format&fit=crop&q=80'
-  },
-  { 
-    title: 'Organic Nutrient Management',
-    img: 'https://images.unsplash.com/photo-1621506289937-a8e4df240d0b?auto=format&fit=crop&q=80'
-  },
-  { 
-    title: 'Financial Literacy',
-    img: 'https://images.unsplash.com/photo-1589923188900-85dae523342b?auto=format&fit=crop&q=80'
-  },
-];
 
 const educationalActivities = [
   {
@@ -66,18 +48,18 @@ const educationalActivities = [
 
 const successStories = [
   {
-    quote: "The soil testing workshops completely changed how I farm. My yields have improved and I'm spending less on unnecessary fertilizers.",
-    author: "Ramesh Kumar",
+    quote: "The soil testing workshops organized by Plastroots completely changed how I approach farming. My yields have improved and I spend less on unnecessary inputs.",
+    author: "Umesh Dhawade, Sachiv, Grampanchayat Tarodi BK",
     img: "https://images.unsplash.com/photo-1532372320572-cda25653a26d?auto=format&fit=crop&w=100&q=80"
   },
   {
-    quote: "Learning about crop scheduling helped us survive the unpredictable rains this year. The education provided is invaluable.",
-    author: "Sunita Devi",
+    quote: "The training on modern crop scheduling and organic farming practices helped our village farmers adapt to changing weather patterns effectively.",
+    author: "Sachin Khode, Sachiv, Rajiv Gandhi Grampanchayat, Gumthala",
     img: "https://images.unsplash.com/photo-1589923158776-cb4485d99fd6?auto=format&fit=crop&w=100&q=80"
   },
   {
-    quote: "Through the networking sessions, I finally found buyers who pay a fair price for organic produce.",
-    author: "Amit Patel",
+    quote: "Plastroots connected us with agricultural experts and helped us understand market prices. Our farmers now get better returns for their produce.",
+    author: "Sarla Chimote, Sachiv, Grampanchayat Devlameti, Wadi",
     img: "https://images.unsplash.com/photo-1560415755-bd80d06eda60?auto=format&fit=crop&w=100&q=80"
   }
 ];
@@ -234,37 +216,15 @@ const FarmerWelfare = () => {
               Through hands-on workshops, expert consultations, and peer-to-peer networking, we empower farmers to make informed decisions that improve their crop yields, protect soil health, and secure their financial futures.
             </p>
           </motion.div>
-          <motion.div 
+          <motion.div
             className={styles.splitImageWrapper}
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.2 }}
           >
+            <img src="/Images/Dheeraj Farmers.jpeg" alt="Farmer Education Program" className={styles.splitImage} />
           </motion.div>
-        </div>
-      </section>
-
-      {/* Key Focus Areas */}
-      <section className={styles.focusSection}>
-        <h2 className={styles.sectionTitle}>Educational Focus Areas</h2>
-        <div className={styles.focusGrid}>
-          {focusAreas.map((area, idx) => (
-            <motion.div 
-              key={idx}
-              className={styles.focusCard}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: idx * 0.1 }}
-            >
-              <div className={styles.focusImageWrapper}>
-              </div>
-              <div className={styles.focusCardContent}>
-                <h3 className={styles.focusCardTitle}>{area.title}</h3>
-              </div>
-            </motion.div>
-          ))}
         </div>
       </section>
 

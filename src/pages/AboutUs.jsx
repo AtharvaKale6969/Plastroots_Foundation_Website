@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 import { useNavigate } from 'react-router-dom';
-import { Target, Lightbulb, Leaf, Recycle, Megaphone, Landmark, Home, Users, Briefcase, Check } from 'lucide-react';
+import { Target, Lightbulb, Leaf, Recycle, Megaphone, Landmark, Home, Users, Briefcase, Check, Heart } from 'lucide-react';
 import styles from './AboutUs.module.css';
 
 const teamMembers = [
@@ -141,7 +141,7 @@ const journeyMilestones = [
     variant: "blue",
     title: "MRF Expansion & Scaling the Mission",
     subtitle: "6 New RRC/MRF Centres Planned",
-    image: "/Images/Our%20Journey/RRC.png",
+    image: "/Images/RRC_12.jpeg",
     body: "Based on our RRC experience, we are now heading towards establishing six more RRC/MRF centres across Nagpur district with Zilla Parishad. Our focus is MRF operations, solid waste management, IEC programmes and tackling illegal dumping.",
     highlight: "RRC Experiment → Model → Opportunity → A larger vision of sustainable waste management across Nagpur and beyond."
   }
@@ -263,25 +263,25 @@ const AboutUs = () => {
               <div className={styles.manifestoCard}>
                 <div className={styles.manifestoHeader}>
                   <div className={styles.manifestoHeaderIcon}>
-                    <Leaf size={18} />
+                    <Leaf size={20} />
                   </div>
                   <span className={styles.manifestoLabel}>What We Stand For Today</span>
                 </div>
-                <ul className={styles.manifestoList}>
+                <div className={styles.manifestoGrid}>
                   {[
-                    "Create awareness in communities",
-                    "Encourage responsible waste segregation",
-                    "Support waste management systems",
-                    "Create opportunities for communities",
-                    "Empower women through skills & livelihoods",
-                    "Work with local bodies for lasting solutions"
+                    { icon: <Megaphone size={20} />, text: "Create awareness in communities" },
+                    { icon: <Recycle size={20} />, text: "Encourage responsible waste segregation" },
+                    { icon: <Leaf size={20} />, text: "Support waste management systems" },
+                    { icon: <Users size={20} />, text: "Create opportunities for communities" },
+                    { icon: <Heart size={20} />, text: "Empower women through skills & livelihoods" },
+                    { icon: <Landmark size={20} />, text: "Work with local bodies for lasting solutions" }
                   ].map((item, i) => (
-                    <li key={i}>
-                      <span className={styles.manifestoCheck}><Check size={14} /></span>
-                      <span>{item}</span>
-                    </li>
+                    <div key={i} className={styles.manifestoItem}>
+                      <div className={styles.manifestoItemIcon}>{item.icon}</div>
+                      <span>{item.text}</span>
+                    </div>
                   ))}
-                </ul>
+                </div>
                 <blockquote className={styles.manifestoQuote}>
                   "Real change happens when people become a part of the solution."
                 </blockquote>

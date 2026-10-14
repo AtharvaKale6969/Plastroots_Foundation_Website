@@ -6,7 +6,7 @@ import { PieChart, Pie, Cell, Tooltip as RechartsTooltip, Legend, ResponsiveCont
 import styles from './InitiativeDetail.module.css';
 
 const impactStats = [
-  { value: '500+', label: 'SHGs Formed' },
+  { value: '100+', label: 'SHGs Formed' },
   { value: '5,000+', label: 'Women Empowered' },
   { value: '200+', label: 'Micro-Enterprises' }
 ];
@@ -71,25 +71,25 @@ const shgActivities = [
 
 const successStories = [
   {
-    quote: "Joining the SHG gave me the confidence to start my own upcycling business. I am now financially independent.",
-    author: "Lakshmi Devi",
+    quote: "Plastroots helped women in our area form self-help groups and trained them in waste segregation work. It gave them financial independence and a sense of purpose.",
+    author: "Shirish Shivankar, President, Samaj Kalyan Hostel, Satranjipura",
     img: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=100&q=80"
   },
   {
-    quote: "Our waste recovery enterprise not only keeps our village clean but also pays for our children's education.",
-    author: "Meera Bai",
+    quote: "The SHG training sessions empowered women in our Gram Panchayat to take up waste recovery as a livelihood. They are now earning and contributing to the local economy.",
+    author: "Pulkit Sarothe, Store Manager, Zepto Store, Nandanwan",
     img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=100&q=80"
   },
   {
-    quote: "The financial literacy training taught us how to save and invest together. Our group fund is now helping other women start businesses.",
-    author: "Anita Sharma",
+    quote: "The skill development workshops gave women in our community practical training in upcycling and waste management. It has transformed their daily lives.",
+    author: "Aryan Bhimte, President, Govt. Boys Hostel, Manish Nagar",
     img: "https://images.unsplash.com/photo-1589923158776-cb4485d99fd6?auto=format&fit=crop&w=100&q=80"
   }
 ];
 
 const WomenChart = () => {
   const data = [
-    { name: 'SHGs Formed', actualValue: '500+', visualValue: 35, color: '#c2185b' },
+    { name: 'SHGs Formed', actualValue: '100+', visualValue: 35, color: '#c2185b' },
     { name: 'Women Empowered', actualValue: '5,000+', visualValue: 50, color: '#7b1fa2' },
     { name: 'Micro-Enterprises', actualValue: '200+', visualValue: 15, color: '#d81b60' }
   ];

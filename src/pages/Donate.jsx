@@ -171,17 +171,6 @@ const Donate = () => {
         </div>
       </section>
 
-      {/* 3. See the Impact Container */}
-      <section className={styles.infoSection} style={{ padding: '80px 5%' }}>
-        <h2 className={styles.sectionTitle} style={{ marginBottom: '60px' }}>See the Impact</h2>
-        <div className={styles.imageShowcase}>
-          <div className={styles.showcaseImg} style={{ backgroundColor: '#e2e8f0', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#64748b', fontWeight: 'bold' }}>Image Placeholder 1</div>
-          <div className={styles.showcaseImg} style={{ backgroundColor: '#e2e8f0', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#64748b', fontWeight: 'bold' }}>Image Placeholder 2</div>
-          <div className={styles.showcaseImg} style={{ backgroundColor: '#e2e8f0', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#64748b', fontWeight: 'bold' }}>Image Placeholder 3</div>
-          <div className={styles.showcaseImg} style={{ backgroundColor: '#e2e8f0', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#64748b', fontWeight: 'bold' }}>Image Placeholder 4</div>
-        </div>
-      </section>
-
       {/* 4. Donation Form Container */}
       <section className={styles.widgetSection}>
         <div className={styles.widgetContainer}>

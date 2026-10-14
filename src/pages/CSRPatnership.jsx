@@ -162,17 +162,6 @@ const CSRPatnership = () => {
         </div>
       </section>
 
-      {/* 3. See the Impact Container */}
-      <section className={charityStyles.infoSection} style={{ padding: '80px 5%' }}>
-        <h2 className={charityStyles.sectionTitle} style={{ marginBottom: '60px' }}>See the Impact</h2>
-        <div className={charityStyles.imageShowcase}>
-          <div className={charityStyles.showcaseImg} style={{ backgroundColor: '#e2e8f0', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#64748b', fontWeight: 'bold' }}>Image Placeholder 1</div>
-          <div className={charityStyles.showcaseImg} style={{ backgroundColor: '#e2e8f0', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#64748b', fontWeight: 'bold' }}>Image Placeholder 2</div>
-          <div className={charityStyles.showcaseImg} style={{ backgroundColor: '#e2e8f0', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#64748b', fontWeight: 'bold' }}>Image Placeholder 3</div>
-          <div className={charityStyles.showcaseImg} style={{ backgroundColor: '#e2e8f0', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#64748b', fontWeight: 'bold' }}>Image Placeholder 4</div>
-        </div>
-      </section>
-
       {/* 4. CSR Form Container */}
       <section className={charityStyles.widgetSection}>
         <div className={charityStyles.widgetContainer}>

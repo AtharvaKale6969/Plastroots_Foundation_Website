@@ -28,7 +28,7 @@ const Footer = () => {
                     <li><a href="/">Home</a></li>
                     <li><a href="/about">About Us</a></li>
                     <li><a href="/initiatives">Our Initiatives</a></li>
-                    <li><a href="/csr">CSR Projects</a></li>
+                    <li><a href="/csr-projects">CSR Projects</a></li>
                   </ul>
                   <ul className={styles.footerLinks}>
                     <li><a href="/gallery">Gallery</a></li>

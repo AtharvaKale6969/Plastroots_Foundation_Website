@@ -15,7 +15,7 @@ const initiatives = [
   {
     title: 'Farmer Stewardship Program / Farmer Empowerment',
     desc: 'Equipping farmers with modern, sustainable agricultural practices, reducing plastic usage in farming, and enhancing rural livelihoods.',
-    img: 'https://images.unsplash.com/photo-1592982537447-6f2a6a0c5c13?auto=format&fit=crop&q=80',
+    img: '/Images/Farmers.jpg',
     link: '/initiatives/farmer-stewardship'
   },
   {
