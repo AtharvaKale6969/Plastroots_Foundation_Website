@@ -11,13 +11,13 @@ const testimonials = [
     initial: "R"
   },
   {
-    quote: "The awareness sessions conducted by Plastroots educated our staff and customers about responsible waste disposal. A much-needed initiative.",
+    quote: "The awareness sessions conducted by Plastroots Foundation educated our staff and customers about responsible waste disposal. A much-needed initiative.",
     author: "Prajwal Thakre",
     role: "Owner, Tick Drip Café",
     initial: "P"
   },
   {
-    quote: "Plastroots helped us set up a proper waste segregation system at our facility. The impact on cleanliness and hygiene has been remarkable.",
+    quote: "Plastroots Foundation helped us set up a proper waste segregation system at our facility. The impact on cleanliness and hygiene has been remarkable.",
     author: "Aditya Kumar",
     role: "Manager, Sakshi Industry",
     initial: "A"
@@ -29,7 +29,7 @@ const testimonials = [
     initial: "G"
   },
   {
-    quote: "Partnering with Plastroots for waste collection and awareness drives has been a great step towards a cleaner community.",
+    quote: "Partnering with Plastroots Foundation for waste collection and awareness drives has been a great step towards a cleaner community.",
     author: "Nitin Bawariya",
     role: "Manager, Sagar Highway Pride Restaurant",
     initial: "N"

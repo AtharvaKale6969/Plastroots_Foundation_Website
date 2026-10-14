@@ -82,7 +82,7 @@ const successStories = [
     img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80"
   },
   {
-    quote: "Plastroots conducted health awareness sessions in our hostel that educated residents on hygiene and preventive care. It has had a lasting impact on the community.",
+    quote: "Plastroots Foundation conducted health awareness sessions in our hostel that educated residents on hygiene and preventive care. It has had a lasting impact on the community.",
     author: "Jay Gaikwad, President, Samaj Kalyan Boys Hostel, Katol Naka",
     img: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=100&q=80"
   },

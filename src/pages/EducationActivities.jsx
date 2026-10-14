@@ -79,7 +79,7 @@ const successStories = [
     img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80"
   },
   {
-    quote: "Plastroots brought a practical approach to environmental education. Our students now understand why waste segregation matters and they practice it every day.",
+    quote: "Plastroots Foundation brought a practical approach to environmental education. Our students now understand why waste segregation matters and they practice it every day.",
     author: "V. M. Samrit, Principal, Pragatik Madhyamik Vidyalaya, Koradi",
     img: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=100&q=80"
   },

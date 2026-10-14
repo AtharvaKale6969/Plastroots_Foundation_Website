@@ -58,7 +58,7 @@ const successStories = [
     img: "https://images.unsplash.com/photo-1589923158776-cb4485d99fd6?auto=format&fit=crop&w=100&q=80"
   },
   {
-    quote: "Plastroots connected us with agricultural experts and helped us understand market prices. Our farmers now get better returns for their produce.",
+    quote: "Plastroots Foundation connected us with agricultural experts and helped us understand market prices. Our farmers now get better returns for their produce.",
     author: "Sarla Chimote, Sachiv, Grampanchayat Devlameti, Wadi",
     img: "https://images.unsplash.com/photo-1560415755-bd80d06eda60?auto=format&fit=crop&w=100&q=80"
   }

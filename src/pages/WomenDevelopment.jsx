@@ -71,7 +71,7 @@ const shgActivities = [
 
 const successStories = [
   {
-    quote: "Plastroots helped women in our area form self-help groups and trained them in waste segregation work. It gave them financial independence and a sense of purpose.",
+    quote: "Plastroots Foundation helped women in our area form self-help groups and trained them in waste segregation work. It gave them financial independence and a sense of purpose.",
     author: "Shirish Shivankar, President, Samaj Kalyan Hostel, Satranjipura",
     img: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=100&q=80"
   },

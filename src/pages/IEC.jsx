@@ -112,7 +112,7 @@ const successStories = [
     img: "https://images.unsplash.com/photo-1532372320572-cda25653a26d?auto=format&fit=crop&w=100&q=80"
   },
   {
-    quote: "Plastroots conducted an incredible awareness rally at our school. The students and staff were truly inspired to take action for a cleaner environment.",
+    quote: "Plastroots Foundation conducted an incredible awareness rally at our school. The students and staff were truly inspired to take action for a cleaner environment.",
     author: "Gajanan Potdar, Principal, Manavata Vidyalaya, Manewada",
     img: "https://images.unsplash.com/photo-1560415755-bd80d06eda60?auto=format&fit=crop&w=100&q=80"
   },
