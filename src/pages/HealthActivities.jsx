@@ -357,7 +357,7 @@ const HealthActivities = () => {
             >
               <p className={styles.masonryText}>{story.quote}</p>
               <div className={styles.masonryAuthor}>
-                <img src={story.img} alt={story.author} className={styles.authorImg} />
+                <div className={styles.authorInitial}>{story.author.charAt(0)}</div>
                 {story.author}
               </div>
             </motion.div>
