@@ -48,9 +48,17 @@ const Testimonials = () => {
         >
           Voices of Our Community
         </motion.h2>
+        <motion.p
+          className={styles.subtitle}
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.1 }}
+        >
+          Hear from the stakeholders and partners who are part of our mission.
+        </motion.p>
       </div>
 
-      {/* Auto-scrolling marquee effect */}
       <motion.div
         className={styles.carouselContainer}
         animate={{ x: ["0%", "-50%"] }}
@@ -60,13 +68,14 @@ const Testimonials = () => {
           duration: 30
         }}
       >
-        {/* Duplicate list to create seamless infinite scroll loop */}
         {[...testimonials, ...testimonials].map((item, index) => (
           <div key={index} className={styles.card}>
+            <div className={styles.quoteIcon}>"</div>
             <div className={styles.stars}>
-              {[1, 2, 3, 4, 5].map(star => <Star key={star} size={16} fill="currentColor" />)}
+              {[1, 2, 3, 4, 5].map(star => <Star key={star} size={14} fill="currentColor" />)}
             </div>
-            <p className={styles.quote}>"{item.quote}"</p>
+            <p className={styles.quote}>{item.quote}</p>
+            <div className={styles.divider} />
             <div className={styles.author}>
               <div className={styles.avatar}>{item.initial}</div>
               <div className={styles.authorInfo}>
