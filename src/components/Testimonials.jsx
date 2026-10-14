@@ -5,34 +5,34 @@ import styles from './Testimonials.module.css';
 
 const testimonials = [
   {
-    quote: "The pure journey of the brand breaking society norms the event is created gives the peace of mind.",
-    author: "Ramesh",
-    role: "Teacher",
+    quote: "Plastroots Foundation's waste management training transformed how our school handles waste. Students now actively segregate and recycle.",
+    author: "Ramesh Pawar",
+    role: "Principal, Raosaheb Thaware High School",
     initial: "R"
   },
   {
-    quote: "The pure feeling which has your soul, and the transparent nature is beautiful.",
-    author: "Neha S.",
-    role: "Student",
-    initial: "N"
-  },
-  {
-    quote: "Superb plastic waste best purchase. The purpose was to clear.",
-    author: "Arjun P.",
-    role: "Corporate Employee",
-    initial: "A"  
-  },
-  {
-    quote: "The transparency of the brand treating people where the nature is ensured gives the peace of mind.",
-    author: "Deepak",
-    role: "Principal",
-    initial: "D"
-  },
-  {
-    quote: "This is a great initiative that everyone must support. Highly recommended.",
-    author: "Priya M.",
-    role: "Volunteer",
+    quote: "The awareness sessions conducted by Plastroots educated our staff and customers about responsible waste disposal. A much-needed initiative.",
+    author: "Prajwal Thakre",
+    role: "Owner, Tick Drip Café",
     initial: "P"
+  },
+  {
+    quote: "Plastroots helped us set up a proper waste segregation system at our facility. The impact on cleanliness and hygiene has been remarkable.",
+    author: "Aditya Kumar",
+    role: "Manager, Sakshi Industry",
+    initial: "A"
+  },
+  {
+    quote: "The environmental awareness programs brought a visible change in our school campus. Students have become ambassadors of sustainability.",
+    author: "Godghate Mam",
+    role: "Principal, Vishakha High School",
+    initial: "G"
+  },
+  {
+    quote: "Partnering with Plastroots for waste collection and awareness drives has been a great step towards a cleaner community.",
+    author: "Nitin Bawariya",
+    role: "Manager, Sagar Highway Pride Restaurant",
+    initial: "N"
   }
 ];
 
