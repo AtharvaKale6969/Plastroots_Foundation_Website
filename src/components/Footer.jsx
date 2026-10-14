@@ -10,7 +10,7 @@ const Footer = () => {
           
           <div className={styles.leftCol}>
             <div className={styles.footerBrand}>
-              <img src="/Images/Header/PF_LOGO.png" alt="Plastroots Logo" className={styles.footerLogo} />
+              <img src="/Images/PF_LOGO_NEW.png" alt="Plastroots Logo" className={styles.footerLogo} />
               <span>PLASTROOTS FOUNDATION</span>
             </div>
             <p className={styles.footerDesc}>
