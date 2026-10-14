@@ -355,7 +355,6 @@ const HealthActivities = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: idx * 0.2 }}
             >
-              <div className={styles.quoteIcon}>"</div>
               <p className={styles.masonryText}>{story.quote}</p>
               <div className={styles.masonryAuthor}>
                 <img src={story.img} alt={story.author} className={styles.authorImg} />
