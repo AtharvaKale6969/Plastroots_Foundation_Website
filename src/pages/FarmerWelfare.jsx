@@ -48,19 +48,19 @@ const educationalActivities = [
 
 const successStories = [
   {
-    quote: "The soil testing workshops organized by Plastroots completely changed how I approach farming. My yields have improved and I spend less on unnecessary inputs.",
-    author: "Umesh Dhawade, Sachiv, Grampanchayat Tarodi BK",
-    img: "https://images.unsplash.com/photo-1532372320572-cda25653a26d?auto=format&fit=crop&w=100&q=80"
+    quote: "Plastroots Foundation organized soil testing camps in our village and guided farmers on the right fertilizers to use. Our crop yields have improved significantly since then.",
+    author: "Anilji Nehare, Sarpanch, Grampanchayat Metpanjra, Katol",
+    img: ""
   },
   {
-    quote: "The training on modern crop scheduling and organic farming practices helped our village farmers adapt to changing weather patterns effectively.",
-    author: "Sachin Khode, Sachiv, Rajiv Gandhi Grampanchayat, Gumthala",
-    img: "https://images.unsplash.com/photo-1589923158776-cb4485d99fd6?auto=format&fit=crop&w=100&q=80"
+    quote: "The training sessions on organic farming and modern crop techniques helped farmers in our Gram Panchayat reduce costs and grow healthier produce. It was a much-needed initiative.",
+    author: "Sachin Khode, Sarpanch, Rajiv Gandhi Grampanchayat, Gumthala",
+    img: ""
   },
   {
-    quote: "Plastroots Foundation connected us with agricultural experts and helped us understand market prices. Our farmers now get better returns for their produce.",
-    author: "Sarla Chimote, Sachiv, Grampanchayat Devlameti, Wadi",
-    img: "https://images.unsplash.com/photo-1560415755-bd80d06eda60?auto=format&fit=crop&w=100&q=80"
+    quote: "Plastroots Foundation connected our farmers with agricultural experts who helped them understand market pricing and better post-harvest practices. The results have been truly impactful.",
+    author: "Umesh Dhawade, Sarpanch, Grampanchayat Tarodi BK",
+    img: ""
   }
 ];
 

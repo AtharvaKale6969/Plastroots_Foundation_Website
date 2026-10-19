@@ -64,10 +64,14 @@ function App() {
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/blogs" element={<Blogs />} />
             <Route path="/blogs/:id" element={<BlogDetail />} />
-            <Route path="/gallery/project" element={<Gallery category="Project" />} />
-            <Route path="/gallery/event" element={<Gallery category="Event" />} />
-            <Route path="/gallery/college-drive" element={<Gallery category="College Drive" />} />
-            <Route path="/gallery/campaign" element={<Gallery category="Campaign" />} />
+            <Route path="/gallery/school-awareness" element={<Gallery category="School Awareness Programs" />} />
+            <Route path="/gallery/college-seminars" element={<Gallery category="College Seminars & Workshops" />} />
+            <Route path="/gallery/rallies" element={<Gallery category="Rallies & Street Campaigns" />} />
+            <Route path="/gallery/hostel-outreach" element={<Gallery category="Hostel & Institutional Outreach" />} />
+            <Route path="/gallery/cleanliness-drives" element={<Gallery category="Cleanliness Drives" />} />
+            <Route path="/gallery/festival-campaigns" element={<Gallery category="Festival Awareness Campaigns" />} />
+            <Route path="/gallery/community-outreach" element={<Gallery category="Community & Village Outreach" />} />
+            <Route path="/gallery/stalls-exhibitions" element={<Gallery category="Awareness Stalls & Exhibitions" />} />
           </Routes>
           <Footer />
         </div>

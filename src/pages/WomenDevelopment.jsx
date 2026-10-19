@@ -71,19 +71,19 @@ const shgActivities = [
 
 const successStories = [
   {
-    quote: "Plastroots Foundation helped women in our area form self-help groups and trained them in waste segregation work. It gave them financial independence and a sense of purpose.",
-    author: "Shirish Shivankar, President, Samaj Kalyan Hostel, Satranjipura",
-    img: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=100&q=80"
+    quote: "Plastroots Foundation helped women in our village form self-help groups and provided them with skill development training. Many of them now run their own micro-enterprises and are financially independent.",
+    author: "Sarla Chimote, Sarpanch, Grampanchayat Devlameti, Wadi",
+    img: ""
   },
   {
-    quote: "The SHG training sessions empowered women in our Gram Panchayat to take up waste recovery as a livelihood. They are now earning and contributing to the local economy.",
-    author: "Pulkit Sarothe, Store Manager, Zepto Store, Nandanwan",
-    img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=100&q=80"
+    quote: "The SHG formation and training sessions organized by Plastroots Foundation gave women in our community the confidence to start earning on their own. It has truly empowered them.",
+    author: "Godghate Mam, Principal, Vishakha High School, Nagpur",
+    img: ""
   },
   {
-    quote: "The skill development workshops gave women in our community practical training in upcycling and waste management. It has transformed their daily lives.",
-    author: "Aryan Bhimte, President, Govt. Boys Hostel, Manish Nagar",
-    img: "https://images.unsplash.com/photo-1589923158776-cb4485d99fd6?auto=format&fit=crop&w=100&q=80"
+    quote: "The women in our Gram Panchayat received hands-on training in tailoring and food processing through Plastroots Foundation. Today, several of them are running their own small businesses.",
+    author: "Anilji Nehare, Sarpanch, Grampanchayat Metpanjra, Katol",
+    img: ""
   }
 ];
 
