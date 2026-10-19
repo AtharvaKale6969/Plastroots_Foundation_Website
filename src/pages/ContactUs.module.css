@@ -51,6 +51,7 @@
   overflow: hidden;
   position: relative;
   z-index: 10;
+  box-sizing: border-box;
 }
 
 @media (max-width: 900px) {
@@ -117,6 +118,8 @@
   opacity: 0.8;
   line-height: 1.5;
   font-size: 1rem;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .socials {
@@ -260,6 +263,8 @@ textarea.formInput {
   border-radius: 30px;
   box-shadow: 0 20px 50px rgba(0,0,0,0.08);
   border: 1px solid rgba(0,0,0,0.05);
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 @media (max-width: 900px) {
@@ -304,6 +309,8 @@ textarea.formInput {
 .contactDetailsItem p {
   color: var(--text-dark);
   line-height: 1.6;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .largeMapWrapper {

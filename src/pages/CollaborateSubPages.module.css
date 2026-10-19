@@ -55,7 +55,7 @@
 
 /* Page Container */
 .section {
-  padding: 80px 0;
+  padding: 80px 5%;
   background-color: var(--light-bg);
 }
 
@@ -110,10 +110,12 @@
 }
 
 .quoteCard {
-  padding: 20px; /* Add padding so funky fonts don't clip */
+  padding: 20px;
   position: relative;
   display: flex;
   flex-direction: column;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 .quoteIcon {
@@ -347,7 +349,7 @@
 }
 
 @media (max-width: 768px) {
-  .section { padding: 60px 0; }
+  .section { padding: 60px 5%; }
   .pageLayout {
     grid-template-columns: 1fr;
   }
@@ -367,7 +369,7 @@
 }
 
 @media (max-width: 425px) {
-  .section { padding: 40px 0; }
+  .section { padding: 40px 5%; }
   .cardsGrid { grid-template-columns: 1fr; }
   .form { grid-template-columns: 1fr; }
   .formSection { padding: 30px 15px; }

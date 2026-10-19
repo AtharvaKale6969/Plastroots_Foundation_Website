@@ -46,6 +46,7 @@
 /* Highlight Section (Director + Featured side by side) */
 .highlightSection {
   margin-bottom: 80px;
+  padding: 0 5%;
 }
 
 .highlightGrid {
@@ -286,7 +287,7 @@
 
 /* Main Content Layout */
 .mainContent {
-  padding-bottom: 100px;
+  padding: 0 5% 100px;
 }
 
 .contentLayout {

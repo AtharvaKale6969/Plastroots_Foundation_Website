@@ -309,6 +309,7 @@
 .splitSection {
   padding: 80px 5%;
   background: var(--white);
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -991,6 +992,22 @@
   .splitSection {
     padding: 60px 5%;
   }
+  .splitContainer {
+    gap: 2rem;
+    overflow: hidden;
+  }
+  .splitText {
+    width: 100%;
+    min-width: 0;
+  }
+  .splitImageWrapper {
+    width: 100%;
+    min-width: 0;
+  }
+  .splitBadge {
+    left: 0;
+    bottom: -16px;
+  }
   .splitTitle {
     font-size: 1.8rem;
     text-align: center;
@@ -998,7 +1015,7 @@
   .splitDesc {
     text-align: left;
     font-size: 1rem;
-    padding: 0 10px;
+    padding: 0;
   }
   .approachContent p, .recoveryText p {
     text-align: left;

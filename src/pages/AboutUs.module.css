@@ -214,7 +214,7 @@
 
 /* ─── Origin Story ──────────────────────────────────────── */
 .storySection {
-  padding: 100px 0;
+  padding: 100px 5%;
   background: var(--white);
 }
 
@@ -410,7 +410,7 @@
 
 /* ─── Core Focus Areas ──────────────────────────────────── */
 .focusSection {
-  padding: 100px 0;
+  padding: 100px 5%;
   background: var(--white);
 }
 
@@ -653,7 +653,7 @@
 /* ─── Journey / Timeline ────────────────────────────────── */
 .journeySection {
   background: var(--white);
-  padding: 100px 0;
+  padding: 100px 5%;
 }
 
 .journeyInner {
@@ -1170,7 +1170,7 @@
   .directorQuoteCard { padding: 1rem 1.2rem; margin-top: 16px; }
 
   /* Story */
-  .storySection { padding: 60px 0; }
+  .storySection { padding: 60px 5%; }
   .storyGrid { grid-template-columns: 1fr; gap: 36px; align-items: start; }
   .storyHeadline { font-size: 2rem; }
   .storySubheadline { font-size: 0.95rem; }
@@ -1178,7 +1178,7 @@
   .manifestoGrid { grid-template-columns: 1fr; gap: 10px; }
 
   /* Focus */
-  .focusSection { padding: 60px 0; }
+  .focusSection { padding: 60px 5%; }
   .focusSectionHeader { margin-bottom: 2rem; }
   .focusGrid { grid-template-columns: 1fr; gap: 16px; }
   .focusCard { grid-column: auto; }
@@ -1195,8 +1195,8 @@
   .sdgImageWrapper { height: 160px; }
 
   /* Journey */
-  .journeySection { padding: 60px 0; }
-  .journeyInner { gap: 2rem; }
+  .journeySection { padding: 60px 5%; }
+  .journeyInner { gap: 2rem; padding: 0; }
   .journeyTitle { font-size: 2.2rem; }
   .journeySubtitle { font-size: 1rem; }
   .journeyText { font-size: 1rem; }
@@ -1231,7 +1231,7 @@
   .quoteAuthor { font-size: 0.75rem; }
 
   /* Story */
-  .storySection { padding: 50px 0; }
+  .storySection { padding: 50px 5%; }
   .storyHeadline { font-size: 1.7rem; }
   .storySubheadline { font-size: 0.9rem; }
   .storyBody { font-size: 0.95rem; }
@@ -1240,7 +1240,7 @@
   .manifestoQuote { margin: 0 1.3rem 1.3rem; font-size: 0.85rem; }
 
   /* Focus */
-  .focusSection { padding: 50px 0; }
+  .focusSection { padding: 50px 5%; }
   .focusCard { padding: 1.6rem 1.4rem 1.4rem; }
   .focusCardTitle { font-size: 1rem; }
   .focusBullets li { font-size: 0.87rem; }
@@ -1256,7 +1256,7 @@
   .sdgContent { padding: 1rem 1rem 1.2rem; }
 
   /* Journey */
-  .journeySection { padding: 50px 0; }
+  .journeySection { padding: 50px 5%; }
   .journeyTitle { font-size: 1.8rem; }
   .journeySubtitle { font-size: 0.9rem; }
   .journeyYearLabel { font-size: 0.85rem; }
