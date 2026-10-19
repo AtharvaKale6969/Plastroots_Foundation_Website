@@ -6,6 +6,7 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  padding-top: 100px;
 }
 
 .heroBackgrounds {
@@ -130,13 +131,13 @@
   .title { font-size: 3.5rem; }
 }
 @media (max-width: 768px) {
-  .hero { min-height: 500px; height: 75vh; padding-top: 80px; }
+  .hero { min-height: 500px; height: 75vh; padding-top: 100px; }
   .title { font-size: 2.8rem; }
   .subtitle { font-size: 1.1rem; }
   .heroContent { padding-bottom: 60px; }
 }
 @media (max-width: 425px) {
-  .hero { min-height: 550px; height: 85vh; padding-top: 80px; }
+  .hero { min-height: 550px; height: 85vh; padding-top: 100px; }
   .title { font-size: 2rem; margin-bottom: 12px; }
   .subtitle { font-size: 0.95rem; margin-bottom: 20px; max-width: 90%; line-height: 1.5; }
   .heroBtn { padding: 12px 24px; font-size: 1rem; }
