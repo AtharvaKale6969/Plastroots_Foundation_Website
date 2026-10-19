@@ -67,7 +67,6 @@ function App() {
             <Route path="/gallery/school-awareness" element={<Gallery category="School Awareness Programs" />} />
             <Route path="/gallery/college-seminars" element={<Gallery category="College Seminars & Workshops" />} />
             <Route path="/gallery/rallies" element={<Gallery category="Rallies & Street Campaigns" />} />
-            <Route path="/gallery/hostel-outreach" element={<Gallery category="Hostel & Institutional Outreach" />} />
             <Route path="/gallery/cleanliness-drives" element={<Gallery category="Cleanliness Drives" />} />
             <Route path="/gallery/festival-campaigns" element={<Gallery category="Festival Awareness Campaigns" />} />
             <Route path="/gallery/community-outreach" element={<Gallery category="Community & Village Outreach" />} />
