@@ -15,14 +15,31 @@ const CSRPatnership = () => {
     phone: '',
     inquiry: ''
   });
+  const [sending, setSending] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    alert(`Thank you, ${formData.fullName}. We have received your CSR inquiry for ${formData.company} and will send a proposal shortly.`);
+    setSending(true);
+    setSubmitStatus(null);
+    try {
+      const res = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ formType: 'csr', fields: formData }),
+      });
+      if (!res.ok) throw new Error('Failed to send');
+      setSubmitStatus('success');
+      setFormData({ fullName: '', company: '', email: '', phone: '', inquiry: '' });
+    } catch {
+      setSubmitStatus('error');
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -215,9 +232,11 @@ const CSRPatnership = () => {
                 </div>
               </div>
 
-              <button type="submit" className={charityStyles.submitBtn} style={{ marginTop: '40px' }}>
-                Submit Inquiry
+              <button type="submit" className={charityStyles.submitBtn} style={{ marginTop: '40px' }} disabled={sending}>
+                {sending ? 'Submitting...' : 'Submit Inquiry'}
               </button>
+              {submitStatus === 'success' && <p style={{ color: '#22c55e', textAlign: 'center', marginTop: '16px' }}>Thank you! We have received your CSR inquiry and will send a proposal shortly.</p>}
+              {submitStatus === 'error' && <p style={{ color: '#ef4444', textAlign: 'center', marginTop: '16px' }}>Something went wrong. Please try again or email us directly.</p>}
             </form>
           </motion.div>
         </div>

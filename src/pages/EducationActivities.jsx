@@ -72,23 +72,6 @@ const eduActivities = [
   }
 ];
 
-const successStories = [
-  {
-    quote: "The environmental education program has completely transformed student behavior. They now take responsibility for keeping the campus clean and segregating waste properly.",
-    author: "Saroj Gajbhiye, Principal, Vidya Convent School, Nagpur",
-    img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80"
-  },
-  {
-    quote: "Plastroots Foundation brought a practical approach to environmental education. Our students now understand why waste segregation matters and they practice it every day.",
-    author: "V. M. Samrit, Principal, Pragatik Madhyamik Vidyalaya, Koradi",
-    img: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=100&q=80"
-  },
-  {
-    quote: "The partnership with Plastroots Foundation has given our students hands-on experience in sustainability. It has become a core part of our school culture.",
-    author: "Shefali Dudbhade, Founder, Rajkumar Kewalramani High School, Jaripatka",
-    img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=100&q=80"
-  }
-];
 
 const EducationChart = () => {
   const data = [
@@ -323,28 +306,6 @@ const EducationActivities = () => {
         </div>
       </section>
 
-      {/* Impact Stories */}
-      <section className={styles.masonrySection}>
-        <h2 className={styles.sectionTitle}>Stories from the Classroom</h2>
-        <div className={styles.masonryGrid}>
-          {successStories.map((story, idx) => (
-            <motion.div 
-              key={idx}
-              className={styles.masonryCard}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: idx * 0.2 }}
-            >
-              <p className={styles.masonryText}>{story.quote}</p>
-              <div className={styles.masonryAuthor}>
-                <div className={styles.authorInitial}>{story.author.charAt(0)}</div>
-                {story.author}
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </section>
 
       {/* CTA Section */}
       <section className={styles.ctaSection}>

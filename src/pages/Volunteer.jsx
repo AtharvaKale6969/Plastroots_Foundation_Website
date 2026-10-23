@@ -14,14 +14,31 @@ const Volunteer = () => {
     phone: '',
     message: ''
   });
+  const [sending, setSending] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    alert(`Thank you for signing up to volunteer, ${formData.fullName}! Our team will contact you soon.`);
+    setSending(true);
+    setSubmitStatus(null);
+    try {
+      const res = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ formType: 'volunteer', fields: formData }),
+      });
+      if (!res.ok) throw new Error('Failed to send');
+      setSubmitStatus('success');
+      setFormData({ fullName: '', email: '', phone: '', message: '' });
+    } catch {
+      setSubmitStatus('error');
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -209,9 +226,11 @@ const Volunteer = () => {
                 </div>
               </div>
 
-              <button type="submit" className={charityStyles.submitBtn} style={{ marginTop: '40px' }}>
-                Submit Application
+              <button type="submit" className={charityStyles.submitBtn} style={{ marginTop: '40px' }} disabled={sending}>
+                {sending ? 'Submitting...' : 'Submit Application'}
               </button>
+              {submitStatus === 'success' && <p style={{ color: '#22c55e', textAlign: 'center', marginTop: '16px' }}>Thank you for signing up to volunteer! Our team will contact you soon.</p>}
+              {submitStatus === 'error' && <p style={{ color: '#ef4444', textAlign: 'center', marginTop: '16px' }}>Something went wrong. Please try again or email us directly.</p>}
             </form>
           </motion.div>
         </div>

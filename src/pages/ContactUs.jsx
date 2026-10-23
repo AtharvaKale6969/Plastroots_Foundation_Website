@@ -11,17 +11,31 @@ const ContactUs = () => {
     mobile: '',
     message: ''
   });
+  const [sending, setSending] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Form Submitted', formData);
-    // Add logic to actually send the message here
-    alert('Thank you for reaching out! We will get back to you soon.');
-    setFormData({ name: '', email: '', mobile: '', message: '' });
+    setSending(true);
+    setSubmitStatus(null);
+    try {
+      const res = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ formType: 'contact', fields: formData }),
+      });
+      if (!res.ok) throw new Error('Failed to send');
+      setSubmitStatus('success');
+      setFormData({ name: '', email: '', mobile: '', message: '' });
+    } catch {
+      setSubmitStatus('error');
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -140,9 +154,11 @@ const ContactUs = () => {
                   required 
                 ></textarea>
               </div>
-              <button type="submit" className={styles.submitBtn}>
-                Send Message <Send size={18} />
+              <button type="submit" className={styles.submitBtn} disabled={sending}>
+                {sending ? 'Sending...' : 'Send Message'} {!sending && <Send size={18} />}
               </button>
+              {submitStatus === 'success' && <p style={{ color: '#22c55e', textAlign: 'center', marginTop: '16px' }}>Thank you for reaching out! We will get back to you soon.</p>}
+              {submitStatus === 'error' && <p style={{ color: '#ef4444', textAlign: 'center', marginTop: '16px' }}>Something went wrong. Please try again or email us directly.</p>}
             </form>
           </div>
 

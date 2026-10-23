@@ -69,23 +69,6 @@ const shgActivities = [
   }
 ];
 
-const successStories = [
-  {
-    quote: "Plastroots Foundation helped women in our village form self-help groups and provided them with skill development training. Many of them now run their own micro-enterprises and are financially independent.",
-    author: "Sarla Chimote, Sarpanch, Grampanchayat Devlameti, Wadi",
-    img: ""
-  },
-  {
-    quote: "The SHG formation and training sessions organized by Plastroots Foundation gave women in our community the confidence to start earning on their own. It has truly empowered them.",
-    author: "Godghate Mam, Principal, Vishakha High School, Nagpur",
-    img: ""
-  },
-  {
-    quote: "The women in our Gram Panchayat received hands-on training in tailoring and food processing through Plastroots Foundation. Today, several of them are running their own small businesses.",
-    author: "Anilji Nehare, Sarpanch, Grampanchayat Metpanjra, Katol",
-    img: ""
-  }
-];
 
 const WomenChart = () => {
   const data = [
@@ -318,28 +301,6 @@ const WomenDevelopment = () => {
         </div>
       </section>
 
-      {/* Impact Stories */}
-      <section className={styles.masonrySection}>
-        <h2 className={styles.sectionTitle}>Voices of Change</h2>
-        <div className={styles.masonryGrid}>
-          {successStories.map((story, idx) => (
-            <motion.div 
-              key={idx}
-              className={styles.masonryCard}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: idx * 0.2 }}
-            >
-              <p className={styles.masonryText}>{story.quote}</p>
-              <div className={styles.masonryAuthor}>
-                <div className={styles.authorInitial}>{story.author.charAt(0)}</div>
-                {story.author}
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </section>
 
       {/* CTA Section */}
       <section className={styles.ctaSection}>
