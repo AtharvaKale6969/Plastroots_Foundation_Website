@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 import { useNavigate } from 'react-router-dom';
 import { Heart, ArrowLeft, Leaf, BookOpen, Users, Quote } from 'lucide-react';
+import { QRCodeSVG } from 'qrcode.react';
 import styles from './CharityFlow.module.css';
 import layoutStyles from './CollaborateSubPages.module.css';
 
@@ -16,6 +17,7 @@ const Donate = () => {
     amount: '',
     paymentMode: ''
   });
+  const [submitted, setSubmitted] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -27,9 +29,7 @@ const Donate = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Donation Data:', formData);
-    alert('Thank you for your generous donation to Plastroots Foundation!');
-    setFormData({ fullName: '', mobile: '', email: '', pan: '', amount: '', paymentMode: '' });
+    setSubmitted(true);
   };
 
   return (
@@ -181,39 +181,62 @@ const Donate = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
+            {submitted ? (
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5 }}
+                style={{ textAlign: 'center', padding: '60px 20px' }}
+              >
+                <div style={{ width: '80px', height: '80px', borderRadius: '50%', background: 'linear-gradient(135deg, var(--brand-blue), var(--brand-green))', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 24px' }}>
+                  <Heart size={36} color="#fff" fill="#fff" />
+                </div>
+                <h3 style={{ fontSize: '2rem', color: 'var(--brand-blue)', marginBottom: '16px' }}>Thank You, {formData.fullName}!</h3>
+                <p style={{ fontSize: '1.1rem', color: '#64748b', maxWidth: '500px', margin: '0 auto 32px', lineHeight: 1.7 }}>
+                  Your generosity of <strong style={{ color: 'var(--brand-blue)' }}>₹{formData.amount}</strong> means the world to us. Together, we're building a cleaner, greener future.
+                </p>
+                <button
+                  className={styles.submitBtn}
+                  style={{ maxWidth: '300px', margin: '0 auto' }}
+                  onClick={() => { setSubmitted(false); setFormData({ fullName: '', mobile: '', email: '', pan: '', amount: '', paymentMode: '' }); }}
+                >
+                  Make Another Donation
+                </button>
+              </motion.div>
+            ) : (
             <form onSubmit={handleSubmit}>
               <h3 className={styles.amountTitle} style={{ textAlign: 'center', fontSize: '2.5rem', marginBottom: '40px', color: 'var(--brand-blue)' }}>Make a Donation</h3>
-              
+
               <div className={styles.formSection} style={{ marginTop: '0', paddingTop: '0', borderTop: 'none' }}>
                 <div className={styles.formGrid}>
-                  
+
                   <div className={styles.formGroup}>
                     <label className={styles.label}>Full Name</label>
                     <input type="text" name="fullName" className={styles.input} placeholder="Enter Your Full Name" value={formData.fullName} onChange={handleChange} required />
                   </div>
-                  
+
                   <div className={styles.formGroup}>
                     <label className={styles.label}>Mobile Number</label>
                     <input type="tel" name="mobile" className={styles.input} placeholder="Enter 10-Digit Mobile Number" value={formData.mobile} onChange={handleChange} required />
                   </div>
-                  
+
                   <div className={styles.formGroup}>
                     <label className={styles.label}>Email Address</label>
                     <input type="email" name="email" className={styles.input} placeholder="Enter Your Email Address" value={formData.email} onChange={handleChange} required />
                   </div>
-                  
+
                   <div className={styles.formGroup}>
                     <label className={styles.label}>PAN Card Number</label>
                     <input type="text" name="pan" className={styles.input} placeholder="ABCDE1234F" value={formData.pan} onChange={handleChange} required />
                   </div>
-                  
+
                   <div className={`${styles.formGroup} ${styles.fullWidth}`}>
                     <label className={styles.label}>Donation Amount (₹)</label>
                     <input type="number" name="amount" className={styles.input} placeholder="Enter amount (₹)" value={formData.amount} onChange={handleChange} required min="100" />
                   </div>
 
                   {formData.amount && (
-                    <motion.div 
+                    <motion.div
                       className={`${styles.formGroup} ${styles.fullWidth}`}
                       initial={{ opacity: 0, height: 0 }}
                       animate={{ opacity: 1, height: 'auto' }}
@@ -228,8 +251,31 @@ const Donate = () => {
                     </motion.div>
                   )}
 
+                  {formData.paymentMode === 'UPI' && formData.amount && (
+                    <motion.div
+                      className={`${styles.formGroup} ${styles.fullWidth}`}
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.4 }}
+                    >
+                       <div style={{ backgroundColor: '#f8fafc', border: '1px solid #cbd5e1', borderRadius: '12px', padding: '30px', marginTop: '10px', textAlign: 'center' }}>
+                          <h4 style={{ color: 'var(--brand-blue)', marginBottom: '8px' }}>Scan to Pay via UPI</h4>
+                          <p style={{ color: '#64748b', fontSize: '0.9rem', marginBottom: '24px' }}>Amount: <strong style={{ color: 'var(--brand-blue)', fontSize: '1.1rem' }}>₹{formData.amount}</strong></p>
+                          <div style={{ display: 'inline-block', padding: '16px', backgroundColor: '#fff', borderRadius: '16px', boxShadow: '0 4px 20px rgba(0,0,0,0.08)' }}>
+                            <QRCodeSVG
+                              value={`upi://pay?pa=plastrootskapil@sbi&pn=PLASTROOTS%20FOUNDATION&am=${formData.amount}&cu=INR`}
+                              size={200}
+                              level="M"
+                              includeMargin={false}
+                            />
+                          </div>
+                          <p style={{ color: '#64748b', fontSize: '0.85rem', marginTop: '16px' }}>UPI ID: <strong style={{ color: 'var(--text-dark)' }}>plastrootskapil@sbi</strong></p>
+                       </div>
+                    </motion.div>
+                  )}
+
                   {formData.paymentMode === 'Bank Transfer' && (
-                    <motion.div 
+                    <motion.div
                       className={`${styles.formGroup} ${styles.fullWidth}`}
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
@@ -238,20 +284,16 @@ const Donate = () => {
                        <div style={{ backgroundColor: '#f8fafc', border: '1px solid #cbd5e1', borderRadius: '12px', padding: '20px', marginTop: '10px' }}>
                           <h4 style={{ color: 'var(--brand-blue)', marginBottom: '15px' }}>Bank Account Details</h4>
                           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px', fontSize: '0.95rem' }}>
-                             <div><strong>Account Name:</strong><br/>Plastroots Foundation</div>
-                             <div><strong>Account Number:</strong><br/>XXXXXXXXXXXXX</div>
-                             <div><strong>IFSC Code:</strong><br/>XXXX0000000</div>
-                             <div><strong>Swift Code:</strong><br/>XXXXINBBXXX</div>
+                             <div><strong>Account Name:</strong><br/>PLASTROOTS FOUNDATION</div>
+                             <div><strong>Account Number:</strong><br/>43390083855</div>
+                             <div><strong>IFSC Code:</strong><br/>SBIN0030469</div>
                              <div><strong>Bank Name:</strong><br/>State Bank of India</div>
-                             <div><strong>Branch:</strong><br/>Nagpur Main Branch</div>
-                          </div>
-                          <div style={{ marginTop: '20px', fontSize: '0.9rem', color: 'var(--brand-blue)', backgroundColor: 'rgba(9, 102, 153, 0.05)', padding: '12px 16px', borderRadius: '8px', borderLeft: '4px solid var(--brand-blue)' }}>
-                            <strong>Note :</strong> Please use your name and mobile number as reference when making the transfer. You will receive a confirmation email once the donation is processed.
+                             <div style={{ gridColumn: '1 / -1' }}><strong>Branch:</strong><br/>Trimurti Nagar, Khamala, Nagpur, 440025</div>
                           </div>
                        </div>
                     </motion.div>
                   )}
-                  
+
                 </div>
               </div>
 
@@ -260,6 +302,7 @@ const Donate = () => {
                 Donate {formData.amount ? `₹${formData.amount}` : 'Now'}
               </button>
             </form>
+            )}
           </motion.div>
         </div>
       </section>
