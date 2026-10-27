@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
+import { API_BASE_URL } from '../config';
 import { useNavigate } from 'react-router-dom';
 import { Users, GraduationCap, Award, Quote, ArrowLeft, Leaf } from 'lucide-react';
 import layoutStyles from './CollaborateSubPages.module.css';
@@ -26,7 +27,7 @@ const Volunteer = () => {
     setSending(true);
     setSubmitStatus(null);
     try {
-      const res = await fetch('/api/send-email', {
+      const res = await fetch(`${API_BASE_URL}/api/send-email`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ formType: 'volunteer', fields: formData }),

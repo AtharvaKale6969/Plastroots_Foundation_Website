@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, Mail, Phone, Send, Share2, Globe, Link } from 'lucide-react';
+import { API_BASE_URL } from '../config';
 import { Helmet } from 'react-helmet-async';
 import styles from './ContactUs.module.css';
 
@@ -23,7 +24,7 @@ const ContactUs = () => {
     setSending(true);
     setSubmitStatus(null);
     try {
-      const res = await fetch('/api/send-email', {
+      const res = await fetch(`${API_BASE_URL}/api/send-email`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ formType: 'contact', fields: formData }),
