@@ -22,6 +22,7 @@ import CSRProjectBisleri from './pages/CSRProjectBisleri';
 import Gallery from './components/Gallery';
 import Blogs from './pages/Blogs';
 import BlogDetail from './pages/BlogDetail';
+import PrivacyPolicy from './pages/PrivacyPolicy';
 import ScrollToTop from './components/ScrollToTop';
 import SplashScreen from './components/SplashScreen';
 import './index.css';
@@ -64,6 +65,7 @@ function App() {
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/blogs" element={<Blogs />} />
             <Route path="/blogs/:id" element={<BlogDetail />} />
+            <Route path="/privacy" element={<PrivacyPolicy />} />
             <Route path="/gallery/school-awareness" element={<Gallery category="School Awareness Programs" />} />
             <Route path="/gallery/college-seminars" element={<Gallery category="College Seminars & Workshops" />} />
             <Route path="/gallery/rallies" element={<Gallery category="Rallies & Street Campaigns" />} />

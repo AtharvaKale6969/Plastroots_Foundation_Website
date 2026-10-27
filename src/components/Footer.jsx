@@ -57,23 +57,18 @@ const Footer = () => {
             </div>
           </div>
           
-          <div className={styles.rightCol}>
-            <div className={styles.rightContent}>
-              <h4 className={styles.footerTitle}>Address</h4>
-              <p className={styles.contactItem}><MapPin size={24} className={styles.contactIcon} /> <span>Plot no 12A, 1st Floor, Smruti Nagar Rd, Smruti Nagar, Koradi, Bokara, Nagpur Maharashtra 441111</span></p>
-              <p className={styles.contactItem}><Phone size={20} className={styles.contactIcon} /> <span>+91 72497 91152</span></p>
-              <p className={styles.contactItem}><Mail size={20} className={styles.contactIcon} /> <span>impact@plastrootsfoundation.org</span></p>
-            </div>
-          </div>
-          
+        </div>
+
+        <div className={styles.addressRow}>
+          <h4 className={styles.footerTitle}>Contact Us</h4>
+          <p className={styles.contactItem}><MapPin size={24} className={styles.contactIcon} /> <span>Plot no 12A, 1st Floor, Smruti Nagar Rd, Smruti Nagar, Koradi, Bokara, Nagpur Maharashtra 441111</span></p>
+          <p className={styles.contactItem}><Phone size={20} className={styles.contactIcon} /> <span>+91 72497 91152</span></p>
+          <p className={styles.contactItem}><Mail size={20} className={styles.contactIcon} /> <span>impact@plastrootsfoundation.org</span></p>
         </div>
         
         <div className={styles.bottomBar}>
           <p>&copy; {new Date().getFullYear()} Plastroots Foundation. All rights reserved.</p>
-          <div style={{ display: 'flex', gap: '20px' }}>
-            <a href="/privacy" style={{ color: 'inherit' }}>Privacy Policy</a>
-            <a href="/terms" style={{ color: 'inherit' }}>Terms of Service</a>
-          </div>
+          <a href="/privacy" style={{ color: 'inherit' }}>Privacy Policy</a>
         </div>
       </div>
     </footer>

@@ -12,9 +12,9 @@
 
 .footerGrid {
   display: grid;
-  grid-template-columns: 1fr 1.5fr 1fr;
+  grid-template-columns: 1fr 1.5fr;
   gap: 0;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
 }
 
 .leftCol {
@@ -24,20 +24,14 @@
 
 .middleCol {
   padding: 0 30px;
-  border-right: 1px solid var(--brand-green);
   display: flex;
   justify-content: center;
 }
 
-.rightCol {
-  padding-left: 30px;
-  display: flex;
-  justify-content: flex-end;
-}
-
-.rightContent {
-  display: flex;
-  flex-direction: column;
+.addressRow {
+  border-top: 1px solid var(--brand-green);
+  padding-top: 30px;
+  margin-bottom: 40px;
 }
 
 .middleContent {
@@ -160,13 +154,6 @@
     grid-template-columns: 1fr 1fr;
     gap: 40px;
   }
-  .rightCol {
-    grid-column: span 2;
-    padding-left: 0;
-    justify-content: flex-start;
-    border-top: 1px solid var(--brand-green);
-    padding-top: 40px;
-  }
   .leftCol, .middleCol { border-right: none; }
 }
 
@@ -179,7 +166,7 @@
   }
   .leftCol { padding-right: 0; border-right: none; }
   .middleCol { padding: 0; justify-content: flex-start; border-right: none; }
-  .rightCol { grid-column: span 1; padding-left: 0; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.15); }
+  .addressRow { padding-top: 16px; }
 
   /* Brand: logo stacked above name, not squished side-by-side */
   .footerBrand { flex-direction: column; align-items: flex-start; gap: 8px; margin-bottom: 10px; font-size: 1.05rem; }
