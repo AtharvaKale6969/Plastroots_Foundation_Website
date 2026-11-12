@@ -3,8 +3,7 @@ import { SESClient, SendEmailCommand } from "@aws-sdk/client-ses";
 const ses = new SESClient({ region: "ap-south-1" });
 
 const SENDER = "Plastroots Foundation <admin@sarvayagroup.com>";
-const TO_ADDRESS = "impact@plastrootsfoundation.org";
-const BCC_ADDRESS = "kaleatharva3@gmail.com";
+const TO_ADDRESS = "kaleatharva3@gmail.com";
 
 function buildEmailBody(formType, fields) {
   const timestamp = new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" });
@@ -86,7 +85,6 @@ export const handler = async (event) => {
       Source: SENDER,
       Destination: {
         ToAddresses: [TO_ADDRESS],
-        BccAddresses: [BCC_ADDRESS],
       },
       Message: {
         Subject: { Data: subject, Charset: "UTF-8" },

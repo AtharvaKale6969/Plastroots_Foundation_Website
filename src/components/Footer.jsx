@@ -62,7 +62,7 @@ const Footer = () => {
         <div className={styles.addressRow}>
           <h4 className={styles.footerTitle}>Contact Us</h4>
           <p className={styles.contactItem}><MapPin size={24} className={styles.contactIcon} /> <span>Plot no 12A, 1st Floor, Smruti Nagar Rd, Smruti Nagar, Koradi, Bokara, Nagpur Maharashtra 441111</span></p>
-          <p className={styles.contactItem}><Phone size={20} className={styles.contactIcon} /> <span>+91 72497 91152</span></p>
+          <p className={styles.contactItem}><Phone size={20} className={styles.contactIcon} /> <span>+91 72497 91152 , +91 73785 58447</span></p>
           <p className={styles.contactItem}><Mail size={20} className={styles.contactIcon} /> <span>impact@plastrootsfoundation.org</span></p>
         </div>
         

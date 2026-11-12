@@ -194,7 +194,7 @@ const ContactUs = () => {
                   <div className={styles.iconWrapper}><Phone size={24} /></div>
                   <div>
                     <h4>Call Us</h4>
-                    <p>+91 72497 91152</p>
+                    <p>+91 72497 91152<br/>+91 73785 58447</p>
                   </div>
                 </div>
               </div>

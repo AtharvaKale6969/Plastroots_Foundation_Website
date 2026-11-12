@@ -159,7 +159,7 @@ const PrivacyPolicy = () => {
               <p><strong>Plastroots Foundation</strong></p>
               <p>Plot no 12A, 1st Floor, Smruti Nagar Rd, Smruti Nagar, Koradi, Bokara, Nagpur, Maharashtra 441111</p>
               <p>Email: <a href="mailto:impact@plastrootsfoundation.org">impact@plastrootsfoundation.org</a></p>
-              <p>Phone: <a href="tel:+917249791152">+91 72497 91152</a></p>
+              <p>Phone: <a href="tel:+917249791152">+91 72497 91152</a> , <a href="tel:+917378558447">+91 73785 58447</a></p>
             </div>
           </div>
 
